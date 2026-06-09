@@ -1,0 +1,22 @@
+{
+  "generated_at_utc": "2026-03-13T06:36:01.830888+00:00",
+  "version": "round-1209",
+  "latest_draw_round": 1209,
+  "bundle": {
+    "file": "data_bundle.json",
+    "sha256": "2890b3690bf33f6f08fc68425a25e2b163b2b2985e2143243b104a51c21bc182",
+    "bytes": 1822260
+  },
+  "coverage": {
+    "draws": {
+      "from_round": 1,
+      "to_round": 1209,
+      "count": 1209
+    },
+    "stores": {
+      "from_round": 1,
+      "to_round": 1209,
+      "count": 1209
+    }
+  }
+}

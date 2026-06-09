@@ -1,0 +1,389 @@
+{
+  "generated_at_utc": "2026-06-09T12:02:31.429324+00:00",
+  "defaults": {
+    "sets_count": 5,
+    "seed": 1781006551
+  },
+  "data_status": {
+    "has_official_history": false,
+    "message": "data/pension720_draws.json이 없어 균등 가중치 기반 추천만 제공합니다."
+  },
+  "latest_draw": null,
+  "strategy": {
+    "description": "Group and per-position digit frequency heuristic",
+    "rules": [
+      "조는 1-5 범위",
+      "6자리 숫자는 0-9 각 자리별 추천",
+      "동일 숫자 4개 이상 반복 회피",
+      "단조 증가/감소 5자리 이상 회피",
+      "과거 데이터가 없으면 균등 가중치 사용"
+    ],
+    "group_weights": [
+      {
+        "group": 1,
+        "weight": 1.0
+      },
+      {
+        "group": 2,
+        "weight": 1.0
+      },
+      {
+        "group": 3,
+        "weight": 1.0
+      },
+      {
+        "group": 4,
+        "weight": 1.0
+      },
+      {
+        "group": 5,
+        "weight": 1.0
+      }
+    ],
+    "digit_weights": [
+      {
+        "position": 1,
+        "digits": [
+          {
+            "digit": 0,
+            "weight": 1.0
+          },
+          {
+            "digit": 1,
+            "weight": 1.0
+          },
+          {
+            "digit": 2,
+            "weight": 1.0
+          },
+          {
+            "digit": 3,
+            "weight": 1.0
+          },
+          {
+            "digit": 4,
+            "weight": 1.0
+          },
+          {
+            "digit": 5,
+            "weight": 1.0
+          },
+          {
+            "digit": 6,
+            "weight": 1.0
+          },
+          {
+            "digit": 7,
+            "weight": 1.0
+          },
+          {
+            "digit": 8,
+            "weight": 1.0
+          },
+          {
+            "digit": 9,
+            "weight": 1.0
+          }
+        ]
+      },
+      {
+        "position": 2,
+        "digits": [
+          {
+            "digit": 0,
+            "weight": 1.0
+          },
+          {
+            "digit": 1,
+            "weight": 1.0
+          },
+          {
+            "digit": 2,
+            "weight": 1.0
+          },
+          {
+            "digit": 3,
+            "weight": 1.0
+          },
+          {
+            "digit": 4,
+            "weight": 1.0
+          },
+          {
+            "digit": 5,
+            "weight": 1.0
+          },
+          {
+            "digit": 6,
+            "weight": 1.0
+          },
+          {
+            "digit": 7,
+            "weight": 1.0
+          },
+          {
+            "digit": 8,
+            "weight": 1.0
+          },
+          {
+            "digit": 9,
+            "weight": 1.0
+          }
+        ]
+      },
+      {
+        "position": 3,
+        "digits": [
+          {
+            "digit": 0,
+            "weight": 1.0
+          },
+          {
+            "digit": 1,
+            "weight": 1.0
+          },
+          {
+            "digit": 2,
+            "weight": 1.0
+          },
+          {
+            "digit": 3,
+            "weight": 1.0
+          },
+          {
+            "digit": 4,
+            "weight": 1.0
+          },
+          {
+            "digit": 5,
+            "weight": 1.0
+          },
+          {
+            "digit": 6,
+            "weight": 1.0
+          },
+          {
+            "digit": 7,
+            "weight": 1.0
+          },
+          {
+            "digit": 8,
+            "weight": 1.0
+          },
+          {
+            "digit": 9,
+            "weight": 1.0
+          }
+        ]
+      },
+      {
+        "position": 4,
+        "digits": [
+          {
+            "digit": 0,
+            "weight": 1.0
+          },
+          {
+            "digit": 1,
+            "weight": 1.0
+          },
+          {
+            "digit": 2,
+            "weight": 1.0
+          },
+          {
+            "digit": 3,
+            "weight": 1.0
+          },
+          {
+            "digit": 4,
+            "weight": 1.0
+          },
+          {
+            "digit": 5,
+            "weight": 1.0
+          },
+          {
+            "digit": 6,
+            "weight": 1.0
+          },
+          {
+            "digit": 7,
+            "weight": 1.0
+          },
+          {
+            "digit": 8,
+            "weight": 1.0
+          },
+          {
+            "digit": 9,
+            "weight": 1.0
+          }
+        ]
+      },
+      {
+        "position": 5,
+        "digits": [
+          {
+            "digit": 0,
+            "weight": 1.0
+          },
+          {
+            "digit": 1,
+            "weight": 1.0
+          },
+          {
+            "digit": 2,
+            "weight": 1.0
+          },
+          {
+            "digit": 3,
+            "weight": 1.0
+          },
+          {
+            "digit": 4,
+            "weight": 1.0
+          },
+          {
+            "digit": 5,
+            "weight": 1.0
+          },
+          {
+            "digit": 6,
+            "weight": 1.0
+          },
+          {
+            "digit": 7,
+            "weight": 1.0
+          },
+          {
+            "digit": 8,
+            "weight": 1.0
+          },
+          {
+            "digit": 9,
+            "weight": 1.0
+          }
+        ]
+      },
+      {
+        "position": 6,
+        "digits": [
+          {
+            "digit": 0,
+            "weight": 1.0
+          },
+          {
+            "digit": 1,
+            "weight": 1.0
+          },
+          {
+            "digit": 2,
+            "weight": 1.0
+          },
+          {
+            "digit": 3,
+            "weight": 1.0
+          },
+          {
+            "digit": 4,
+            "weight": 1.0
+          },
+          {
+            "digit": 5,
+            "weight": 1.0
+          },
+          {
+            "digit": 6,
+            "weight": 1.0
+          },
+          {
+            "digit": 7,
+            "weight": 1.0
+          },
+          {
+            "digit": 8,
+            "weight": 1.0
+          },
+          {
+            "digit": 9,
+            "weight": 1.0
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "from_round": null,
+      "to_round": null,
+      "draws": 0
+    }
+  },
+  "tickets": [
+    {
+      "ticket_no": 1,
+      "group": 2,
+      "digits": [
+        3,
+        6,
+        3,
+        7,
+        8,
+        0
+      ],
+      "score": 1.0
+    },
+    {
+      "ticket_no": 2,
+      "group": 4,
+      "digits": [
+        3,
+        7,
+        4,
+        3,
+        0,
+        8
+      ],
+      "score": 1.0
+    },
+    {
+      "ticket_no": 3,
+      "group": 4,
+      "digits": [
+        9,
+        6,
+        9,
+        4,
+        9,
+        4
+      ],
+      "score": 1.0
+    },
+    {
+      "ticket_no": 4,
+      "group": 4,
+      "digits": [
+        2,
+        6,
+        4,
+        8,
+        9,
+        6
+      ],
+      "score": 1.0
+    },
+    {
+      "ticket_no": 5,
+      "group": 1,
+      "digits": [
+        1,
+        5,
+        9,
+        4,
+        2,
+        0
+      ],
+      "score": 1.0
+    }
+  ],
+  "all_draws": []
+}

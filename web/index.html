@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lottobang Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero panel">
+        <div>
+          <p class="eyebrow">Lottery Research Console</p>
+          <h1>추천 번호를 만들고, 공식 LO40 구매 화면에 바로 마킹합니다.</h1>
+          <p class="hero-copy">과거 전 회차 흐름, 최근 출현 흐름, 번호 균형 조건을 함께 사용합니다. 구매 확정은 자동화하지 않고, 번호 선택 이후 사용자가 직접 확인합니다.</p>
+        </div>
+        <form id="controls" class="control-card">
+          <label>
+            세트 수
+            <input id="sets" name="sets" type="number" min="1" max="10" value="5" />
+          </label>
+          <label>
+            시드
+            <input id="seed" name="seed" type="number" placeholder="비우면 이번 주 기준" />
+          </label>
+          <button type="submit">추천 다시 생성</button>
+          <a class="quiet-link" href="pension.html">연금복권720+ 탭</a>
+          <a class="quiet-link" href="stores.html">가맹점 지도와 검색</a>
+        </form>
+      </section>
+
+      <section class="status-grid">
+        <article class="panel metric">
+          <span>기준 회차</span>
+          <strong id="latestRound">-</strong>
+          <small id="generatedAt">데이터 로딩 중</small>
+        </article>
+        <article class="panel metric">
+          <span>분석 범위</span>
+          <strong id="coverage">-</strong>
+          <small>1회차부터 가능한 공식 CSV 기준</small>
+        </article>
+        <article class="panel metric">
+          <span>공식 구매</span>
+          <strong>LO40</strong>
+          <small>번호 마킹까지만 보조</small>
+        </article>
+      </section>
+
+      <section class="grid-main">
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Recommended Tickets</p>
+              <h2>추천번호</h2>
+            </div>
+            <button id="copyAllTickets" type="button" class="ghost" disabled>전체 복사</button>
+          </div>
+          <div id="tickets" class="ticket-grid"></div>
+        </section>
+
+        <aside class="panel official-box">
+          <p class="eyebrow">Official Marking</p>
+          <h2>동행복권 마킹 보조</h2>
+          <p id="markingSummary" class="muted">추천 세트를 선택하면 공식 사이트용 스크립트가 준비됩니다.</p>
+          <div id="markingBoard" class="number-board"></div>
+          <form id="officialLoginForm" class="official-login" autocomplete="off">
+            <label>
+              동행복권 아이디
+              <input id="officialUserId" name="official_user_id" type="text" autocomplete="off" />
+            </label>
+            <label>
+              동행복권 비밀번호
+              <input id="officialPassword" name="official_password" type="password" autocomplete="off" />
+            </label>
+            <button id="fillOfficialLogin" type="submit" class="ghost">로그인 페이지 열고 로그인</button>
+            <button id="runOfficialFlow" type="button">로그인 후 5세트 마킹</button>
+            <button id="copyLoginScript" type="button" class="ghost">로그인 콘솔 스크립트 복사</button>
+            <p class="muted">입력값은 이 브라우저의 localStorage에만 저장하고, https://www.dhlottery.co.kr/login 입력칸에 채운 뒤 로그인 버튼 클릭까지 수행합니다.</p>
+          </form>
+          <div class="action-stack">
+            <button id="openOfficial" type="button">공식 구매 페이지 열기</button>
+            <button id="autoMarkOfficial" type="button" class="ghost" disabled>로컬 자동 마킹 실행</button>
+            <button id="copyConsoleScript" type="button" class="ghost" disabled>콘솔 스크립트 복사</button>
+            <button id="copyBatchScript" type="button" class="ghost" disabled>5세트 콘솔 스크립트 복사</button>
+          </div>
+          <div class="marking-history-box">
+            <div class="mini-head">
+              <div>
+                <p class="eyebrow">Marked Tickets</p>
+                <h3>내 마킹 이력</h3>
+              </div>
+              <button id="refreshMarkingHistory" type="button" class="ghost">새로고침</button>
+            </div>
+            <div id="markingHistory" class="marking-history-list">
+              <p class="muted">아직 저장된 마킹 이력이 없습니다.</p>
+            </div>
+          </div>
+          <textarea id="officialScript" readonly spellcheck="false" placeholder="콘솔 스크립트가 여기에 표시됩니다."></textarea>
+        </aside>
+      </section>
+
+      <section class="grid-main lower">
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Number Signals</p>
+              <h2>알고리즘 근거</h2>
+            </div>
+          </div>
+          <div id="rules" class="chips"></div>
+          <div id="topNumbers" class="weight-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Winning Draws</p>
+              <h2>과거 1등 번호</h2>
+            </div>
+            <input id="drawSearch" class="search-input" type="search" placeholder="회차 또는 날짜 검색" />
+          </div>
+          <div id="drawHistory" class="history-list"></div>
+        </section>
+      </section>
+
+      <p id="statusMessage" class="toast" hidden></p>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

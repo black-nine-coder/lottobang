@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1등 가맹점 지도</title>
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell store-shell">
+      <section class="hero panel">
+        <div>
+          <p class="eyebrow">Winner Store Map</p>
+          <h1>1등 당첨 가맹점을 지도와 목록으로 확인합니다.</h1>
+          <p class="hero-copy">동행복권 공식 당첨 가맹점 데이터를 기준으로 회차, 지역, 가맹점명, 주소, 구매 유형을 검색합니다. 지도는 무료 OpenStreetMap 타일과 Leaflet을 사용합니다.</p>
+        </div>
+        <form id="storeControls" class="control-card">
+          <label>
+            시작 회차
+            <input id="startRound" name="start_round" type="number" min="1" value="1" />
+          </label>
+          <label>
+            종료 회차
+            <input id="endRound" name="end_round" type="number" min="1" placeholder="최신 회차 자동" />
+          </label>
+          <label>
+            검색어
+            <input id="query" name="query" type="search" placeholder="가맹점명, 지역, 주소" />
+          </label>
+          <label>
+            구매 유형
+            <select id="selectionType" name="selection_type">
+              <option value="all">전체</option>
+              <option value="자동">자동</option>
+              <option value="수동">수동</option>
+              <option value="반자동">반자동</option>
+            </select>
+          </label>
+          <label>
+            표시 회차 수
+            <input id="roundsLimit" name="rounds_limit" type="number" min="1" max="200" value="40" />
+          </label>
+          <button type="submit">가맹점 다시 보기</button>
+          <a class="quiet-link" href="index.html">추천 화면으로 돌아가기</a>
+          <p id="storesStatusMessage" class="muted" hidden aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="status-grid">
+        <article class="panel metric">
+          <span>데이터 생성</span>
+          <strong id="storesGeneratedAt">-</strong>
+          <small id="storesCoverage">불러오는 중</small>
+        </article>
+        <article class="panel metric">
+          <span>매칭 회차</span>
+          <strong id="matchedRounds">-</strong>
+          <small>검색 조건 기준</small>
+        </article>
+        <article class="panel metric">
+          <span>지도 좌표</span>
+          <strong id="uniqueAddresses">-</strong>
+          <small>좌표가 있는 주소만 지도 표시</small>
+        </article>
+      </section>
+
+      <section class="map-layout">
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Map</p>
+              <h2>가맹점 지도</h2>
+            </div>
+            <button id="fitMap" type="button" class="ghost">전체 보기</button>
+          </div>
+          <div id="mapCanvas" class="store-map"></div>
+        </section>
+
+        <aside class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Selected</p>
+              <h2>선택 가맹점</h2>
+            </div>
+          </div>
+          <div id="markerDetail" class="store-list">
+            <p class="muted">지도 마커나 목록의 “지도에서 보기”를 선택하세요.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="grid-main lower">
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Top Stores</p>
+              <h2>가맹점 랭킹</h2>
+            </div>
+          </div>
+          <div id="storeRankings" class="store-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Rounds</p>
+              <h2>회차별 1등 가맹점</h2>
+            </div>
+          </div>
+          <div id="storeRounds" class="history-list"></div>
+        </section>
+      </section>
+
+      <section class="grid-main lower">
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Regions</p>
+              <h2>지역별 출현</h2>
+            </div>
+          </div>
+          <div id="storeRegions" class="weight-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Addresses</p>
+              <h2>주소별 출현</h2>
+            </div>
+          </div>
+          <div id="storeAddresses" class="weight-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="stores.js" defer></script>
+  </body>
+</html>

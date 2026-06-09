@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>연금복권720+ Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero panel">
+        <div>
+          <p class="eyebrow">Pension 720+ Research</p>
+          <h1>연금복권720+ 조와 6자리 번호를 추천합니다.</h1>
+          <p class="hero-copy">연금복권은 로또와 달리 조와 자리별 숫자 구조입니다. 과거 데이터 파일이 있으면 자리별 출현 흐름을 반영하고, 없으면 균등 가중치 기반으로 추천합니다.</p>
+        </div>
+        <form id="pensionControls" class="control-card">
+          <label>
+            세트 수
+            <input id="pensionSets" name="sets" type="number" min="1" max="10" value="5" />
+          </label>
+          <label>
+            시드
+            <input id="pensionSeed" name="seed" type="number" placeholder="비우면 새 추천" />
+          </label>
+          <button type="submit">연금복권 추천 다시 생성</button>
+          <a class="quiet-link" href="index.html">로또6/45 탭</a>
+          <a class="quiet-link" href="stores.html">가맹점 지도와 검색</a>
+        </form>
+      </section>
+
+      <section class="status-grid">
+        <article class="panel metric">
+          <span>기준 회차</span>
+          <strong id="pensionLatestRound">-</strong>
+          <small id="pensionGeneratedAt">데이터 로딩 중</small>
+        </article>
+        <article class="panel metric">
+          <span>분석 범위</span>
+          <strong id="pensionCoverage">-</strong>
+          <small id="pensionDataStatus">공식 데이터 확인 중</small>
+        </article>
+        <article class="panel metric">
+          <span>번호 구조</span>
+          <strong>조 + 6자리</strong>
+          <small>구매 확정 자동화 없음</small>
+        </article>
+      </section>
+
+      <section class="grid-main">
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Recommended Tickets</p>
+              <h2>연금복권 추천번호</h2>
+            </div>
+            <button id="copyPensionTickets" type="button" class="ghost" disabled>전체 복사</button>
+          </div>
+          <div id="pensionTickets" class="ticket-grid"></div>
+        </section>
+
+        <aside class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Digit Signals</p>
+              <h2>자리별 근거</h2>
+            </div>
+          </div>
+          <div id="pensionRules" class="chips"></div>
+          <div id="pensionDigitSignals" class="weight-list"></div>
+        </aside>
+      </section>
+
+      <section class="panel lower-panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Winning Draws</p>
+            <h2>연금복권 과거 당첨번호</h2>
+          </div>
+          <input id="pensionDrawSearch" class="search-input" type="search" placeholder="회차 또는 날짜 검색" />
+        </div>
+        <div id="pensionDrawHistory" class="history-list"></div>
+      </section>
+
+      <p id="pensionStatusMessage" class="toast" hidden></p>
+    </main>
+    <script src="pension.js"></script>
+  </body>
+</html>
