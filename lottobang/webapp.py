@@ -11,7 +11,14 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
-from .analysis import generate_recommendations, summarize_frequency_stats, summarize_top_numbers
+from .analysis import (
+    build_pair_weights,
+    generate_recommendations,
+    run_backtest,
+    summarize_frequency_stats,
+    summarize_top_numbers,
+    summarize_top_pairs,
+)
 from .data_loader import load_draws
 from .official_data import load_store_archive, resolve_dashboard_draws_csv, resolve_draws_csv
 from .official_login import launch_official_login_fill, parse_official_login_payload
@@ -41,6 +48,7 @@ def build_dashboard_payload(
     draws = load_draws(effective_csv_path)
     effective_seed = seed if seed is not None else build_weekly_seed()
     recommendations, weights = generate_recommendations(draws, sets_count=sets_count, seed=effective_seed)
+    pair_weights = build_pair_weights(draws)
     latest_draw = draws[-1]
     store_archive = build_dashboard_store_archive(load_store_archive(), latest_draw.round_no)
 
@@ -59,7 +67,7 @@ def build_dashboard_payload(
             "bonus": latest_draw.bonus,
         },
         "strategy": {
-            "description": "Frequency, recent trend, overdue signal, balance, and portfolio diversification heuristic",
+            "description": "Frequency, multi-window recent trend, overdue signal, pair synergy, balance, and portfolio diversification heuristic",
             "rules": [
                 "2-4 odd numbers",
                 "sum between 90 and 200",
@@ -68,6 +76,8 @@ def build_dashboard_payload(
                 "max 2 consecutive pairs",
                 "unique tickets per generation",
                 "max 2 shared numbers between recommended tickets when possible",
+                "multi-window recent trend: 12, 26, and 52 draws",
+                "pair co-occurrence bonus from full and recent history",
             ],
             "top_numbers": [
                 {"number": number, "weight": round(weight, 4)}
@@ -77,6 +87,15 @@ def build_dashboard_payload(
                 {"number": number, "weight": round(weights[number], 4)}
                 for number in sorted(weights)
             ],
+            "top_pairs": [
+                {"numbers": list(pair), "weight": round(weight, 4)}
+                for pair, weight in summarize_top_pairs(pair_weights, limit=8)
+            ],
+            "pair_weights": [
+                {"numbers": list(pair), "weight": round(pair_weights[pair], 4)}
+                for pair in sorted(pair_weights)
+            ],
+            "backtest": run_backtest(draws, sets_count=sets_count),
             "frequency_stats": summarize_frequency_stats(draws, limit=12),
             "frequency_coverage": {
                 "from_round": draws[0].round_no,

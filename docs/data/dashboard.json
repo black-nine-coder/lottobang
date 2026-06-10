@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-10T05:12:10.460554+00:00",
+  "generated_at_utc": "2026-06-10T05:44:37.265412+00:00",
   "source_csv": "\\\\wsl$\\Ubuntu\\home\\ychaos89\\lottobang\\data\\official_draws.csv",
   "defaults": {
     "sets_count": 5,
@@ -20,7 +20,7 @@
     "bonus": 24
   },
   "strategy": {
-    "description": "Frequency, recent trend, overdue signal, balance, and portfolio diversification heuristic",
+    "description": "Frequency, multi-window recent trend, overdue signal, pair synergy, balance, and portfolio diversification heuristic",
     "rules": [
       "2-4 odd numbers",
       "sum between 90 and 200",
@@ -28,240 +28,7239 @@
       "at least 3 decade buckets",
       "max 2 consecutive pairs",
       "unique tickets per generation",
-      "max 2 shared numbers between recommended tickets when possible"
+      "max 2 shared numbers between recommended tickets when possible",
+      "multi-window recent trend: 12, 26, and 52 draws",
+      "pair co-occurrence bonus from full and recent history"
     ],
     "top_numbers": [
       {
         "number": 27,
-        "weight": 0.8121
-      },
-      {
-        "number": 3,
-        "weight": 0.7249
-      },
-      {
-        "number": 12,
-        "weight": 0.7137
-      },
-      {
-        "number": 13,
-        "weight": 0.7113
+        "weight": 0.7803
       },
       {
         "number": 16,
-        "weight": 0.7054
+        "weight": 0.7524
       },
       {
-        "number": 7,
-        "weight": 0.6688
-      },
-      {
-        "number": 40,
-        "weight": 0.6586
+        "number": 3,
+        "weight": 0.6178
       },
       {
         "number": 37,
-        "weight": 0.6415
-      },
-      {
-        "number": 33,
-        "weight": 0.6289
-      },
-      {
-        "number": 14,
-        "weight": 0.6287
-      },
-      {
-        "number": 39,
-        "weight": 0.6253
+        "weight": 0.6052
       },
       {
         "number": 24,
-        "weight": 0.6229
+        "weight": 0.5995
+      },
+      {
+        "number": 12,
+        "weight": 0.5907
+      },
+      {
+        "number": 33,
+        "weight": 0.5855
+      },
+      {
+        "number": 1,
+        "weight": 0.5836
+      },
+      {
+        "number": 39,
+        "weight": 0.5818
+      },
+      {
+        "number": 38,
+        "weight": 0.5805
+      },
+      {
+        "number": 40,
+        "weight": 0.5478
+      },
+      {
+        "number": 13,
+        "weight": 0.5378
       }
     ],
     "number_weights": [
       {
         "number": 1,
-        "weight": 0.5418
+        "weight": 0.5836
       },
       {
         "number": 2,
-        "weight": 0.3115
+        "weight": 0.3517
       },
       {
         "number": 3,
-        "weight": 0.7249
+        "weight": 0.6178
       },
       {
         "number": 4,
-        "weight": 0.4466
+        "weight": 0.4602
       },
       {
         "number": 5,
-        "weight": 0.3972
+        "weight": 0.356
       },
       {
         "number": 6,
-        "weight": 0.576
+        "weight": 0.5141
       },
       {
         "number": 7,
-        "weight": 0.6688
+        "weight": 0.5197
       },
       {
         "number": 8,
-        "weight": 0.4476
+        "weight": 0.3799
       },
       {
         "number": 9,
-        "weight": 0.3084
+        "weight": 0.2752
       },
       {
         "number": 10,
-        "weight": 0.3048
+        "weight": 0.3127
       },
       {
         "number": 11,
-        "weight": 0.5565
+        "weight": 0.4083
       },
       {
         "number": 12,
-        "weight": 0.7137
+        "weight": 0.5907
       },
       {
         "number": 13,
-        "weight": 0.7113
+        "weight": 0.5378
       },
       {
         "number": 14,
-        "weight": 0.6287
+        "weight": 0.4787
       },
       {
         "number": 15,
-        "weight": 0.5462
+        "weight": 0.4256
       },
       {
         "number": 16,
-        "weight": 0.7054
+        "weight": 0.7524
       },
       {
         "number": 17,
-        "weight": 0.5362
+        "weight": 0.4949
       },
       {
         "number": 18,
-        "weight": 0.582
+        "weight": 0.46
       },
       {
         "number": 19,
-        "weight": 0.5588
+        "weight": 0.4706
       },
       {
         "number": 20,
-        "weight": 0.527
+        "weight": 0.4878
       },
       {
         "number": 21,
-        "weight": 0.5165
+        "weight": 0.4089
       },
       {
         "number": 22,
-        "weight": 0.1875
+        "weight": 0.2257
       },
       {
         "number": 23,
-        "weight": 0.4347
+        "weight": 0.3785
       },
       {
         "number": 24,
-        "weight": 0.6229
+        "weight": 0.5995
       },
       {
         "number": 25,
-        "weight": 0.4325
+        "weight": 0.3471
       },
       {
         "number": 26,
-        "weight": 0.4754
+        "weight": 0.5028
       },
       {
         "number": 27,
-        "weight": 0.8121
+        "weight": 0.7803
       },
       {
         "number": 28,
-        "weight": 0.4978
+        "weight": 0.4274
       },
       {
         "number": 29,
-        "weight": 0.4761
+        "weight": 0.4261
       },
       {
         "number": 30,
-        "weight": 0.4248
+        "weight": 0.5181
       },
       {
         "number": 31,
-        "weight": 0.4834
+        "weight": 0.5338
       },
       {
         "number": 32,
-        "weight": 0.2824
+        "weight": 0.3272
       },
       {
         "number": 33,
-        "weight": 0.6289
+        "weight": 0.5855
       },
       {
         "number": 34,
-        "weight": 0.612
+        "weight": 0.484
       },
       {
         "number": 35,
-        "weight": 0.4627
+        "weight": 0.5028
       },
       {
         "number": 36,
-        "weight": 0.4799
+        "weight": 0.4709
       },
       {
         "number": 37,
-        "weight": 0.6415
+        "weight": 0.6052
       },
       {
         "number": 38,
-        "weight": 0.6036
+        "weight": 0.5805
       },
       {
         "number": 39,
-        "weight": 0.6253
+        "weight": 0.5818
       },
       {
         "number": 40,
-        "weight": 0.6586
+        "weight": 0.5478
       },
       {
         "number": 41,
-        "weight": 0.2883
+        "weight": 0.3329
       },
       {
         "number": 42,
-        "weight": 0.4453
+        "weight": 0.3882
       },
       {
         "number": 43,
-        "weight": 0.4604
+        "weight": 0.3507
       },
       {
         "number": 44,
-        "weight": 0.3768
+        "weight": 0.3323
       },
       {
         "number": 45,
-        "weight": 0.5019
+        "weight": 0.4545
       }
     ],
+    "top_pairs": [
+      {
+        "numbers": [
+          3,
+          27
+        ],
+        "weight": 0.7856
+      },
+      {
+        "numbers": [
+          37,
+          40
+        ],
+        "weight": 0.7396
+      },
+      {
+        "numbers": [
+          27,
+          38
+        ],
+        "weight": 0.7352
+      },
+      {
+        "numbers": [
+          11,
+          21
+        ],
+        "weight": 0.72
+      },
+      {
+        "numbers": [
+          6,
+          38
+        ],
+        "weight": 0.7178
+      },
+      {
+        "numbers": [
+          33,
+          40
+        ],
+        "weight": 0.6959
+      },
+      {
+        "numbers": [
+          12,
+          24
+        ],
+        "weight": 0.6937
+      },
+      {
+        "numbers": [
+          1,
+          28
+        ],
+        "weight": 0.6696
+      }
+    ],
+    "pair_weights": [
+      {
+        "numbers": [
+          1,
+          2
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          1,
+          3
+        ],
+        "weight": 0.5515
+      },
+      {
+        "numbers": [
+          1,
+          4
+        ],
+        "weight": 0.547
+      },
+      {
+        "numbers": [
+          1,
+          5
+        ],
+        "weight": 0.4048
+      },
+      {
+        "numbers": [
+          1,
+          6
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          1,
+          7
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          1,
+          8
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          1,
+          9
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          1,
+          10
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          1,
+          11
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          1,
+          12
+        ],
+        "weight": 0.5033
+      },
+      {
+        "numbers": [
+          1,
+          13
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          1,
+          14
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          1,
+          15
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          1,
+          16
+        ],
+        "weight": 0.5011
+      },
+      {
+        "numbers": [
+          1,
+          17
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          1,
+          18
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          1,
+          19
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          1,
+          20
+        ],
+        "weight": 0.5711
+      },
+      {
+        "numbers": [
+          1,
+          21
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          1,
+          22
+        ],
+        "weight": 0.0481
+      },
+      {
+        "numbers": [
+          1,
+          23
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          1,
+          24
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          1,
+          25
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          1,
+          26
+        ],
+        "weight": 0.477
+      },
+      {
+        "numbers": [
+          1,
+          27
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          1,
+          28
+        ],
+        "weight": 0.6696
+      },
+      {
+        "numbers": [
+          1,
+          29
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          1,
+          30
+        ],
+        "weight": 0.1904
+      },
+      {
+        "numbers": [
+          1,
+          31
+        ],
+        "weight": 0.2604
+      },
+      {
+        "numbers": [
+          1,
+          32
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          1,
+          33
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          1,
+          34
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          1,
+          35
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          1,
+          36
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          1,
+          37
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          1,
+          38
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          1,
+          39
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          1,
+          40
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          1,
+          41
+        ],
+        "weight": 0.453
+      },
+      {
+        "numbers": [
+          1,
+          42
+        ],
+        "weight": 0.4793
+      },
+      {
+        "numbers": [
+          1,
+          43
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          1,
+          44
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          1,
+          45
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          2,
+          3
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          2,
+          4
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          2,
+          5
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          2,
+          6
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          2,
+          7
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          2,
+          8
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          2,
+          9
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          2,
+          10
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          2,
+          11
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          2,
+          12
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          2,
+          13
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          2,
+          14
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          2,
+          15
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          2,
+          16
+        ],
+        "weight": 0.5711
+      },
+      {
+        "numbers": [
+          2,
+          17
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          2,
+          18
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          2,
+          19
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          2,
+          20
+        ],
+        "weight": 0.523
+      },
+      {
+        "numbers": [
+          2,
+          21
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          2,
+          22
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          2,
+          23
+        ],
+        "weight": 0.1663
+      },
+      {
+        "numbers": [
+          2,
+          24
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          2,
+          25
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          2,
+          26
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          2,
+          27
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          2,
+          28
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          2,
+          29
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          2,
+          30
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          2,
+          31
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          2,
+          32
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          2,
+          33
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          2,
+          34
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          2,
+          35
+        ],
+        "weight": 0.1663
+      },
+      {
+        "numbers": [
+          2,
+          36
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          2,
+          37
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          2,
+          38
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          2,
+          39
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          2,
+          40
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          2,
+          41
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          2,
+          42
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          2,
+          43
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          2,
+          44
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          2,
+          45
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          3,
+          4
+        ],
+        "weight": 0.5011
+      },
+      {
+        "numbers": [
+          3,
+          5
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          3,
+          6
+        ],
+        "weight": 0.4507
+      },
+      {
+        "numbers": [
+          3,
+          7
+        ],
+        "weight": 0.477
+      },
+      {
+        "numbers": [
+          3,
+          8
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          3,
+          9
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          3,
+          10
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          3,
+          11
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          3,
+          12
+        ],
+        "weight": 0.5733
+      },
+      {
+        "numbers": [
+          3,
+          13
+        ],
+        "weight": 0.6696
+      },
+      {
+        "numbers": [
+          3,
+          14
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          3,
+          15
+        ],
+        "weight": 0.523
+      },
+      {
+        "numbers": [
+          3,
+          16
+        ],
+        "weight": 0.4048
+      },
+      {
+        "numbers": [
+          3,
+          17
+        ],
+        "weight": 0.4048
+      },
+      {
+        "numbers": [
+          3,
+          18
+        ],
+        "weight": 0.3567
+      },
+      {
+        "numbers": [
+          3,
+          19
+        ],
+        "weight": 0.3567
+      },
+      {
+        "numbers": [
+          3,
+          20
+        ],
+        "weight": 0.5296
+      },
+      {
+        "numbers": [
+          3,
+          21
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          3,
+          22
+        ],
+        "weight": 0.4793
+      },
+      {
+        "numbers": [
+          3,
+          23
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          3,
+          24
+        ],
+        "weight": 0.6456
+      },
+      {
+        "numbers": [
+          3,
+          25
+        ],
+        "weight": 0.0481
+      },
+      {
+        "numbers": [
+          3,
+          26
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          3,
+          27
+        ],
+        "weight": 0.7856
+      },
+      {
+        "numbers": [
+          3,
+          28
+        ],
+        "weight": 0.2363
+      },
+      {
+        "numbers": [
+          3,
+          29
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          3,
+          30
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          3,
+          31
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          3,
+          32
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          3,
+          33
+        ],
+        "weight": 0.453
+      },
+      {
+        "numbers": [
+          3,
+          34
+        ],
+        "weight": 0.453
+      },
+      {
+        "numbers": [
+          3,
+          35
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          3,
+          36
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          3,
+          37
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          3,
+          38
+        ],
+        "weight": 0.453
+      },
+      {
+        "numbers": [
+          3,
+          39
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          3,
+          40
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          3,
+          41
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          3,
+          42
+        ],
+        "weight": 0.547
+      },
+      {
+        "numbers": [
+          3,
+          43
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          3,
+          44
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          3,
+          45
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          4,
+          5
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          4,
+          6
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          4,
+          7
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          4,
+          8
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          4,
+          9
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          4,
+          10
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          4,
+          11
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          4,
+          12
+        ],
+        "weight": 0.4289
+      },
+      {
+        "numbers": [
+          4,
+          13
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          4,
+          14
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          4,
+          15
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          4,
+          16
+        ],
+        "weight": 0.5011
+      },
+      {
+        "numbers": [
+          4,
+          17
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          4,
+          18
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          4,
+          19
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          4,
+          20
+        ],
+        "weight": 0.5974
+      },
+      {
+        "numbers": [
+          4,
+          21
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          4,
+          22
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          4,
+          23
+        ],
+        "weight": 0.4289
+      },
+      {
+        "numbers": [
+          4,
+          24
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          4,
+          25
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          4,
+          26
+        ],
+        "weight": 0.4093
+      },
+      {
+        "numbers": [
+          4,
+          27
+        ],
+        "weight": 0.5011
+      },
+      {
+        "numbers": [
+          4,
+          28
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          4,
+          29
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          4,
+          30
+        ],
+        "weight": 0.0481
+      },
+      {
+        "numbers": [
+          4,
+          31
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          4,
+          32
+        ],
+        "weight": 0.4289
+      },
+      {
+        "numbers": [
+          4,
+          33
+        ],
+        "weight": 0.4574
+      },
+      {
+        "numbers": [
+          4,
+          34
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          4,
+          35
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          4,
+          36
+        ],
+        "weight": 0.1904
+      },
+      {
+        "numbers": [
+          4,
+          37
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          4,
+          38
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          4,
+          39
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          4,
+          40
+        ],
+        "weight": 0.4093
+      },
+      {
+        "numbers": [
+          4,
+          41
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          4,
+          42
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          4,
+          43
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          4,
+          44
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          4,
+          45
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          5,
+          6
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          5,
+          7
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          5,
+          8
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          5,
+          9
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          5,
+          10
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          5,
+          11
+        ],
+        "weight": 0.5033
+      },
+      {
+        "numbers": [
+          5,
+          12
+        ],
+        "weight": 0.5493
+      },
+      {
+        "numbers": [
+          5,
+          13
+        ],
+        "weight": 0.4793
+      },
+      {
+        "numbers": [
+          5,
+          14
+        ],
+        "weight": 0.4093
+      },
+      {
+        "numbers": [
+          5,
+          15
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          5,
+          16
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          5,
+          17
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          5,
+          18
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          5,
+          19
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          5,
+          20
+        ],
+        "weight": 0.5274
+      },
+      {
+        "numbers": [
+          5,
+          21
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          5,
+          22
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          5,
+          23
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          5,
+          24
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          5,
+          25
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          5,
+          26
+        ],
+        "weight": 0.547
+      },
+      {
+        "numbers": [
+          5,
+          27
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          5,
+          28
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          5,
+          29
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          5,
+          30
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          5,
+          31
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          5,
+          32
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          5,
+          33
+        ],
+        "weight": 0.1904
+      },
+      {
+        "numbers": [
+          5,
+          34
+        ],
+        "weight": 0.4574
+      },
+      {
+        "numbers": [
+          5,
+          35
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          5,
+          36
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          5,
+          37
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          5,
+          38
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          5,
+          39
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          5,
+          40
+        ],
+        "weight": 0.2604
+      },
+      {
+        "numbers": [
+          5,
+          41
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          5,
+          42
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          5,
+          43
+        ],
+        "weight": 0.453
+      },
+      {
+        "numbers": [
+          5,
+          44
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          5,
+          45
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          6,
+          7
+        ],
+        "weight": 0.5252
+      },
+      {
+        "numbers": [
+          6,
+          8
+        ],
+        "weight": 0.1904
+      },
+      {
+        "numbers": [
+          6,
+          9
+        ],
+        "weight": 0.1904
+      },
+      {
+        "numbers": [
+          6,
+          10
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          6,
+          11
+        ],
+        "weight": 0.5493
+      },
+      {
+        "numbers": [
+          6,
+          12
+        ],
+        "weight": 0.5011
+      },
+      {
+        "numbers": [
+          6,
+          13
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          6,
+          14
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          6,
+          15
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          6,
+          16
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          6,
+          17
+        ],
+        "weight": 0.5493
+      },
+      {
+        "numbers": [
+          6,
+          18
+        ],
+        "weight": 0.5252
+      },
+      {
+        "numbers": [
+          6,
+          19
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          6,
+          20
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          6,
+          21
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          6,
+          22
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          6,
+          23
+        ],
+        "weight": 0.0722
+      },
+      {
+        "numbers": [
+          6,
+          24
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          6,
+          25
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          6,
+          26
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          6,
+          27
+        ],
+        "weight": 0.4267
+      },
+      {
+        "numbers": [
+          6,
+          28
+        ],
+        "weight": 0.5974
+      },
+      {
+        "numbers": [
+          6,
+          29
+        ],
+        "weight": 0.2822
+      },
+      {
+        "numbers": [
+          6,
+          30
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          6,
+          31
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          6,
+          32
+        ],
+        "weight": 0.453
+      },
+      {
+        "numbers": [
+          6,
+          33
+        ],
+        "weight": 0.0481
+      },
+      {
+        "numbers": [
+          6,
+          34
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          6,
+          35
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          6,
+          36
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          6,
+          37
+        ],
+        "weight": 0.5033
+      },
+      {
+        "numbers": [
+          6,
+          38
+        ],
+        "weight": 0.7178
+      },
+      {
+        "numbers": [
+          6,
+          39
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          6,
+          40
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          6,
+          41
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          6,
+          42
+        ],
+        "weight": 0.3085
+      },
+      {
+        "numbers": [
+          6,
+          43
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          6,
+          44
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          6,
+          45
+        ],
+        "weight": 0.1904
+      },
+      {
+        "numbers": [
+          7,
+          8
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          7,
+          9
+        ],
+        "weight": 0.617
+      },
+      {
+        "numbers": [
+          7,
+          10
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          7,
+          11
+        ],
+        "weight": 0.4289
+      },
+      {
+        "numbers": [
+          7,
+          12
+        ],
+        "weight": 0.4793
+      },
+      {
+        "numbers": [
+          7,
+          13
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          7,
+          14
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          7,
+          15
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          7,
+          16
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          7,
+          17
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          7,
+          18
+        ],
+        "weight": 0.5515
+      },
+      {
+        "numbers": [
+          7,
+          19
+        ],
+        "weight": 0.5974
+      },
+      {
+        "numbers": [
+          7,
+          20
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          7,
+          21
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          7,
+          22
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          7,
+          23
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          7,
+          24
+        ],
+        "weight": 0.5974
+      },
+      {
+        "numbers": [
+          7,
+          25
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          7,
+          26
+        ],
+        "weight": 0.477
+      },
+      {
+        "numbers": [
+          7,
+          27
+        ],
+        "weight": 0.4289
+      },
+      {
+        "numbers": [
+          7,
+          28
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          7,
+          29
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          7,
+          30
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          7,
+          31
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          7,
+          32
+        ],
+        "weight": 0.0722
+      },
+      {
+        "numbers": [
+          7,
+          33
+        ],
+        "weight": 0.4333
+      },
+      {
+        "numbers": [
+          7,
+          34
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          7,
+          35
+        ],
+        "weight": 0.4048
+      },
+      {
+        "numbers": [
+          7,
+          36
+        ],
+        "weight": 0.5493
+      },
+      {
+        "numbers": [
+          7,
+          37
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          7,
+          38
+        ],
+        "weight": 0.4793
+      },
+      {
+        "numbers": [
+          7,
+          39
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          7,
+          40
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          7,
+          41
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          7,
+          42
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          7,
+          43
+        ],
+        "weight": 0.3567
+      },
+      {
+        "numbers": [
+          7,
+          44
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          7,
+          45
+        ],
+        "weight": 0.4748
+      },
+      {
+        "numbers": [
+          8,
+          9
+        ],
+        "weight": 0.0481
+      },
+      {
+        "numbers": [
+          8,
+          10
+        ],
+        "weight": 0.1904
+      },
+      {
+        "numbers": [
+          8,
+          11
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          8,
+          12
+        ],
+        "weight": 0.07
+      },
+      {
+        "numbers": [
+          8,
+          13
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          8,
+          14
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          8,
+          15
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          8,
+          16
+        ],
+        "weight": 0.3326
+      },
+      {
+        "numbers": [
+          8,
+          17
+        ],
+        "weight": 0.4793
+      },
+      {
+        "numbers": [
+          8,
+          18
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          8,
+          19
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          8,
+          20
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          8,
+          21
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          8,
+          22
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          8,
+          23
+        ],
+        "weight": 0.3326
+      },
+      {
+        "numbers": [
+          8,
+          24
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          8,
+          25
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          8,
+          26
+        ],
+        "weight": 0.0241
+      },
+      {
+        "numbers": [
+          8,
+          27
+        ],
+        "weight": 0.4815
+      },
+      {
+        "numbers": [
+          8,
+          28
+        ],
+        "weight": 0.3567
+      },
+      {
+        "numbers": [
+          8,
+          29
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          8,
+          30
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          8,
+          31
+        ],
+        "weight": 0.477
+      },
+      {
+        "numbers": [
+          8,
+          32
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          8,
+          33
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          8,
+          34
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          8,
+          35
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          8,
+          36
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          8,
+          37
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          8,
+          38
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          8,
+          39
+        ],
+        "weight": 0.6215
+      },
+      {
+        "numbers": [
+          8,
+          40
+        ],
+        "weight": 0.3085
+      },
+      {
+        "numbers": [
+          8,
+          41
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          8,
+          42
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          8,
+          43
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          8,
+          44
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          8,
+          45
+        ],
+        "weight": 0.4793
+      },
+      {
+        "numbers": [
+          9,
+          10
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          9,
+          11
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          9,
+          12
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          9,
+          13
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          9,
+          14
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          9,
+          15
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          9,
+          16
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          9,
+          17
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          9,
+          18
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          9,
+          19
+        ],
+        "weight": 0.3544
+      },
+      {
+        "numbers": [
+          9,
+          20
+        ],
+        "weight": 0.0722
+      },
+      {
+        "numbers": [
+          9,
+          21
+        ],
+        "weight": 0.3326
+      },
+      {
+        "numbers": [
+          9,
+          22
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          9,
+          23
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          9,
+          24
+        ],
+        "weight": 0.5207
+      },
+      {
+        "numbers": [
+          9,
+          25
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          9,
+          26
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          9,
+          27
+        ],
+        "weight": 0.3567
+      },
+      {
+        "numbers": [
+          9,
+          28
+        ],
+        "weight": 0.4048
+      },
+      {
+        "numbers": [
+          9,
+          29
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          9,
+          30
+        ],
+        "weight": 0.3326
+      },
+      {
+        "numbers": [
+          9,
+          31
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          9,
+          32
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          9,
+          33
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          9,
+          34
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          9,
+          35
+        ],
+        "weight": 0.4748
+      },
+      {
+        "numbers": [
+          9,
+          36
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          9,
+          37
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          9,
+          38
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          9,
+          39
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          9,
+          40
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          9,
+          41
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          9,
+          42
+        ],
+        "weight": 0.1904
+      },
+      {
+        "numbers": [
+          9,
+          43
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          9,
+          44
+        ],
+        "weight": 0.1904
+      },
+      {
+        "numbers": [
+          9,
+          45
+        ],
+        "weight": 0.1904
+      },
+      {
+        "numbers": [
+          10,
+          11
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          10,
+          12
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          10,
+          13
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          10,
+          14
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          10,
+          15
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          10,
+          16
+        ],
+        "weight": 0.5274
+      },
+      {
+        "numbers": [
+          10,
+          17
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          10,
+          18
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          10,
+          19
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          10,
+          20
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          10,
+          21
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          10,
+          22
+        ],
+        "weight": 0.4793
+      },
+      {
+        "numbers": [
+          10,
+          23
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          10,
+          24
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          10,
+          25
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          10,
+          26
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          10,
+          27
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          10,
+          28
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          10,
+          29
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          10,
+          30
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          10,
+          31
+        ],
+        "weight": 0.5296
+      },
+      {
+        "numbers": [
+          10,
+          32
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          10,
+          33
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          10,
+          34
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          10,
+          35
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          10,
+          36
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          10,
+          37
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          10,
+          38
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          10,
+          39
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          10,
+          40
+        ],
+        "weight": 0.5033
+      },
+      {
+        "numbers": [
+          10,
+          41
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          10,
+          42
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          10,
+          43
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          10,
+          44
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          10,
+          45
+        ],
+        "weight": 0.1904
+      },
+      {
+        "numbers": [
+          11,
+          12
+        ],
+        "weight": 0.4289
+      },
+      {
+        "numbers": [
+          11,
+          13
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          11,
+          14
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          11,
+          15
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          11,
+          16
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          11,
+          17
+        ],
+        "weight": 0.5733
+      },
+      {
+        "numbers": [
+          11,
+          18
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          11,
+          19
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          11,
+          20
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          11,
+          21
+        ],
+        "weight": 0.72
+      },
+      {
+        "numbers": [
+          11,
+          22
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          11,
+          23
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          11,
+          24
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          11,
+          25
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          11,
+          26
+        ],
+        "weight": 0.4093
+      },
+      {
+        "numbers": [
+          11,
+          27
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          11,
+          28
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          11,
+          29
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          11,
+          30
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          11,
+          31
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          11,
+          32
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          11,
+          33
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          11,
+          34
+        ],
+        "weight": 0.0722
+      },
+      {
+        "numbers": [
+          11,
+          35
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          11,
+          36
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          11,
+          37
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          11,
+          38
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          11,
+          39
+        ],
+        "weight": 0.5033
+      },
+      {
+        "numbers": [
+          11,
+          40
+        ],
+        "weight": 0.0481
+      },
+      {
+        "numbers": [
+          11,
+          41
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          11,
+          42
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          11,
+          43
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          11,
+          44
+        ],
+        "weight": 0.5274
+      },
+      {
+        "numbers": [
+          11,
+          45
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          12,
+          13
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          12,
+          14
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          12,
+          15
+        ],
+        "weight": 0.5515
+      },
+      {
+        "numbers": [
+          12,
+          16
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          12,
+          17
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          12,
+          18
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          12,
+          19
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          12,
+          20
+        ],
+        "weight": 0.5011
+      },
+      {
+        "numbers": [
+          12,
+          21
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          12,
+          22
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          12,
+          23
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          12,
+          24
+        ],
+        "weight": 0.6937
+      },
+      {
+        "numbers": [
+          12,
+          25
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          12,
+          26
+        ],
+        "weight": 0.5033
+      },
+      {
+        "numbers": [
+          12,
+          27
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          12,
+          28
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          12,
+          29
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          12,
+          30
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          12,
+          31
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          12,
+          32
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          12,
+          33
+        ],
+        "weight": 0.5033
+      },
+      {
+        "numbers": [
+          12,
+          34
+        ],
+        "weight": 0.5515
+      },
+      {
+        "numbers": [
+          12,
+          35
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          12,
+          36
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          12,
+          37
+        ],
+        "weight": 0.3326
+      },
+      {
+        "numbers": [
+          12,
+          38
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          12,
+          39
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          12,
+          40
+        ],
+        "weight": 0.6193
+      },
+      {
+        "numbers": [
+          12,
+          41
+        ],
+        "weight": 0.5011
+      },
+      {
+        "numbers": [
+          12,
+          42
+        ],
+        "weight": 0.5974
+      },
+      {
+        "numbers": [
+          12,
+          43
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          12,
+          44
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          12,
+          45
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          13,
+          14
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          13,
+          15
+        ],
+        "weight": 0.4289
+      },
+      {
+        "numbers": [
+          13,
+          16
+        ],
+        "weight": 0.3567
+      },
+      {
+        "numbers": [
+          13,
+          17
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          13,
+          18
+        ],
+        "weight": 0.4793
+      },
+      {
+        "numbers": [
+          13,
+          19
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          13,
+          20
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          13,
+          21
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          13,
+          22
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          13,
+          23
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          13,
+          24
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          13,
+          25
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          13,
+          26
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          13,
+          27
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          13,
+          28
+        ],
+        "weight": 0.6193
+      },
+      {
+        "numbers": [
+          13,
+          29
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          13,
+          30
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          13,
+          31
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          13,
+          32
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          13,
+          33
+        ],
+        "weight": 0.6456
+      },
+      {
+        "numbers": [
+          13,
+          34
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          13,
+          35
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          13,
+          36
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          13,
+          37
+        ],
+        "weight": 0.5493
+      },
+      {
+        "numbers": [
+          13,
+          38
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          13,
+          39
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          13,
+          40
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          13,
+          41
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          13,
+          42
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          13,
+          43
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          13,
+          44
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          13,
+          45
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          14,
+          15
+        ],
+        "weight": 0.5056
+      },
+      {
+        "numbers": [
+          14,
+          16
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          14,
+          17
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          14,
+          18
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          14,
+          19
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          14,
+          20
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          14,
+          21
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          14,
+          22
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          14,
+          23
+        ],
+        "weight": 0.4048
+      },
+      {
+        "numbers": [
+          14,
+          24
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          14,
+          25
+        ],
+        "weight": 0.4048
+      },
+      {
+        "numbers": [
+          14,
+          26
+        ],
+        "weight": 0.4093
+      },
+      {
+        "numbers": [
+          14,
+          27
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          14,
+          28
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          14,
+          29
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          14,
+          30
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          14,
+          31
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          14,
+          32
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          14,
+          33
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          14,
+          34
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          14,
+          35
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          14,
+          36
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          14,
+          37
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          14,
+          38
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          14,
+          39
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          14,
+          40
+        ],
+        "weight": 0.4093
+      },
+      {
+        "numbers": [
+          14,
+          41
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          14,
+          42
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          14,
+          43
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          14,
+          44
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          14,
+          45
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          15,
+          16
+        ],
+        "weight": 0.3567
+      },
+      {
+        "numbers": [
+          15,
+          17
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          15,
+          18
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          15,
+          19
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          15,
+          20
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          15,
+          21
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          15,
+          22
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          15,
+          23
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          15,
+          24
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          15,
+          25
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          15,
+          26
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          15,
+          27
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          15,
+          28
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          15,
+          29
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          15,
+          30
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          15,
+          31
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          15,
+          32
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          15,
+          33
+        ],
+        "weight": 0.4267
+      },
+      {
+        "numbers": [
+          15,
+          34
+        ],
+        "weight": 0.5996
+      },
+      {
+        "numbers": [
+          15,
+          35
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          15,
+          36
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          15,
+          37
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          15,
+          38
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          15,
+          39
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          15,
+          40
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          15,
+          41
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          15,
+          42
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          15,
+          43
+        ],
+        "weight": 0.5011
+      },
+      {
+        "numbers": [
+          15,
+          44
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          15,
+          45
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          16,
+          17
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          16,
+          18
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          16,
+          19
+        ],
+        "weight": 0.5493
+      },
+      {
+        "numbers": [
+          16,
+          20
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          16,
+          21
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          16,
+          22
+        ],
+        "weight": 0.0722
+      },
+      {
+        "numbers": [
+          16,
+          23
+        ],
+        "weight": 0.6411
+      },
+      {
+        "numbers": [
+          16,
+          24
+        ],
+        "weight": 0.6193
+      },
+      {
+        "numbers": [
+          16,
+          25
+        ],
+        "weight": 0.5252
+      },
+      {
+        "numbers": [
+          16,
+          26
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          16,
+          27
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          16,
+          28
+        ],
+        "weight": 0.523
+      },
+      {
+        "numbers": [
+          16,
+          29
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          16,
+          30
+        ],
+        "weight": 0.3326
+      },
+      {
+        "numbers": [
+          16,
+          31
+        ],
+        "weight": 0.6652
+      },
+      {
+        "numbers": [
+          16,
+          32
+        ],
+        "weight": 0.2604
+      },
+      {
+        "numbers": [
+          16,
+          33
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          16,
+          34
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          16,
+          35
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          16,
+          36
+        ],
+        "weight": 0.4793
+      },
+      {
+        "numbers": [
+          16,
+          37
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          16,
+          38
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          16,
+          39
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          16,
+          40
+        ],
+        "weight": 0.477
+      },
+      {
+        "numbers": [
+          16,
+          41
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          16,
+          42
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          16,
+          43
+        ],
+        "weight": 0.477
+      },
+      {
+        "numbers": [
+          16,
+          44
+        ],
+        "weight": 0.453
+      },
+      {
+        "numbers": [
+          16,
+          45
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          17,
+          18
+        ],
+        "weight": 0.4793
+      },
+      {
+        "numbers": [
+          17,
+          19
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          17,
+          20
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          17,
+          21
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          17,
+          22
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          17,
+          23
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          17,
+          24
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          17,
+          25
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          17,
+          26
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          17,
+          27
+        ],
+        "weight": 0.5252
+      },
+      {
+        "numbers": [
+          17,
+          28
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          17,
+          29
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          17,
+          30
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          17,
+          31
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          17,
+          32
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          17,
+          33
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          17,
+          34
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          17,
+          35
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          17,
+          36
+        ],
+        "weight": 0.5493
+      },
+      {
+        "numbers": [
+          17,
+          37
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          17,
+          38
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          17,
+          39
+        ],
+        "weight": 0.5952
+      },
+      {
+        "numbers": [
+          17,
+          40
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          17,
+          41
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          17,
+          42
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          17,
+          43
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          17,
+          44
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          17,
+          45
+        ],
+        "weight": 0.4333
+      },
+      {
+        "numbers": [
+          18,
+          19
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          18,
+          20
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          18,
+          21
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          18,
+          22
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          18,
+          23
+        ],
+        "weight": 0.4793
+      },
+      {
+        "numbers": [
+          18,
+          24
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          18,
+          25
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          18,
+          26
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          18,
+          27
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          18,
+          28
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          18,
+          29
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          18,
+          30
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          18,
+          31
+        ],
+        "weight": 0.4815
+      },
+      {
+        "numbers": [
+          18,
+          32
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          18,
+          33
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          18,
+          34
+        ],
+        "weight": 0.4333
+      },
+      {
+        "numbers": [
+          18,
+          35
+        ],
+        "weight": 0.4048
+      },
+      {
+        "numbers": [
+          18,
+          36
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          18,
+          37
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          18,
+          38
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          18,
+          39
+        ],
+        "weight": 0.5952
+      },
+      {
+        "numbers": [
+          18,
+          40
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          18,
+          41
+        ],
+        "weight": 0.1904
+      },
+      {
+        "numbers": [
+          18,
+          42
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          18,
+          43
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          18,
+          44
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          18,
+          45
+        ],
+        "weight": 0.5274
+      },
+      {
+        "numbers": [
+          19,
+          20
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          19,
+          21
+        ],
+        "weight": 0.5056
+      },
+      {
+        "numbers": [
+          19,
+          22
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          19,
+          23
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          19,
+          24
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          19,
+          25
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          19,
+          26
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          19,
+          27
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          19,
+          28
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          19,
+          29
+        ],
+        "weight": 0.1422
+      },
+      {
+        "numbers": [
+          19,
+          30
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          19,
+          31
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          19,
+          32
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          19,
+          33
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          19,
+          34
+        ],
+        "weight": 0.4333
+      },
+      {
+        "numbers": [
+          19,
+          35
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          19,
+          36
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          19,
+          37
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          19,
+          38
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          19,
+          39
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          19,
+          40
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          19,
+          41
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          19,
+          42
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          19,
+          43
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          19,
+          44
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          19,
+          45
+        ],
+        "weight": 0.5274
+      },
+      {
+        "numbers": [
+          20,
+          21
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          20,
+          22
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          20,
+          23
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          20,
+          24
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          20,
+          25
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          20,
+          26
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          20,
+          27
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          20,
+          28
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          20,
+          29
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          20,
+          30
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          20,
+          31
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          20,
+          32
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          20,
+          33
+        ],
+        "weight": 0.5033
+      },
+      {
+        "numbers": [
+          20,
+          34
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          20,
+          35
+        ],
+        "weight": 0.5974
+      },
+      {
+        "numbers": [
+          20,
+          36
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          20,
+          37
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          20,
+          38
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          20,
+          39
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          20,
+          40
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          20,
+          41
+        ],
+        "weight": 0.453
+      },
+      {
+        "numbers": [
+          20,
+          42
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          20,
+          43
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          20,
+          44
+        ],
+        "weight": 0.4333
+      },
+      {
+        "numbers": [
+          20,
+          45
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          21,
+          22
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          21,
+          23
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          21,
+          24
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          21,
+          25
+        ],
+        "weight": 0.5952
+      },
+      {
+        "numbers": [
+          21,
+          26
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          21,
+          27
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          21,
+          28
+        ],
+        "weight": 0.2363
+      },
+      {
+        "numbers": [
+          21,
+          29
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          21,
+          30
+        ],
+        "weight": 0.453
+      },
+      {
+        "numbers": [
+          21,
+          31
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          21,
+          32
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          21,
+          33
+        ],
+        "weight": 0.4289
+      },
+      {
+        "numbers": [
+          21,
+          34
+        ],
+        "weight": 0.4815
+      },
+      {
+        "numbers": [
+          21,
+          35
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          21,
+          36
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          21,
+          37
+        ],
+        "weight": 0.547
+      },
+      {
+        "numbers": [
+          21,
+          38
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          21,
+          39
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          21,
+          40
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          21,
+          41
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          21,
+          42
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          21,
+          43
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          21,
+          44
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          21,
+          45
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          22,
+          23
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          22,
+          24
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          22,
+          25
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          22,
+          26
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          22,
+          27
+        ],
+        "weight": 0.3326
+      },
+      {
+        "numbers": [
+          22,
+          28
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          22,
+          29
+        ],
+        "weight": 0.2604
+      },
+      {
+        "numbers": [
+          22,
+          30
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          22,
+          31
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          22,
+          32
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          22,
+          33
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          22,
+          34
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          22,
+          35
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          22,
+          36
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          22,
+          37
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          22,
+          38
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          22,
+          39
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          22,
+          40
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          22,
+          41
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          22,
+          42
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          22,
+          43
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          22,
+          44
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          22,
+          45
+        ],
+        "weight": 0.1663
+      },
+      {
+        "numbers": [
+          23,
+          24
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          23,
+          25
+        ],
+        "weight": 0.4748
+      },
+      {
+        "numbers": [
+          23,
+          26
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          23,
+          27
+        ],
+        "weight": 0.3326
+      },
+      {
+        "numbers": [
+          23,
+          28
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          23,
+          29
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          23,
+          30
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          23,
+          31
+        ],
+        "weight": 0.4267
+      },
+      {
+        "numbers": [
+          23,
+          32
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          23,
+          33
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          23,
+          34
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          23,
+          35
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          23,
+          36
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          23,
+          37
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          23,
+          38
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          23,
+          39
+        ],
+        "weight": 0.4748
+      },
+      {
+        "numbers": [
+          23,
+          40
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          23,
+          41
+        ],
+        "weight": 0.1181
+      },
+      {
+        "numbers": [
+          23,
+          42
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          23,
+          43
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          23,
+          44
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          23,
+          45
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          24,
+          25
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          24,
+          26
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          24,
+          27
+        ],
+        "weight": 0.6696
+      },
+      {
+        "numbers": [
+          24,
+          28
+        ],
+        "weight": 0.1422
+      },
+      {
+        "numbers": [
+          24,
+          29
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          24,
+          30
+        ],
+        "weight": 0.477
+      },
+      {
+        "numbers": [
+          24,
+          31
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          24,
+          32
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          24,
+          33
+        ],
+        "weight": 0.477
+      },
+      {
+        "numbers": [
+          24,
+          34
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          24,
+          35
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          24,
+          36
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          24,
+          37
+        ],
+        "weight": 0.4289
+      },
+      {
+        "numbers": [
+          24,
+          38
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          24,
+          39
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          24,
+          40
+        ],
+        "weight": 0.477
+      },
+      {
+        "numbers": [
+          24,
+          41
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          24,
+          42
+        ],
+        "weight": 0.4748
+      },
+      {
+        "numbers": [
+          24,
+          43
+        ],
+        "weight": 0.0241
+      },
+      {
+        "numbers": [
+          24,
+          44
+        ],
+        "weight": 0.5493
+      },
+      {
+        "numbers": [
+          24,
+          45
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          25,
+          26
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          25,
+          27
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          25,
+          28
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          25,
+          29
+        ],
+        "weight": 0.477
+      },
+      {
+        "numbers": [
+          25,
+          30
+        ],
+        "weight": 0.1663
+      },
+      {
+        "numbers": [
+          25,
+          31
+        ],
+        "weight": 0.4507
+      },
+      {
+        "numbers": [
+          25,
+          32
+        ],
+        "weight": 0.3085
+      },
+      {
+        "numbers": [
+          25,
+          33
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          25,
+          34
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          25,
+          35
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          25,
+          36
+        ],
+        "weight": 0.4574
+      },
+      {
+        "numbers": [
+          25,
+          37
+        ],
+        "weight": 0.477
+      },
+      {
+        "numbers": [
+          25,
+          38
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          25,
+          39
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          25,
+          40
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          25,
+          41
+        ],
+        "weight": 0.0722
+      },
+      {
+        "numbers": [
+          25,
+          42
+        ],
+        "weight": 0.1663
+      },
+      {
+        "numbers": [
+          25,
+          43
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          25,
+          44
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          25,
+          45
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          26,
+          27
+        ],
+        "weight": 0.5033
+      },
+      {
+        "numbers": [
+          26,
+          28
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          26,
+          29
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          26,
+          30
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          26,
+          31
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          26,
+          32
+        ],
+        "weight": 0.0241
+      },
+      {
+        "numbers": [
+          26,
+          33
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          26,
+          34
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          26,
+          35
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          26,
+          36
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          26,
+          37
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          26,
+          38
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          26,
+          39
+        ],
+        "weight": 0.3567
+      },
+      {
+        "numbers": [
+          26,
+          40
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          26,
+          41
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          26,
+          42
+        ],
+        "weight": 0.453
+      },
+      {
+        "numbers": [
+          26,
+          43
+        ],
+        "weight": 0.4793
+      },
+      {
+        "numbers": [
+          26,
+          44
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          26,
+          45
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          27,
+          28
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          27,
+          29
+        ],
+        "weight": 0.5252
+      },
+      {
+        "numbers": [
+          27,
+          30
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          27,
+          31
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          27,
+          32
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          27,
+          33
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          27,
+          34
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          27,
+          35
+        ],
+        "weight": 0.5274
+      },
+      {
+        "numbers": [
+          27,
+          36
+        ],
+        "weight": 0.6652
+      },
+      {
+        "numbers": [
+          27,
+          37
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          27,
+          38
+        ],
+        "weight": 0.7352
+      },
+      {
+        "numbers": [
+          27,
+          39
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          27,
+          40
+        ],
+        "weight": 0.4333
+      },
+      {
+        "numbers": [
+          27,
+          41
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          27,
+          42
+        ],
+        "weight": 0.547
+      },
+      {
+        "numbers": [
+          27,
+          43
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          27,
+          44
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          27,
+          45
+        ],
+        "weight": 0.5493
+      },
+      {
+        "numbers": [
+          28,
+          29
+        ],
+        "weight": 0.2844
+      },
+      {
+        "numbers": [
+          28,
+          30
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          28,
+          31
+        ],
+        "weight": 0.2363
+      },
+      {
+        "numbers": [
+          28,
+          32
+        ],
+        "weight": 0.1663
+      },
+      {
+        "numbers": [
+          28,
+          33
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          28,
+          34
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          28,
+          35
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          28,
+          36
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          28,
+          37
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          28,
+          38
+        ],
+        "weight": 0.3807
+      },
+      {
+        "numbers": [
+          28,
+          39
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          28,
+          40
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          28,
+          41
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          28,
+          42
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          28,
+          43
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          28,
+          44
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          28,
+          45
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          29,
+          30
+        ],
+        "weight": 0.0722
+      },
+      {
+        "numbers": [
+          29,
+          31
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          29,
+          32
+        ],
+        "weight": 0.2144
+      },
+      {
+        "numbers": [
+          29,
+          33
+        ],
+        "weight": 0.4333
+      },
+      {
+        "numbers": [
+          29,
+          34
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          29,
+          35
+        ],
+        "weight": 0.3567
+      },
+      {
+        "numbers": [
+          29,
+          36
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          29,
+          37
+        ],
+        "weight": 0.3326
+      },
+      {
+        "numbers": [
+          29,
+          38
+        ],
+        "weight": 0.5011
+      },
+      {
+        "numbers": [
+          29,
+          39
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          29,
+          40
+        ],
+        "weight": 0.5011
+      },
+      {
+        "numbers": [
+          29,
+          41
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          29,
+          42
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          29,
+          43
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          29,
+          44
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          29,
+          45
+        ],
+        "weight": 0.4048
+      },
+      {
+        "numbers": [
+          30,
+          31
+        ],
+        "weight": 0.5011
+      },
+      {
+        "numbers": [
+          30,
+          32
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          30,
+          33
+        ],
+        "weight": 0.5252
+      },
+      {
+        "numbers": [
+          30,
+          34
+        ],
+        "weight": 0.5056
+      },
+      {
+        "numbers": [
+          30,
+          35
+        ],
+        "weight": 0.477
+      },
+      {
+        "numbers": [
+          30,
+          36
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          30,
+          37
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          30,
+          38
+        ],
+        "weight": 0.5252
+      },
+      {
+        "numbers": [
+          30,
+          39
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          30,
+          40
+        ],
+        "weight": 0.1926
+      },
+      {
+        "numbers": [
+          30,
+          41
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          30,
+          42
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          30,
+          43
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          30,
+          44
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          30,
+          45
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          31,
+          32
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          31,
+          33
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          31,
+          34
+        ],
+        "weight": 0.4815
+      },
+      {
+        "numbers": [
+          31,
+          35
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          31,
+          36
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          31,
+          37
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          31,
+          38
+        ],
+        "weight": 0.4093
+      },
+      {
+        "numbers": [
+          31,
+          39
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          31,
+          40
+        ],
+        "weight": 0.5033
+      },
+      {
+        "numbers": [
+          31,
+          41
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          31,
+          42
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          31,
+          43
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          31,
+          44
+        ],
+        "weight": 0.4552
+      },
+      {
+        "numbers": [
+          31,
+          45
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          32,
+          33
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          32,
+          34
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          32,
+          35
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          32,
+          36
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          32,
+          37
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          32,
+          38
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          32,
+          39
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          32,
+          40
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          32,
+          41
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          32,
+          42
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          32,
+          43
+        ],
+        "weight": 0.1204
+      },
+      {
+        "numbers": [
+          32,
+          44
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          32,
+          45
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          33,
+          34
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          33,
+          35
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          33,
+          36
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          33,
+          37
+        ],
+        "weight": 0.6193
+      },
+      {
+        "numbers": [
+          33,
+          38
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          33,
+          39
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          33,
+          40
+        ],
+        "weight": 0.6959
+      },
+      {
+        "numbers": [
+          33,
+          41
+        ],
+        "weight": 0.4289
+      },
+      {
+        "numbers": [
+          33,
+          42
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          33,
+          43
+        ],
+        "weight": 0.2385
+      },
+      {
+        "numbers": [
+          33,
+          44
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          33,
+          45
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          34,
+          35
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          34,
+          36
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          34,
+          37
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          34,
+          38
+        ],
+        "weight": 0.3348
+      },
+      {
+        "numbers": [
+          34,
+          39
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          34,
+          40
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          34,
+          41
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          34,
+          42
+        ],
+        "weight": 0.6696
+      },
+      {
+        "numbers": [
+          34,
+          43
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          34,
+          44
+        ],
+        "weight": 0.4574
+      },
+      {
+        "numbers": [
+          34,
+          45
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          35,
+          36
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          35,
+          37
+        ],
+        "weight": 0.5493
+      },
+      {
+        "numbers": [
+          35,
+          38
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          35,
+          39
+        ],
+        "weight": 0.523
+      },
+      {
+        "numbers": [
+          35,
+          40
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          35,
+          41
+        ],
+        "weight": 0.0963
+      },
+      {
+        "numbers": [
+          35,
+          42
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          35,
+          43
+        ],
+        "weight": 0.4093
+      },
+      {
+        "numbers": [
+          35,
+          44
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          35,
+          45
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          36,
+          37
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          36,
+          38
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          36,
+          39
+        ],
+        "weight": 0.6433
+      },
+      {
+        "numbers": [
+          36,
+          40
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          36,
+          41
+        ],
+        "weight": 0.2407
+      },
+      {
+        "numbers": [
+          36,
+          42
+        ],
+        "weight": 0.2867
+      },
+      {
+        "numbers": [
+          36,
+          43
+        ],
+        "weight": 0.1444
+      },
+      {
+        "numbers": [
+          36,
+          44
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          36,
+          45
+        ],
+        "weight": 0.407
+      },
+      {
+        "numbers": [
+          37,
+          38
+        ],
+        "weight": 0.5493
+      },
+      {
+        "numbers": [
+          37,
+          39
+        ],
+        "weight": 0.383
+      },
+      {
+        "numbers": [
+          37,
+          40
+        ],
+        "weight": 0.7396
+      },
+      {
+        "numbers": [
+          37,
+          41
+        ],
+        "weight": 0.3589
+      },
+      {
+        "numbers": [
+          37,
+          42
+        ],
+        "weight": 0.1685
+      },
+      {
+        "numbers": [
+          37,
+          43
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          37,
+          44
+        ],
+        "weight": 0.0722
+      },
+      {
+        "numbers": [
+          37,
+          45
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          38,
+          39
+        ],
+        "weight": 0.547
+      },
+      {
+        "numbers": [
+          38,
+          40
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          38,
+          41
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          38,
+          42
+        ],
+        "weight": 0.3326
+      },
+      {
+        "numbers": [
+          38,
+          43
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          38,
+          44
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          38,
+          45
+        ],
+        "weight": 0.5252
+      },
+      {
+        "numbers": [
+          39,
+          40
+        ],
+        "weight": 0.3567
+      },
+      {
+        "numbers": [
+          39,
+          41
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          39,
+          42
+        ],
+        "weight": 0.1904
+      },
+      {
+        "numbers": [
+          39,
+          43
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          39,
+          44
+        ],
+        "weight": 0.313
+      },
+      {
+        "numbers": [
+          39,
+          45
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          40,
+          41
+        ],
+        "weight": 0.4311
+      },
+      {
+        "numbers": [
+          40,
+          42
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          40,
+          43
+        ],
+        "weight": 0.337
+      },
+      {
+        "numbers": [
+          40,
+          44
+        ],
+        "weight": 0.4289
+      },
+      {
+        "numbers": [
+          40,
+          45
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          41,
+          42
+        ],
+        "weight": 0.2167
+      },
+      {
+        "numbers": [
+          41,
+          43
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          41,
+          44
+        ],
+        "weight": 0.2648
+      },
+      {
+        "numbers": [
+          41,
+          45
+        ],
+        "weight": 0.3611
+      },
+      {
+        "numbers": [
+          42,
+          43
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          42,
+          44
+        ],
+        "weight": 0.2626
+      },
+      {
+        "numbers": [
+          42,
+          45
+        ],
+        "weight": 0.3852
+      },
+      {
+        "numbers": [
+          43,
+          44
+        ],
+        "weight": 0.3107
+      },
+      {
+        "numbers": [
+          43,
+          45
+        ],
+        "weight": 0.2889
+      },
+      {
+        "numbers": [
+          44,
+          45
+        ],
+        "weight": 0.1204
+      }
+    ],
+    "backtest": {
+      "rounds": 60,
+      "avg_best_matches": 1.567,
+      "three_plus_rate": 0.1,
+      "four_plus_rate": 0.0,
+      "best_match": 3
+    },
     "frequency_stats": [
       {
         "number": 34,
@@ -334,62 +7333,62 @@
     {
       "ticket_no": 1,
       "numbers": [
-        3,
-        13,
+        1,
+        12,
         16,
+        19,
         27,
-        37,
         40
       ],
-      "score": 0.749
+      "score": 0.6841
     },
     {
       "ticket_no": 2,
       "numbers": [
-        7,
-        8,
-        12,
+        3,
+        16,
+        20,
+        21,
         27,
-        38,
-        40
+        37
       ],
-      "score": 0.6907
+      "score": 0.6714
     },
     {
       "ticket_no": 3,
       "numbers": [
-        12,
+        6,
         16,
-        20,
         27,
-        31,
-        33
+        28,
+        30,
+        39
       ],
-      "score": 0.6751
+      "score": 0.6591
     },
     {
       "ticket_no": 4,
       "numbers": [
-        7,
-        13,
-        14,
+        11,
         16,
-        23,
+        24,
+        27,
+        36,
         38
       ],
-      "score": 0.6654
+      "score": 0.6535
     },
     {
       "ticket_no": 5,
       "numbers": [
         7,
-        16,
-        28,
-        34,
+        18,
+        27,
+        33,
         37,
-        39
+        40
       ],
-      "score": 0.6651
+      "score": 0.6493
     }
   ],
   "winner_highlights": [

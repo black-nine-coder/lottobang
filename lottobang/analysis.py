@@ -2,6 +2,7 @@
 
 import random
 from collections import Counter
+from itertools import combinations
 
 from .models import Draw, TicketRecommendation
 
@@ -17,21 +18,23 @@ MIN_HIGH_NUMBERS = 1
 MIN_DECADE_BUCKETS = 3
 MAX_SHARED_NUMBERS_BETWEEN_TICKETS = 2
 CANDIDATE_POOL_MULTIPLIER = 80
+RECENT_WINDOWS = (12, 26, 52)
+BACKTEST_ROUNDS_LIMIT = 60
 
 
 def build_number_weights(draws: list[Draw]) -> dict[int, float]:
     frequency_counter: Counter[int] = Counter()
-    recent_counter: Counter[int] = Counter()
+    recent_counters: dict[int, Counter[int]] = {window: Counter() for window in RECENT_WINDOWS}
     last_seen_round: dict[int, int] = {}
-    recent_window = draws[-min(len(draws), 52) :]
 
     for draw in draws:
         for number in draw.numbers:
             frequency_counter[number] += 1
             last_seen_round[number] = draw.round_no
 
-    for draw in recent_window:
-        recent_counter.update(draw.numbers)
+    for window in RECENT_WINDOWS:
+        for draw in draws[-min(len(draws), window) :]:
+            recent_counters[window].update(draw.numbers)
 
     latest_round = draws[-1].round_no
     frequencies = {
@@ -39,8 +42,11 @@ def build_number_weights(draws: list[Draw]) -> dict[int, float]:
         for number in range(NUMBER_MIN, NUMBER_MAX + 1)
     }
     recent_frequencies = {
-        number: recent_counter[number] / len(recent_window)
-        for number in range(NUMBER_MIN, NUMBER_MAX + 1)
+        window: {
+            number: recent_counters[window][number] / min(len(draws), window)
+            for number in range(NUMBER_MIN, NUMBER_MAX + 1)
+        }
+        for window in RECENT_WINDOWS
     }
     recency_gaps = {
         number: latest_round - last_seen_round.get(number, latest_round - len(draws))
@@ -48,18 +54,56 @@ def build_number_weights(draws: list[Draw]) -> dict[int, float]:
     }
 
     normalized_frequency = _normalize(frequencies)
-    normalized_recent_frequency = _normalize(recent_frequencies)
-    normalized_recency_gaps = _normalize(recency_gaps)
+    normalized_recent_frequency = {
+        window: _normalize(recent_frequencies[window])
+        for window in RECENT_WINDOWS
+    }
+    normalized_recency_gaps = _normalize({
+        number: min(gap, 120)
+        for number, gap in recency_gaps.items()
+    })
     normalized_overdue = normalized_recency_gaps
 
     return {
         number: (
-            (0.45 * normalized_frequency[number])
-            + (0.35 * normalized_recent_frequency[number])
-            + (0.20 * normalized_overdue[number])
+            (0.35 * normalized_frequency[number])
+            + (0.18 * normalized_recent_frequency[12][number])
+            + (0.14 * normalized_recent_frequency[26][number])
+            + (0.13 * normalized_recent_frequency[52][number])
+            + (0.15 * normalized_overdue[number])
             + 0.05
         )
         for number in range(NUMBER_MIN, NUMBER_MAX + 1)
+    }
+
+
+def build_pair_weights(draws: list[Draw]) -> dict[tuple[int, int], float]:
+    pair_counter: Counter[tuple[int, int]] = Counter()
+    recent_pair_counter: Counter[tuple[int, int]] = Counter()
+    recent_window = draws[-min(len(draws), 52) :]
+
+    for draw in draws:
+        pair_counter.update(combinations(draw.numbers, 2))
+
+    for draw in recent_window:
+        recent_pair_counter.update(combinations(draw.numbers, 2))
+
+    total_pairs = max(len(draws) * 15, 1)
+    recent_total_pairs = max(len(recent_window) * 15, 1)
+    pair_frequencies = {
+        pair: pair_counter[pair] / total_pairs
+        for pair in combinations(range(NUMBER_MIN, NUMBER_MAX + 1), 2)
+    }
+    recent_pair_frequencies = {
+        pair: recent_pair_counter[pair] / recent_total_pairs
+        for pair in combinations(range(NUMBER_MIN, NUMBER_MAX + 1), 2)
+    }
+    normalized_pair_frequency = _normalize(pair_frequencies)
+    normalized_recent_pair_frequency = _normalize(recent_pair_frequencies)
+
+    return {
+        pair: (0.65 * normalized_pair_frequency[pair]) + (0.35 * normalized_recent_pair_frequency[pair])
+        for pair in pair_frequencies
     }
 
 
@@ -74,6 +118,7 @@ def generate_recommendations(
 
     rng = random.Random(seed)
     weights = build_number_weights(draws)
+    pair_weights = build_pair_weights(draws)
     candidates: list[tuple[tuple[int, ...], float]] = []
     seen: set[tuple[int, ...]] = set()
 
@@ -88,7 +133,7 @@ def generate_recommendations(
             continue
 
         seen.add(numbers)
-        candidates.append((numbers, _score_ticket(numbers, weights)))
+        candidates.append((numbers, _score_ticket(numbers, weights, pair_weights)))
 
     recommendations = _select_diversified_tickets(candidates, sets_count)
     if len(recommendations) != sets_count:
@@ -100,8 +145,71 @@ def generate_recommendations(
     ], weights
 
 
+def run_backtest(
+    draws: list[Draw],
+    *,
+    sets_count: int = 5,
+    rounds_limit: int = BACKTEST_ROUNDS_LIMIT,
+) -> dict[str, object]:
+    if len(draws) < 20:
+        return {
+            "rounds": 0,
+            "avg_best_matches": 0.0,
+            "three_plus_rate": 0.0,
+            "four_plus_rate": 0.0,
+            "best_match": 0,
+        }
+
+    sample = draws[-min(rounds_limit, len(draws) - 10) :]
+    best_matches: list[int] = []
+    three_plus = 0
+    four_plus = 0
+    best_match = 0
+
+    for draw in sample:
+        history = [candidate for candidate in draws if candidate.round_no < draw.round_no]
+        if len(history) < 10:
+            continue
+        recommendations, _ = generate_recommendations(
+            history,
+            sets_count=sets_count,
+            seed=draw.round_no,
+            max_attempts=2_500,
+        )
+        actual_numbers = set(draw.numbers)
+        round_best = max(len(set(recommendation.numbers) & actual_numbers) for recommendation in recommendations)
+        best_matches.append(round_best)
+        if round_best >= 3:
+            three_plus += 1
+        if round_best >= 4:
+            four_plus += 1
+        best_match = max(best_match, round_best)
+
+    rounds = len(best_matches)
+    if rounds == 0:
+        return {
+            "rounds": 0,
+            "avg_best_matches": 0.0,
+            "three_plus_rate": 0.0,
+            "four_plus_rate": 0.0,
+            "best_match": 0,
+        }
+
+    return {
+        "rounds": rounds,
+        "avg_best_matches": round(sum(best_matches) / rounds, 3),
+        "three_plus_rate": round(three_plus / rounds, 3),
+        "four_plus_rate": round(four_plus / rounds, 3),
+        "best_match": best_match,
+    }
+
+
 def summarize_top_numbers(weights: dict[int, float], limit: int = 10) -> list[tuple[int, float]]:
     return sorted(weights.items(), key=lambda item: item[1], reverse=True)[:limit]
+
+
+def summarize_top_pairs(pair_weights: dict[tuple[int, int], float], limit: int = 10) -> list[tuple[tuple[int, int], float]]:
+    return sorted(pair_weights.items(), key=lambda item: item[1], reverse=True)[:limit]
 
 
 def summarize_frequency_stats(draws: list[Draw], limit: int = 10) -> list[dict[str, float]]:
@@ -169,11 +277,19 @@ def _passes_ticket_rules(numbers: tuple[int, ...]) -> bool:
     return True
 
 
-def _score_ticket(numbers: tuple[int, ...], weights: dict[int, float]) -> float:
+def _score_ticket(
+    numbers: tuple[int, ...],
+    weights: dict[int, float],
+    pair_weights: dict[tuple[int, int], float] | None = None,
+) -> float:
     base_score = sum(weights[number] for number in numbers) / NUMBERS_PER_TICKET
     decade_buckets = {(number - 1) // 10 for number in numbers}
     spread_bonus = min(len(decade_buckets), 5) * 0.01
-    return base_score + spread_bonus
+    pair_score = 0.0
+    if pair_weights:
+        pairs = list(combinations(numbers, 2))
+        pair_score = (sum(pair_weights.get(pair, 0.0) for pair in pairs) / len(pairs)) * 0.06
+    return base_score + spread_bonus + pair_score
 
 
 def _select_diversified_tickets(
