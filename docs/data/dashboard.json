@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-10T04:29:04.375765+00:00",
+  "generated_at_utc": "2026-06-10T04:36:06.808976+00:00",
   "source_csv": "\\\\wsl$\\Ubuntu\\home\\ychaos89\\lottobang\\data\\official_draws.csv",
   "defaults": {
     "sets_count": 5,
@@ -78,6 +78,188 @@
       {
         "number": 24,
         "weight": 0.6229
+      }
+    ],
+    "number_weights": [
+      {
+        "number": 1,
+        "weight": 0.5418
+      },
+      {
+        "number": 2,
+        "weight": 0.3115
+      },
+      {
+        "number": 3,
+        "weight": 0.7249
+      },
+      {
+        "number": 4,
+        "weight": 0.4466
+      },
+      {
+        "number": 5,
+        "weight": 0.3972
+      },
+      {
+        "number": 6,
+        "weight": 0.576
+      },
+      {
+        "number": 7,
+        "weight": 0.6688
+      },
+      {
+        "number": 8,
+        "weight": 0.4476
+      },
+      {
+        "number": 9,
+        "weight": 0.3084
+      },
+      {
+        "number": 10,
+        "weight": 0.3048
+      },
+      {
+        "number": 11,
+        "weight": 0.5565
+      },
+      {
+        "number": 12,
+        "weight": 0.7137
+      },
+      {
+        "number": 13,
+        "weight": 0.7113
+      },
+      {
+        "number": 14,
+        "weight": 0.6287
+      },
+      {
+        "number": 15,
+        "weight": 0.5462
+      },
+      {
+        "number": 16,
+        "weight": 0.7054
+      },
+      {
+        "number": 17,
+        "weight": 0.5362
+      },
+      {
+        "number": 18,
+        "weight": 0.582
+      },
+      {
+        "number": 19,
+        "weight": 0.5588
+      },
+      {
+        "number": 20,
+        "weight": 0.527
+      },
+      {
+        "number": 21,
+        "weight": 0.5165
+      },
+      {
+        "number": 22,
+        "weight": 0.1875
+      },
+      {
+        "number": 23,
+        "weight": 0.4347
+      },
+      {
+        "number": 24,
+        "weight": 0.6229
+      },
+      {
+        "number": 25,
+        "weight": 0.4325
+      },
+      {
+        "number": 26,
+        "weight": 0.4754
+      },
+      {
+        "number": 27,
+        "weight": 0.8121
+      },
+      {
+        "number": 28,
+        "weight": 0.4978
+      },
+      {
+        "number": 29,
+        "weight": 0.4761
+      },
+      {
+        "number": 30,
+        "weight": 0.4248
+      },
+      {
+        "number": 31,
+        "weight": 0.4834
+      },
+      {
+        "number": 32,
+        "weight": 0.2824
+      },
+      {
+        "number": 33,
+        "weight": 0.6289
+      },
+      {
+        "number": 34,
+        "weight": 0.612
+      },
+      {
+        "number": 35,
+        "weight": 0.4627
+      },
+      {
+        "number": 36,
+        "weight": 0.4799
+      },
+      {
+        "number": 37,
+        "weight": 0.6415
+      },
+      {
+        "number": 38,
+        "weight": 0.6036
+      },
+      {
+        "number": 39,
+        "weight": 0.6253
+      },
+      {
+        "number": 40,
+        "weight": 0.6586
+      },
+      {
+        "number": 41,
+        "weight": 0.2883
+      },
+      {
+        "number": 42,
+        "weight": 0.4453
+      },
+      {
+        "number": 43,
+        "weight": 0.4604
+      },
+      {
+        "number": 44,
+        "weight": 0.3768
+      },
+      {
+        "number": 45,
+        "weight": 0.5019
       }
     ],
     "frequency_stats": [

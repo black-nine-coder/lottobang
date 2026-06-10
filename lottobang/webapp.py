@@ -73,6 +73,10 @@ def build_dashboard_payload(
                 {"number": number, "weight": round(weight, 4)}
                 for number, weight in summarize_top_numbers(weights, limit=12)
             ],
+            "number_weights": [
+                {"number": number, "weight": round(weights[number], 4)}
+                for number in sorted(weights)
+            ],
             "frequency_stats": summarize_frequency_stats(draws, limit=12),
             "frequency_coverage": {
                 "from_round": draws[0].round_no,

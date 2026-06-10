@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-06-10T04:29:04.408291+00:00",
+  "generated_at_utc": "2026-06-10T04:36:06.847427+00:00",
   "defaults": {
     "sets_count": 5,
-    "seed": 1781065744
+    "seed": 1781066166
   },
   "data_status": {
     "has_official_history": false,
@@ -321,66 +321,66 @@
   "tickets": [
     {
       "ticket_no": 1,
-      "group": 1,
+      "group": 2,
       "digits": [
-        8,
+        5,
+        1,
         3,
-        9,
         0,
-        2,
+        4,
         9
       ],
       "score": 1.0
     },
     {
       "ticket_no": 2,
-      "group": 5,
+      "group": 1,
       "digits": [
-        8,
-        8,
         2,
-        9,
-        4,
-        7
+        0,
+        3,
+        3,
+        1,
+        3
       ],
       "score": 1.0
     },
     {
       "ticket_no": 3,
-      "group": 4,
+      "group": 2,
       "digits": [
         6,
-        4,
-        9,
         8,
-        6,
-        0
+        8,
+        9,
+        5,
+        1
       ],
       "score": 1.0
     },
     {
       "ticket_no": 4,
-      "group": 1,
+      "group": 4,
       "digits": [
-        8,
+        6,
         1,
-        8,
-        4,
-        3,
-        4
+        0,
+        0,
+        1,
+        5
       ],
       "score": 1.0
     },
     {
       "ticket_no": 5,
-      "group": 1,
+      "group": 2,
       "digits": [
         2,
-        5,
-        5,
-        6,
-        7,
-        1
+        4,
+        9,
+        1,
+        3,
+        0
       ],
       "score": 1.0
     }
