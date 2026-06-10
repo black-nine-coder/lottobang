@@ -20,7 +20,45 @@ function setStatus(message, tone = "info") { if (!message) { els.statusMessage.h
 function buildQuery() { const p = new URLSearchParams(); p.set("sets", $("#sets").value || "5"); const seed = ($("#seed").value || "").trim(); if (seed) p.set("seed", seed); return p; }
 function loadStoredCredentials() { try { const saved = JSON.parse(localStorage.getItem(CREDENTIAL_STORAGE_KEY) || "{}"); if (saved.userId) els.officialUserId.value = saved.userId; if (saved.password) els.officialPassword.value = saved.password; } catch { localStorage.removeItem(CREDENTIAL_STORAGE_KEY); } }
 function saveStoredCredentials() { const userId = els.officialUserId.value.trim(); const password = els.officialPassword.value; if (!userId && !password) { localStorage.removeItem(CREDENTIAL_STORAGE_KEY); return; } localStorage.setItem(CREDENTIAL_STORAGE_KEY, JSON.stringify({ userId, password })); }
-async function loadDashboard(params = buildQuery()) { setStatus("추천 데이터를 불러오는 중입니다."); let res = await fetch(`api/dashboard?${params.toString()}`).catch(() => null); if (!res || !res.ok) res = await fetch("data/dashboard.json"); const payload = await res.json(); if (!res.ok) throw new Error(payload.error || "대시보드 데이터를 불러오지 못했습니다."); state.payload = payload; renderDashboard(payload); setStatus(""); }
+async function loadDashboard(params = buildQuery()) { setStatus("추천 데이터를 불러오는 중입니다."); let res = await fetch(`api/dashboard?${params.toString()}`).catch(() => null); let payload; if (res && res.ok) { payload = await res.json(); } else { res = await fetch("data/dashboard.json"); payload = await res.json(); if (!res.ok) throw new Error(payload.error || "대시보드 데이터를 불러오지 못했습니다."); payload = buildStaticDashboardVariant(payload, params); } state.payload = payload; renderDashboard(payload); setStatus(""); }
+function seededRandom(seed) { let value = Number(seed) || Date.now(); return () => { value = (value * 1664525 + 1013904223) >>> 0; return value / 4294967296; }; }
+function weightedPick(pool, rng, excluded) { const available = pool.filter((item) => !excluded.has(item.number)); const total = available.reduce((sum, item) => sum + Math.max(Number(item.weight) || 0.01, 0.01), 0); let cursor = rng() * total; for (const item of available) { cursor -= Math.max(Number(item.weight) || 0.01, 0.01); if (cursor <= 0) return item.number; } return available[available.length - 1]?.number || 1; }
+function scoreStaticTicket(numbers, weights) { return normalizeTicketNumbers(numbers).reduce((sum, number) => sum + (weights.get(number) || 0.01), 0) / 6; }
+function isBalancedTicket(numbers) { const sorted = normalizeTicketNumbers(numbers); const odd = sorted.filter((n) => n % 2).length; const sum = sorted.reduce((acc, n) => acc + n, 0); const low = sorted.filter((n) => n <= 22).length; const buckets = new Set(sorted.map((n) => Math.floor((n - 1) / 10))).size; return sorted.length === 6 && odd >= 2 && odd <= 4 && sum >= 90 && sum <= 200 && low >= 1 && low <= 5 && buckets >= 3; }
+function buildStaticDashboardVariant(basePayload, params) {
+  const seed = Number(params.get("seed")) || Date.now();
+  const sets = Math.max(1, Math.min(10, Number(params.get("sets")) || basePayload.defaults?.sets_count || 5));
+  const rng = seededRandom(seed);
+  const topNumbers = basePayload.strategy?.top_numbers || [];
+  const weightMap = new Map(topNumbers.map((item) => [Number(item.number), Number(item.weight) || 0.01]));
+  const pool = Array.from({ length: 45 }, (_, index) => {
+    const number = index + 1;
+    return { number, weight: weightMap.get(number) || 0.35 + rng() * 0.2 };
+  });
+  const tickets = [];
+  const seen = new Set();
+  for (let ticketNo = 1; ticketNo <= sets; ticketNo += 1) {
+    let numbers = [];
+    for (let attempt = 0; attempt < 120; attempt += 1) {
+      const selected = new Set();
+      while (selected.size < 6) selected.add(weightedPick(pool, rng, selected));
+      numbers = normalizeTicketNumbers([...selected]);
+      const key = numbers.join("-");
+      const overlaps = tickets.map((ticket) => ticket.numbers.filter((n) => selected.has(n)).length);
+      if (isBalancedTicket(numbers) && !seen.has(key) && overlaps.every((count) => count <= 3)) {
+        seen.add(key);
+        break;
+      }
+    }
+    tickets.push({ ticket_no: ticketNo, numbers, score: scoreStaticTicket(numbers, weightMap) });
+  }
+  return {
+    ...basePayload,
+    generated_at_utc: new Date().toISOString(),
+    defaults: { ...(basePayload.defaults || {}), sets_count: sets, seed },
+    tickets,
+  };
+}
 function renderDashboard(payload) { const range = payload.strategy.frequency_coverage; els.latestRound.textContent = `${payload.latest_draw.round_no}회`; els.generatedAt.textContent = `생성 ${new Date(payload.generated_at_utc).toLocaleString("ko-KR")} · seed ${payload.defaults.seed}`; els.coverage.textContent = `${range.from_round}-${range.to_round}회`; $("#sets").value = payload.defaults.sets_count; renderTickets(payload.tickets || []); renderStrategy(payload.strategy); renderDrawHistory(payload.all_draws || []); prepareBatchScript(payload.tickets || []); if (payload.tickets?.length) selectTicket(payload.tickets[0]); }
 function renderTickets(tickets) { els.copyAllTickets.disabled = !tickets.length; els.tickets.innerHTML = tickets.map((t) => `<article class="ticket-card" data-ticket="${t.ticket_no}"><div class="ticket-head"><h3>Ticket ${t.ticket_no}</h3><span class="score">적합도 ${Number(t.score).toFixed(4)}</span></div>${renderBalls(t.numbers)}<button type="button" class="ghost select-ticket" data-ticket="${t.ticket_no}">이 번호 사용</button></article>`).join(""); els.tickets.querySelectorAll(".select-ticket").forEach((b) => b.addEventListener("click", () => { const t = state.payload.tickets.find((item) => String(item.ticket_no) === b.dataset.ticket); if (t) selectTicket(t); })); }
 function renderStrategy(strategy) { els.rules.innerHTML = strategy.rules.map((r) => `<span class="chip">${r}</span>`).join(""); const max = Math.max(...strategy.top_numbers.map((i) => i.weight), 1); els.topNumbers.innerHTML = strategy.top_numbers.map((i) => `<div class="signal-row"><strong>${String(i.number).padStart(2, "0")}</strong><div class="signal-bar"><span style="width:${Math.round((i.weight / max) * 100)}%"></span></div><small>${Number(i.weight).toFixed(3)}</small></div>`).join(""); }
