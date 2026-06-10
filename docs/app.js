@@ -20,6 +20,7 @@ function setStatus(message, tone = "info") { if (!message) { els.statusMessage.h
 function buildQuery() { const p = new URLSearchParams(); p.set("sets", $("#sets").value || "5"); const seed = ($("#seed").value || "").trim(); if (seed) p.set("seed", seed); return p; }
 function loadStoredCredentials() { try { const saved = JSON.parse(localStorage.getItem(CREDENTIAL_STORAGE_KEY) || "{}"); if (saved.userId) els.officialUserId.value = saved.userId; if (saved.password) els.officialPassword.value = saved.password; } catch { localStorage.removeItem(CREDENTIAL_STORAGE_KEY); } }
 function saveStoredCredentials() { const userId = els.officialUserId.value.trim(); const password = els.officialPassword.value; if (!userId && !password) { localStorage.removeItem(CREDENTIAL_STORAGE_KEY); return; } localStorage.setItem(CREDENTIAL_STORAGE_KEY, JSON.stringify({ userId, password })); }
+function isLocalAutomationAvailable() { return ["localhost", "127.0.0.1", "::1"].includes(location.hostname); }
 async function loadDashboard(params = buildQuery()) { setStatus("추천 데이터를 불러오는 중입니다."); let res = await fetch(`api/dashboard?${params.toString()}`).catch(() => null); let payload; if (res && res.ok) { payload = await res.json(); } else { res = await fetch("data/dashboard.json"); payload = await res.json(); if (!res.ok) throw new Error(payload.error || "대시보드 데이터를 불러오지 못했습니다."); payload = buildStaticDashboardVariant(payload, params); } state.payload = payload; renderDashboard(payload); setStatus(""); }
 function seededRandom(seed) { let value = Number(seed) || Date.now(); return () => { value = (value * 1664525 + 1013904223) >>> 0; return value / 4294967296; }; }
 function weightedPick(pool, rng, excluded) { const available = pool.filter((item) => !excluded.has(item.number)); const total = available.reduce((sum, item) => sum + Math.max(Number(item.weight) || 0.01, 0.01), 0); let cursor = rng() * total; for (const item of available) { cursor -= Math.max(Number(item.weight) || 0.01, 0.01); if (cursor <= 0) return item.number; } return available[available.length - 1]?.number || 1; }
@@ -205,7 +206,18 @@ function buildOfficialMarkingScript(tickets) {
 })();`;
 }
 
-async function copyText(text, message) { await navigator.clipboard.writeText(text); setStatus(message); }
+async function copyText(text, message) {
+  try {
+    await navigator.clipboard.writeText(text);
+    setStatus(message);
+  } catch {
+    els.officialScript.value = text;
+    els.officialScript.focus();
+    els.officialScript.select();
+    const copied = document.execCommand?.("copy");
+    setStatus(copied ? message : "스크립트를 아래 입력창에 준비했습니다. 직접 전체 선택 후 복사하세요.", copied ? "info" : "error");
+  }
+}
 function buildOfficialLoginScript(userId, password) {
   return `(() => {
   const userId = ${JSON.stringify(userId)};
@@ -286,6 +298,14 @@ els.runOfficialFlow.addEventListener("click", async () => {
   saveStoredCredentials();
   els.runOfficialFlow.disabled = true;
   try {
+    if (!isLocalAutomationAvailable()) {
+      if (!state.batchScript) prepareBatchScript(state.payload?.tickets || []);
+      if (!state.batchScript) throw new Error("5세트 콘솔 스크립트를 만들지 못했습니다. 추천번호를 다시 생성하세요.");
+      els.officialScript.value = state.batchScript;
+      await copyText(state.batchScript, "GitHub Pages에서는 로컬 자동화 API를 사용할 수 없어 5세트 콘솔 스크립트를 복사했습니다. 공식 구매 페이지 콘솔에서 실행하세요.");
+      window.open(OFFICIAL_MARKING_URL, "_blank", "noopener,noreferrer");
+      return;
+    }
     const response = await fetch("api/official-purchase-flow", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
