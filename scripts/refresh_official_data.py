@@ -49,9 +49,8 @@ def fetch_json(url: str, headers: dict[str, str]) -> dict[str, object]:
         ],
         check=True,
         capture_output=True,
-        text=True,
     )
-    return json.loads(result.stdout)
+    return json.loads(result.stdout.decode("utf-8-sig"))
 
 
 def format_date(yyyymmdd: str) -> str:

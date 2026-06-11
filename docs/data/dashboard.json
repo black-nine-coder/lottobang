@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-10T05:44:37.265412+00:00",
+  "generated_at_utc": "2026-06-11T10:39:19.190990+00:00",
   "source_csv": "\\\\wsl$\\Ubuntu\\home\\ychaos89\\lottobang\\data\\official_draws.csv",
   "defaults": {
     "sets_count": 5,
@@ -7,17 +7,17 @@
     "refresh_cycle": "2026 week 24"
   },
   "latest_draw": {
-    "round_no": 1209,
-    "draw_date": "2026-01-31",
+    "round_no": 1227,
+    "draw_date": "2026-06-06",
     "numbers": [
-      2,
-      17,
-      20,
-      35,
-      37,
-      39
+      1,
+      14,
+      16,
+      34,
+      41,
+      44
     ],
-    "bonus": 24
+    "bonus": 13
   },
   "strategy": {
     "description": "Frequency, multi-window recent trend, overdue signal, pair synergy, balance, and portfolio diversification heuristic",
@@ -35,242 +35,270 @@
     "top_numbers": [
       {
         "number": 27,
-        "weight": 0.7803
+        "weight": 0.7094
       },
       {
-        "number": 16,
-        "weight": 0.7524
+        "number": 15,
+        "weight": 0.6103
+      },
+      {
+        "number": 45,
+        "weight": 0.5997
+      },
+      {
+        "number": 28,
+        "weight": 0.5931
       },
       {
         "number": 3,
-        "weight": 0.6178
+        "weight": 0.5765
       },
       {
-        "number": 37,
-        "weight": 0.6052
+        "number": 18,
+        "weight": 0.5667
       },
       {
-        "number": 24,
-        "weight": 0.5995
+        "number": 31,
+        "weight": 0.547
+      },
+      {
+        "number": 16,
+        "weight": 0.5396
       },
       {
         "number": 12,
-        "weight": 0.5907
-      },
-      {
-        "number": 33,
-        "weight": 0.5855
+        "weight": 0.5323
       },
       {
         "number": 1,
-        "weight": 0.5836
-      },
-      {
-        "number": 39,
-        "weight": 0.5818
-      },
-      {
-        "number": 38,
-        "weight": 0.5805
-      },
-      {
-        "number": 40,
-        "weight": 0.5478
+        "weight": 0.5279
       },
       {
         "number": 13,
-        "weight": 0.5378
+        "weight": 0.5262
+      },
+      {
+        "number": 17,
+        "weight": 0.5225
       }
     ],
     "number_weights": [
       {
         "number": 1,
-        "weight": 0.5836
+        "weight": 0.5279
       },
       {
         "number": 2,
-        "weight": 0.3517
+        "weight": 0.3685
       },
       {
         "number": 3,
-        "weight": 0.6178
+        "weight": 0.5765
       },
       {
         "number": 4,
-        "weight": 0.4602
+        "weight": 0.4096
       },
       {
         "number": 5,
-        "weight": 0.356
+        "weight": 0.3443
       },
       {
         "number": 6,
-        "weight": 0.5141
+        "weight": 0.4718
       },
       {
         "number": 7,
-        "weight": 0.5197
+        "weight": 0.4316
       },
       {
         "number": 8,
-        "weight": 0.3799
+        "weight": 0.4064
       },
       {
         "number": 9,
-        "weight": 0.2752
+        "weight": 0.239
       },
       {
         "number": 10,
-        "weight": 0.3127
-      },
-      {
-        "number": 11,
-        "weight": 0.4083
-      },
-      {
-        "number": 12,
-        "weight": 0.5907
-      },
-      {
-        "number": 13,
-        "weight": 0.5378
-      },
-      {
-        "number": 14,
-        "weight": 0.4787
-      },
-      {
-        "number": 15,
-        "weight": 0.4256
-      },
-      {
-        "number": 16,
-        "weight": 0.7524
-      },
-      {
-        "number": 17,
-        "weight": 0.4949
-      },
-      {
-        "number": 18,
-        "weight": 0.46
-      },
-      {
-        "number": 19,
         "weight": 0.4706
       },
       {
+        "number": 11,
+        "weight": 0.3808
+      },
+      {
+        "number": 12,
+        "weight": 0.5323
+      },
+      {
+        "number": 13,
+        "weight": 0.5262
+      },
+      {
+        "number": 14,
+        "weight": 0.4175
+      },
+      {
+        "number": 15,
+        "weight": 0.6103
+      },
+      {
+        "number": 16,
+        "weight": 0.5396
+      },
+      {
+        "number": 17,
+        "weight": 0.5225
+      },
+      {
+        "number": 18,
+        "weight": 0.5667
+      },
+      {
+        "number": 19,
+        "weight": 0.4436
+      },
+      {
         "number": 20,
-        "weight": 0.4878
+        "weight": 0.4729
       },
       {
         "number": 21,
-        "weight": 0.4089
+        "weight": 0.396
       },
       {
         "number": 22,
-        "weight": 0.2257
+        "weight": 0.2763
       },
       {
         "number": 23,
-        "weight": 0.3785
+        "weight": 0.3445
       },
       {
         "number": 24,
-        "weight": 0.5995
+        "weight": 0.4355
       },
       {
         "number": 25,
-        "weight": 0.3471
+        "weight": 0.37
       },
       {
         "number": 26,
-        "weight": 0.5028
+        "weight": 0.4028
       },
       {
         "number": 27,
-        "weight": 0.7803
+        "weight": 0.7094
       },
       {
         "number": 28,
-        "weight": 0.4274
+        "weight": 0.5931
       },
       {
         "number": 29,
-        "weight": 0.4261
+        "weight": 0.3363
       },
       {
         "number": 30,
-        "weight": 0.5181
+        "weight": 0.3944
       },
       {
         "number": 31,
-        "weight": 0.5338
+        "weight": 0.547
       },
       {
         "number": 32,
-        "weight": 0.3272
+        "weight": 0.3266
       },
       {
         "number": 33,
-        "weight": 0.5855
+        "weight": 0.4864
       },
       {
         "number": 34,
-        "weight": 0.484
+        "weight": 0.492
       },
       {
         "number": 35,
-        "weight": 0.5028
+        "weight": 0.4146
       },
       {
         "number": 36,
-        "weight": 0.4709
+        "weight": 0.4182
       },
       {
         "number": 37,
-        "weight": 0.6052
+        "weight": 0.4925
       },
       {
         "number": 38,
-        "weight": 0.5805
+        "weight": 0.5139
       },
       {
         "number": 39,
-        "weight": 0.5818
+        "weight": 0.4783
       },
       {
         "number": 40,
-        "weight": 0.5478
+        "weight": 0.4878
       },
       {
         "number": 41,
-        "weight": 0.3329
+        "weight": 0.4254
       },
       {
         "number": 42,
-        "weight": 0.3882
+        "weight": 0.3528
       },
       {
         "number": 43,
-        "weight": 0.3507
+        "weight": 0.3452
       },
       {
         "number": 44,
-        "weight": 0.3323
+        "weight": 0.4582
       },
       {
         "number": 45,
-        "weight": 0.4545
+        "weight": 0.5997
       }
     ],
     "top_pairs": [
       {
         "numbers": [
-          3,
-          27
+          27,
+          38
+        ],
+        "weight": 0.8074
+      },
+      {
+        "numbers": [
+          6,
+          28
         ],
         "weight": 0.7856
+      },
+      {
+        "numbers": [
+          1,
+          28
+        ],
+        "weight": 0.7637
+      },
+      {
+        "numbers": [
+          27,
+          36
+        ],
+        "weight": 0.7593
+      },
+      {
+        "numbers": [
+          3,
+          24
+        ],
+        "weight": 0.7396
       },
       {
         "numbers": [
@@ -281,10 +309,10 @@
       },
       {
         "numbers": [
-          27,
-          38
+          13,
+          28
         ],
-        "weight": 0.7352
+        "weight": 0.7374
       },
       {
         "numbers": [
@@ -292,34 +320,6 @@
           21
         ],
         "weight": 0.72
-      },
-      {
-        "numbers": [
-          6,
-          38
-        ],
-        "weight": 0.7178
-      },
-      {
-        "numbers": [
-          33,
-          40
-        ],
-        "weight": 0.6959
-      },
-      {
-        "numbers": [
-          12,
-          24
-        ],
-        "weight": 0.6937
-      },
-      {
-        "numbers": [
-          1,
-          28
-        ],
-        "weight": 0.6696
       }
     ],
     "pair_weights": [
@@ -328,7 +328,7 @@
           1,
           2
         ],
-        "weight": 0.4552
+        "weight": 0.5493
       },
       {
         "numbers": [
@@ -349,7 +349,7 @@
           1,
           5
         ],
-        "weight": 0.4048
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -363,7 +363,7 @@
           1,
           7
         ],
-        "weight": 0.2144
+        "weight": 0.3085
       },
       {
         "numbers": [
@@ -377,7 +377,7 @@
           1,
           9
         ],
-        "weight": 0.313
+        "weight": 0.407
       },
       {
         "numbers": [
@@ -412,35 +412,35 @@
           1,
           14
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
           1,
           15
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
           1,
           16
         ],
-        "weight": 0.5011
+        "weight": 0.5952
       },
       {
         "numbers": [
           1,
           17
         ],
-        "weight": 0.407
+        "weight": 0.5011
       },
       {
         "numbers": [
           1,
           18
         ],
-        "weight": 0.383
+        "weight": 0.313
       },
       {
         "numbers": [
@@ -454,7 +454,7 @@
           1,
           20
         ],
-        "weight": 0.5711
+        "weight": 0.5011
       },
       {
         "numbers": [
@@ -503,14 +503,14 @@
           1,
           27
         ],
-        "weight": 0.407
+        "weight": 0.5011
       },
       {
         "numbers": [
           1,
           28
         ],
-        "weight": 0.6696
+        "weight": 0.7637
       },
       {
         "numbers": [
@@ -524,7 +524,7 @@
           1,
           30
         ],
-        "weight": 0.1904
+        "weight": 0.1204
       },
       {
         "numbers": [
@@ -552,14 +552,14 @@
           1,
           34
         ],
-        "weight": 0.3852
+        "weight": 0.4793
       },
       {
         "numbers": [
           1,
           35
         ],
-        "weight": 0.4311
+        "weight": 0.3611
       },
       {
         "numbers": [
@@ -580,14 +580,14 @@
           1,
           38
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
           1,
           39
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
@@ -601,7 +601,7 @@
           1,
           41
         ],
-        "weight": 0.453
+        "weight": 0.547
       },
       {
         "numbers": [
@@ -622,14 +622,14 @@
           1,
           44
         ],
-        "weight": 0.1685
+        "weight": 0.2626
       },
       {
         "numbers": [
           1,
           45
         ],
-        "weight": 0.2889
+        "weight": 0.383
       },
       {
         "numbers": [
@@ -699,14 +699,14 @@
           2,
           12
         ],
-        "weight": 0.3348
+        "weight": 0.2648
       },
       {
         "numbers": [
           2,
           13
         ],
-        "weight": 0.3807
+        "weight": 0.3107
       },
       {
         "numbers": [
@@ -720,14 +720,14 @@
           2,
           15
         ],
-        "weight": 0.4311
+        "weight": 0.4552
       },
       {
         "numbers": [
           2,
           16
         ],
-        "weight": 0.5711
+        "weight": 0.5011
       },
       {
         "numbers": [
@@ -755,7 +755,7 @@
           2,
           20
         ],
-        "weight": 0.523
+        "weight": 0.453
       },
       {
         "numbers": [
@@ -769,7 +769,7 @@
           2,
           22
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -783,14 +783,14 @@
           2,
           24
         ],
-        "weight": 0.3107
+        "weight": 0.2407
       },
       {
         "numbers": [
           2,
           25
         ],
-        "weight": 0.3611
+        "weight": 0.4552
       },
       {
         "numbers": [
@@ -811,7 +811,7 @@
           2,
           28
         ],
-        "weight": 0.383
+        "weight": 0.5711
       },
       {
         "numbers": [
@@ -846,14 +846,14 @@
           2,
           33
         ],
-        "weight": 0.4552
+        "weight": 0.3852
       },
       {
         "numbers": [
           2,
           34
         ],
-        "weight": 0.407
+        "weight": 0.4311
       },
       {
         "numbers": [
@@ -888,7 +888,7 @@
           2,
           39
         ],
-        "weight": 0.3348
+        "weight": 0.4289
       },
       {
         "numbers": [
@@ -909,14 +909,14 @@
           2,
           42
         ],
-        "weight": 0.3107
+        "weight": 0.2407
       },
       {
         "numbers": [
           2,
           43
         ],
-        "weight": 0.2867
+        "weight": 0.3107
       },
       {
         "numbers": [
@@ -930,14 +930,14 @@
           2,
           45
         ],
-        "weight": 0.2889
+        "weight": 0.383
       },
       {
         "numbers": [
           3,
           4
         ],
-        "weight": 0.5011
+        "weight": 0.4311
       },
       {
         "numbers": [
@@ -951,70 +951,70 @@
           3,
           6
         ],
-        "weight": 0.4507
+        "weight": 0.3107
       },
       {
         "numbers": [
           3,
           7
         ],
-        "weight": 0.477
+        "weight": 0.407
       },
       {
         "numbers": [
           3,
           8
         ],
-        "weight": 0.3589
+        "weight": 0.2889
       },
       {
         "numbers": [
           3,
           9
         ],
-        "weight": 0.2867
+        "weight": 0.2167
       },
       {
         "numbers": [
           3,
           10
         ],
-        "weight": 0.337
+        "weight": 0.4311
       },
       {
         "numbers": [
           3,
           11
         ],
-        "weight": 0.407
+        "weight": 0.337
       },
       {
         "numbers": [
           3,
           12
         ],
-        "weight": 0.5733
+        "weight": 0.5033
       },
       {
         "numbers": [
           3,
           13
         ],
-        "weight": 0.6696
+        "weight": 0.5996
       },
       {
         "numbers": [
           3,
           14
         ],
-        "weight": 0.313
+        "weight": 0.407
       },
       {
         "numbers": [
           3,
           15
         ],
-        "weight": 0.523
+        "weight": 0.617
       },
       {
         "numbers": [
@@ -1028,7 +1028,7 @@
           3,
           17
         ],
-        "weight": 0.4048
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -1070,14 +1070,14 @@
           3,
           23
         ],
-        "weight": 0.2648
+        "weight": 0.3589
       },
       {
         "numbers": [
           3,
           24
         ],
-        "weight": 0.6456
+        "weight": 0.7396
       },
       {
         "numbers": [
@@ -1098,14 +1098,14 @@
           3,
           27
         ],
-        "weight": 0.7856
+        "weight": 0.7156
       },
       {
         "numbers": [
           3,
           28
         ],
-        "weight": 0.2363
+        "weight": 0.1904
       },
       {
         "numbers": [
@@ -1126,14 +1126,14 @@
           3,
           31
         ],
-        "weight": 0.2648
+        "weight": 0.3589
       },
       {
         "numbers": [
           3,
           32
         ],
-        "weight": 0.4311
+        "weight": 0.4552
       },
       {
         "numbers": [
@@ -1147,7 +1147,7 @@
           3,
           34
         ],
-        "weight": 0.453
+        "weight": 0.383
       },
       {
         "numbers": [
@@ -1175,14 +1175,14 @@
           3,
           38
         ],
-        "weight": 0.453
+        "weight": 0.313
       },
       {
         "numbers": [
           3,
           39
         ],
-        "weight": 0.3807
+        "weight": 0.3107
       },
       {
         "numbers": [
@@ -1203,7 +1203,7 @@
           3,
           42
         ],
-        "weight": 0.547
+        "weight": 0.5011
       },
       {
         "numbers": [
@@ -1224,7 +1224,7 @@
           3,
           45
         ],
-        "weight": 0.313
+        "weight": 0.407
       },
       {
         "numbers": [
@@ -1238,7 +1238,7 @@
           4,
           6
         ],
-        "weight": 0.2385
+        "weight": 0.2626
       },
       {
         "numbers": [
@@ -1252,7 +1252,7 @@
           4,
           8
         ],
-        "weight": 0.3589
+        "weight": 0.2889
       },
       {
         "numbers": [
@@ -1273,7 +1273,7 @@
           4,
           11
         ],
-        "weight": 0.3348
+        "weight": 0.4289
       },
       {
         "numbers": [
@@ -1287,7 +1287,7 @@
           4,
           13
         ],
-        "weight": 0.1926
+        "weight": 0.2867
       },
       {
         "numbers": [
@@ -1315,7 +1315,7 @@
           4,
           17
         ],
-        "weight": 0.383
+        "weight": 0.5711
       },
       {
         "numbers": [
@@ -1350,7 +1350,7 @@
           4,
           22
         ],
-        "weight": 0.2626
+        "weight": 0.3567
       },
       {
         "numbers": [
@@ -1378,7 +1378,7 @@
           4,
           26
         ],
-        "weight": 0.4093
+        "weight": 0.5033
       },
       {
         "numbers": [
@@ -1392,7 +1392,7 @@
           4,
           28
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -1420,7 +1420,7 @@
           4,
           32
         ],
-        "weight": 0.4289
+        "weight": 0.453
       },
       {
         "numbers": [
@@ -1483,14 +1483,14 @@
           4,
           41
         ],
-        "weight": 0.3807
+        "weight": 0.4748
       },
       {
         "numbers": [
           4,
           42
         ],
-        "weight": 0.3107
+        "weight": 0.2407
       },
       {
         "numbers": [
@@ -1532,7 +1532,7 @@
           5,
           8
         ],
-        "weight": 0.1204
+        "weight": 0.2144
       },
       {
         "numbers": [
@@ -1553,14 +1553,14 @@
           5,
           11
         ],
-        "weight": 0.5033
+        "weight": 0.5974
       },
       {
         "numbers": [
           5,
           12
         ],
-        "weight": 0.5493
+        "weight": 0.4793
       },
       {
         "numbers": [
@@ -1602,7 +1602,7 @@
           5,
           18
         ],
-        "weight": 0.383
+        "weight": 0.313
       },
       {
         "numbers": [
@@ -1616,7 +1616,7 @@
           5,
           20
         ],
-        "weight": 0.5274
+        "weight": 0.4574
       },
       {
         "numbers": [
@@ -1644,28 +1644,28 @@
           5,
           24
         ],
-        "weight": 0.2144
+        "weight": 0.1444
       },
       {
         "numbers": [
           5,
           25
         ],
-        "weight": 0.2167
+        "weight": 0.4048
       },
       {
         "numbers": [
           5,
           26
         ],
-        "weight": 0.547
+        "weight": 0.477
       },
       {
         "numbers": [
           5,
           27
         ],
-        "weight": 0.4552
+        "weight": 0.5493
       },
       {
         "numbers": [
@@ -1686,14 +1686,14 @@
           5,
           30
         ],
-        "weight": 0.3107
+        "weight": 0.2407
       },
       {
         "numbers": [
           5,
           31
         ],
-        "weight": 0.1926
+        "weight": 0.2867
       },
       {
         "numbers": [
@@ -1721,14 +1721,14 @@
           5,
           35
         ],
-        "weight": 0.2626
+        "weight": 0.1926
       },
       {
         "numbers": [
           5,
           36
         ],
-        "weight": 0.0963
+        "weight": 0.1904
       },
       {
         "numbers": [
@@ -1742,14 +1742,14 @@
           5,
           38
         ],
-        "weight": 0.0963
+        "weight": 0.1904
       },
       {
         "numbers": [
           5,
           39
         ],
-        "weight": 0.383
+        "weight": 0.313
       },
       {
         "numbers": [
@@ -1763,14 +1763,14 @@
           5,
           41
         ],
-        "weight": 0.1444
+        "weight": 0.2385
       },
       {
         "numbers": [
           5,
           42
         ],
-        "weight": 0.3589
+        "weight": 0.2889
       },
       {
         "numbers": [
@@ -1784,7 +1784,7 @@
           5,
           44
         ],
-        "weight": 0.2867
+        "weight": 0.3807
       },
       {
         "numbers": [
@@ -1798,14 +1798,14 @@
           6,
           7
         ],
-        "weight": 0.5252
+        "weight": 0.3852
       },
       {
         "numbers": [
           6,
           8
         ],
-        "weight": 0.1904
+        "weight": 0.1204
       },
       {
         "numbers": [
@@ -1826,21 +1826,21 @@
           6,
           11
         ],
-        "weight": 0.5493
+        "weight": 0.4793
       },
       {
         "numbers": [
           6,
           12
         ],
-        "weight": 0.5011
+        "weight": 0.4311
       },
       {
         "numbers": [
           6,
           13
         ],
-        "weight": 0.3611
+        "weight": 0.5493
       },
       {
         "numbers": [
@@ -1868,14 +1868,14 @@
           6,
           17
         ],
-        "weight": 0.5493
+        "weight": 0.5733
       },
       {
         "numbers": [
           6,
           18
         ],
-        "weight": 0.5252
+        "weight": 0.6193
       },
       {
         "numbers": [
@@ -1931,35 +1931,35 @@
           6,
           26
         ],
-        "weight": 0.1926
+        "weight": 0.2867
       },
       {
         "numbers": [
           6,
           27
         ],
-        "weight": 0.4267
+        "weight": 0.3567
       },
       {
         "numbers": [
           6,
           28
         ],
-        "weight": 0.5974
+        "weight": 0.7856
       },
       {
         "numbers": [
           6,
           29
         ],
-        "weight": 0.2822
+        "weight": 0.2122
       },
       {
         "numbers": [
           6,
           30
         ],
-        "weight": 0.3348
+        "weight": 0.4289
       },
       {
         "numbers": [
@@ -1973,7 +1973,7 @@
           6,
           32
         ],
-        "weight": 0.453
+        "weight": 0.383
       },
       {
         "numbers": [
@@ -2001,7 +2001,7 @@
           6,
           36
         ],
-        "weight": 0.2867
+        "weight": 0.3807
       },
       {
         "numbers": [
@@ -2015,7 +2015,7 @@
           6,
           38
         ],
-        "weight": 0.7178
+        "weight": 0.6478
       },
       {
         "numbers": [
@@ -2043,7 +2043,7 @@
           6,
           42
         ],
-        "weight": 0.3085
+        "weight": 0.2385
       },
       {
         "numbers": [
@@ -2064,7 +2064,7 @@
           6,
           45
         ],
-        "weight": 0.1904
+        "weight": 0.1204
       },
       {
         "numbers": [
@@ -2078,7 +2078,7 @@
           7,
           9
         ],
-        "weight": 0.617
+        "weight": 0.6411
       },
       {
         "numbers": [
@@ -2092,21 +2092,21 @@
           7,
           11
         ],
-        "weight": 0.4289
+        "weight": 0.3589
       },
       {
         "numbers": [
           7,
           12
         ],
-        "weight": 0.4793
+        "weight": 0.4093
       },
       {
         "numbers": [
           7,
           13
         ],
-        "weight": 0.3589
+        "weight": 0.2889
       },
       {
         "numbers": [
@@ -2134,14 +2134,14 @@
           7,
           17
         ],
-        "weight": 0.3107
+        "weight": 0.3348
       },
       {
         "numbers": [
           7,
           18
         ],
-        "weight": 0.5515
+        "weight": 0.4815
       },
       {
         "numbers": [
@@ -2183,7 +2183,7 @@
           7,
           24
         ],
-        "weight": 0.5974
+        "weight": 0.5274
       },
       {
         "numbers": [
@@ -2204,7 +2204,7 @@
           7,
           27
         ],
-        "weight": 0.4289
+        "weight": 0.453
       },
       {
         "numbers": [
@@ -2218,7 +2218,7 @@
           7,
           29
         ],
-        "weight": 0.4552
+        "weight": 0.3852
       },
       {
         "numbers": [
@@ -2267,7 +2267,7 @@
           7,
           36
         ],
-        "weight": 0.5493
+        "weight": 0.4793
       },
       {
         "numbers": [
@@ -2281,21 +2281,21 @@
           7,
           38
         ],
-        "weight": 0.4793
+        "weight": 0.5033
       },
       {
         "numbers": [
           7,
           39
         ],
-        "weight": 0.3589
+        "weight": 0.2889
       },
       {
         "numbers": [
           7,
           40
         ],
-        "weight": 0.4311
+        "weight": 0.3611
       },
       {
         "numbers": [
@@ -2309,7 +2309,7 @@
           7,
           42
         ],
-        "weight": 0.383
+        "weight": 0.313
       },
       {
         "numbers": [
@@ -2323,35 +2323,35 @@
           7,
           44
         ],
-        "weight": 0.3348
+        "weight": 0.2648
       },
       {
         "numbers": [
           7,
           45
         ],
-        "weight": 0.4748
+        "weight": 0.3348
       },
       {
         "numbers": [
           8,
           9
         ],
-        "weight": 0.0481
+        "weight": 0.1422
       },
       {
         "numbers": [
           8,
           10
         ],
-        "weight": 0.1904
+        "weight": 0.2844
       },
       {
         "numbers": [
           8,
           11
         ],
-        "weight": 0.2385
+        "weight": 0.1685
       },
       {
         "numbers": [
@@ -2372,14 +2372,14 @@
           8,
           14
         ],
-        "weight": 0.3807
+        "weight": 0.3107
       },
       {
         "numbers": [
           8,
           15
         ],
-        "weight": 0.3107
+        "weight": 0.4048
       },
       {
         "numbers": [
@@ -2393,7 +2393,7 @@
           8,
           17
         ],
-        "weight": 0.4793
+        "weight": 0.4093
       },
       {
         "numbers": [
@@ -2407,14 +2407,14 @@
           8,
           19
         ],
-        "weight": 0.3611
+        "weight": 0.4552
       },
       {
         "numbers": [
           8,
           20
         ],
-        "weight": 0.2144
+        "weight": 0.3085
       },
       {
         "numbers": [
@@ -2435,7 +2435,7 @@
           8,
           23
         ],
-        "weight": 0.3326
+        "weight": 0.2626
       },
       {
         "numbers": [
@@ -2449,7 +2449,7 @@
           8,
           25
         ],
-        "weight": 0.2167
+        "weight": 0.4048
       },
       {
         "numbers": [
@@ -2477,7 +2477,7 @@
           8,
           29
         ],
-        "weight": 0.3589
+        "weight": 0.453
       },
       {
         "numbers": [
@@ -2491,14 +2491,14 @@
           8,
           31
         ],
-        "weight": 0.477
+        "weight": 0.5952
       },
       {
         "numbers": [
           8,
           32
         ],
-        "weight": 0.2867
+        "weight": 0.2167
       },
       {
         "numbers": [
@@ -2519,14 +2519,14 @@
           8,
           35
         ],
-        "weight": 0.3348
+        "weight": 0.2648
       },
       {
         "numbers": [
           8,
           36
         ],
-        "weight": 0.4311
+        "weight": 0.3611
       },
       {
         "numbers": [
@@ -2547,28 +2547,28 @@
           8,
           39
         ],
-        "weight": 0.6215
+        "weight": 0.4815
       },
       {
         "numbers": [
           8,
           40
         ],
-        "weight": 0.3085
+        "weight": 0.2385
       },
       {
         "numbers": [
           8,
           41
         ],
-        "weight": 0.2144
+        "weight": 0.4026
       },
       {
         "numbers": [
           8,
           42
         ],
-        "weight": 0.2867
+        "weight": 0.3107
       },
       {
         "numbers": [
@@ -2582,7 +2582,7 @@
           8,
           44
         ],
-        "weight": 0.3589
+        "weight": 0.453
       },
       {
         "numbers": [
@@ -2645,21 +2645,21 @@
           9,
           17
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
           9,
           18
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
           9,
           19
         ],
-        "weight": 0.3544
+        "weight": 0.4485
       },
       {
         "numbers": [
@@ -2673,7 +2673,7 @@
           9,
           21
         ],
-        "weight": 0.3326
+        "weight": 0.3567
       },
       {
         "numbers": [
@@ -2694,14 +2694,14 @@
           9,
           24
         ],
-        "weight": 0.5207
+        "weight": 0.3807
       },
       {
         "numbers": [
           9,
           25
         ],
-        "weight": 0.1926
+        "weight": 0.2867
       },
       {
         "numbers": [
@@ -2715,14 +2715,14 @@
           9,
           27
         ],
-        "weight": 0.3567
+        "weight": 0.4748
       },
       {
         "numbers": [
           9,
           28
         ],
-        "weight": 0.4048
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -2736,7 +2736,7 @@
           9,
           30
         ],
-        "weight": 0.3326
+        "weight": 0.2626
       },
       {
         "numbers": [
@@ -2757,7 +2757,7 @@
           9,
           33
         ],
-        "weight": 0.407
+        "weight": 0.337
       },
       {
         "numbers": [
@@ -2785,42 +2785,42 @@
           9,
           37
         ],
-        "weight": 0.3807
+        "weight": 0.3107
       },
       {
         "numbers": [
           9,
           38
         ],
-        "weight": 0.3807
+        "weight": 0.4048
       },
       {
         "numbers": [
           9,
           39
         ],
-        "weight": 0.2867
+        "weight": 0.2167
       },
       {
         "numbers": [
           9,
           40
         ],
-        "weight": 0.2626
+        "weight": 0.1926
       },
       {
         "numbers": [
           9,
           41
         ],
-        "weight": 0.1685
+        "weight": 0.2626
       },
       {
         "numbers": [
           9,
           42
         ],
-        "weight": 0.1904
+        "weight": 0.2144
       },
       {
         "numbers": [
@@ -2834,14 +2834,14 @@
           9,
           44
         ],
-        "weight": 0.1904
+        "weight": 0.2144
       },
       {
         "numbers": [
           9,
           45
         ],
-        "weight": 0.1904
+        "weight": 0.2844
       },
       {
         "numbers": [
@@ -2869,14 +2869,14 @@
           10,
           14
         ],
-        "weight": 0.407
+        "weight": 0.5011
       },
       {
         "numbers": [
           10,
           15
         ],
-        "weight": 0.2407
+        "weight": 0.523
       },
       {
         "numbers": [
@@ -2904,14 +2904,14 @@
           10,
           19
         ],
-        "weight": 0.3611
+        "weight": 0.4552
       },
       {
         "numbers": [
           10,
           20
         ],
-        "weight": 0.3348
+        "weight": 0.4289
       },
       {
         "numbers": [
@@ -2932,14 +2932,14 @@
           10,
           23
         ],
-        "weight": 0.2385
+        "weight": 0.3326
       },
       {
         "numbers": [
           10,
           24
         ],
-        "weight": 0.3589
+        "weight": 0.453
       },
       {
         "numbers": [
@@ -2960,7 +2960,7 @@
           10,
           27
         ],
-        "weight": 0.3348
+        "weight": 0.4289
       },
       {
         "numbers": [
@@ -2974,21 +2974,21 @@
           10,
           29
         ],
-        "weight": 0.2648
+        "weight": 0.3589
       },
       {
         "numbers": [
           10,
           30
         ],
-        "weight": 0.1204
+        "weight": 0.2144
       },
       {
         "numbers": [
           10,
           31
         ],
-        "weight": 0.5296
+        "weight": 0.6237
       },
       {
         "numbers": [
@@ -3002,7 +3002,7 @@
           10,
           33
         ],
-        "weight": 0.3589
+        "weight": 0.453
       },
       {
         "numbers": [
@@ -3093,7 +3093,7 @@
           11,
           12
         ],
-        "weight": 0.4289
+        "weight": 0.3589
       },
       {
         "numbers": [
@@ -3107,7 +3107,7 @@
           11,
           14
         ],
-        "weight": 0.407
+        "weight": 0.337
       },
       {
         "numbers": [
@@ -3128,7 +3128,7 @@
           11,
           17
         ],
-        "weight": 0.5733
+        "weight": 0.5274
       },
       {
         "numbers": [
@@ -3163,7 +3163,7 @@
           11,
           22
         ],
-        "weight": 0.1444
+        "weight": 0.2385
       },
       {
         "numbers": [
@@ -3184,7 +3184,7 @@
           11,
           25
         ],
-        "weight": 0.1444
+        "weight": 0.2385
       },
       {
         "numbers": [
@@ -3198,7 +3198,7 @@
           11,
           27
         ],
-        "weight": 0.3348
+        "weight": 0.4289
       },
       {
         "numbers": [
@@ -3233,7 +3233,7 @@
           11,
           32
         ],
-        "weight": 0.2648
+        "weight": 0.3589
       },
       {
         "numbers": [
@@ -3261,7 +3261,7 @@
           11,
           36
         ],
-        "weight": 0.3348
+        "weight": 0.3589
       },
       {
         "numbers": [
@@ -3275,14 +3275,14 @@
           11,
           38
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
           11,
           39
         ],
-        "weight": 0.5033
+        "weight": 0.4333
       },
       {
         "numbers": [
@@ -3296,7 +3296,7 @@
           11,
           41
         ],
-        "weight": 0.3107
+        "weight": 0.4048
       },
       {
         "numbers": [
@@ -3359,7 +3359,7 @@
           12,
           17
         ],
-        "weight": 0.2626
+        "weight": 0.1926
       },
       {
         "numbers": [
@@ -3380,7 +3380,7 @@
           12,
           20
         ],
-        "weight": 0.5011
+        "weight": 0.4311
       },
       {
         "numbers": [
@@ -3408,7 +3408,7 @@
           12,
           24
         ],
-        "weight": 0.6937
+        "weight": 0.5537
       },
       {
         "numbers": [
@@ -3422,7 +3422,7 @@
           12,
           26
         ],
-        "weight": 0.5033
+        "weight": 0.4333
       },
       {
         "numbers": [
@@ -3478,7 +3478,7 @@
           12,
           34
         ],
-        "weight": 0.5515
+        "weight": 0.4815
       },
       {
         "numbers": [
@@ -3513,7 +3513,7 @@
           12,
           39
         ],
-        "weight": 0.4552
+        "weight": 0.3852
       },
       {
         "numbers": [
@@ -3534,7 +3534,7 @@
           12,
           42
         ],
-        "weight": 0.5974
+        "weight": 0.4574
       },
       {
         "numbers": [
@@ -3569,35 +3569,35 @@
           13,
           15
         ],
-        "weight": 0.4289
+        "weight": 0.453
       },
       {
         "numbers": [
           13,
           16
         ],
-        "weight": 0.3567
+        "weight": 0.2867
       },
       {
         "numbers": [
           13,
           17
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
           13,
           18
         ],
-        "weight": 0.4793
+        "weight": 0.5033
       },
       {
         "numbers": [
           13,
           19
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -3611,7 +3611,7 @@
           13,
           21
         ],
-        "weight": 0.3589
+        "weight": 0.453
       },
       {
         "numbers": [
@@ -3646,7 +3646,7 @@
           13,
           26
         ],
-        "weight": 0.3589
+        "weight": 0.453
       },
       {
         "numbers": [
@@ -3660,7 +3660,7 @@
           13,
           28
         ],
-        "weight": 0.6193
+        "weight": 0.7374
       },
       {
         "numbers": [
@@ -3674,7 +3674,7 @@
           13,
           30
         ],
-        "weight": 0.1204
+        "weight": 0.2144
       },
       {
         "numbers": [
@@ -3695,14 +3695,14 @@
           13,
           33
         ],
-        "weight": 0.6456
+        "weight": 0.5756
       },
       {
         "numbers": [
           13,
           34
         ],
-        "weight": 0.407
+        "weight": 0.337
       },
       {
         "numbers": [
@@ -3716,7 +3716,7 @@
           13,
           36
         ],
-        "weight": 0.3589
+        "weight": 0.383
       },
       {
         "numbers": [
@@ -3730,14 +3730,14 @@
           13,
           38
         ],
-        "weight": 0.4311
+        "weight": 0.3611
       },
       {
         "numbers": [
           13,
           39
         ],
-        "weight": 0.4552
+        "weight": 0.3852
       },
       {
         "numbers": [
@@ -3758,49 +3758,49 @@
           13,
           42
         ],
-        "weight": 0.3107
+        "weight": 0.2407
       },
       {
         "numbers": [
           13,
           43
         ],
-        "weight": 0.407
+        "weight": 0.337
       },
       {
         "numbers": [
           13,
           44
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
           13,
           45
         ],
-        "weight": 0.4552
+        "weight": 0.4793
       },
       {
         "numbers": [
           14,
           15
         ],
-        "weight": 0.5056
+        "weight": 0.5996
       },
       {
         "numbers": [
           14,
           16
         ],
-        "weight": 0.3107
+        "weight": 0.4048
       },
       {
         "numbers": [
           14,
           17
         ],
-        "weight": 0.2867
+        "weight": 0.2167
       },
       {
         "numbers": [
@@ -3842,21 +3842,21 @@
           14,
           23
         ],
-        "weight": 0.4048
+        "weight": 0.4289
       },
       {
         "numbers": [
           14,
           24
         ],
-        "weight": 0.1444
+        "weight": 0.2385
       },
       {
         "numbers": [
           14,
           25
         ],
-        "weight": 0.4048
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -3870,7 +3870,7 @@
           14,
           27
         ],
-        "weight": 0.4552
+        "weight": 0.3852
       },
       {
         "numbers": [
@@ -3884,7 +3884,7 @@
           14,
           29
         ],
-        "weight": 0.2385
+        "weight": 0.1685
       },
       {
         "numbers": [
@@ -3919,7 +3919,7 @@
           14,
           34
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -3933,7 +3933,7 @@
           14,
           36
         ],
-        "weight": 0.4311
+        "weight": 0.3611
       },
       {
         "numbers": [
@@ -3954,7 +3954,7 @@
           14,
           39
         ],
-        "weight": 0.4552
+        "weight": 0.3852
       },
       {
         "numbers": [
@@ -3968,14 +3968,14 @@
           14,
           41
         ],
-        "weight": 0.2144
+        "weight": 0.3085
       },
       {
         "numbers": [
           14,
           42
         ],
-        "weight": 0.3107
+        "weight": 0.2407
       },
       {
         "numbers": [
@@ -3989,7 +3989,7 @@
           14,
           44
         ],
-        "weight": 0.2648
+        "weight": 0.3589
       },
       {
         "numbers": [
@@ -4003,7 +4003,7 @@
           15,
           16
         ],
-        "weight": 0.3567
+        "weight": 0.2867
       },
       {
         "numbers": [
@@ -4024,21 +4024,21 @@
           15,
           19
         ],
-        "weight": 0.4311
+        "weight": 0.6193
       },
       {
         "numbers": [
           15,
           20
         ],
-        "weight": 0.2648
+        "weight": 0.3589
       },
       {
         "numbers": [
           15,
           21
         ],
-        "weight": 0.3852
+        "weight": 0.4793
       },
       {
         "numbers": [
@@ -4052,14 +4052,14 @@
           15,
           23
         ],
-        "weight": 0.4311
+        "weight": 0.5252
       },
       {
         "numbers": [
           15,
           24
         ],
-        "weight": 0.407
+        "weight": 0.5011
       },
       {
         "numbers": [
@@ -4080,35 +4080,35 @@
           15,
           27
         ],
-        "weight": 0.3807
+        "weight": 0.4748
       },
       {
         "numbers": [
           15,
           28
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
           15,
           29
         ],
-        "weight": 0.2385
+        "weight": 0.3326
       },
       {
         "numbers": [
           15,
           30
         ],
-        "weight": 0.1926
+        "weight": 0.2867
       },
       {
         "numbers": [
           15,
           31
         ],
-        "weight": 0.1204
+        "weight": 0.2144
       },
       {
         "numbers": [
@@ -4122,7 +4122,7 @@
           15,
           33
         ],
-        "weight": 0.4267
+        "weight": 0.4507
       },
       {
         "numbers": [
@@ -4164,7 +4164,7 @@
           15,
           39
         ],
-        "weight": 0.1926
+        "weight": 0.2867
       },
       {
         "numbers": [
@@ -4192,21 +4192,21 @@
           15,
           43
         ],
-        "weight": 0.5011
+        "weight": 0.4311
       },
       {
         "numbers": [
           15,
           44
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
           15,
           45
         ],
-        "weight": 0.3348
+        "weight": 0.523
       },
       {
         "numbers": [
@@ -4220,7 +4220,7 @@
           16,
           18
         ],
-        "weight": 0.2867
+        "weight": 0.3807
       },
       {
         "numbers": [
@@ -4234,7 +4234,7 @@
           16,
           20
         ],
-        "weight": 0.3589
+        "weight": 0.453
       },
       {
         "numbers": [
@@ -4318,21 +4318,21 @@
           16,
           32
         ],
-        "weight": 0.2604
+        "weight": 0.3544
       },
       {
         "numbers": [
           16,
           33
         ],
-        "weight": 0.3348
+        "weight": 0.3589
       },
       {
         "numbers": [
           16,
           34
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -4367,7 +4367,7 @@
           16,
           39
         ],
-        "weight": 0.3107
+        "weight": 0.4048
       },
       {
         "numbers": [
@@ -4381,7 +4381,7 @@
           16,
           41
         ],
-        "weight": 0.4552
+        "weight": 0.5493
       },
       {
         "numbers": [
@@ -4395,14 +4395,14 @@
           16,
           43
         ],
-        "weight": 0.477
+        "weight": 0.407
       },
       {
         "numbers": [
           16,
           44
         ],
-        "weight": 0.453
+        "weight": 0.547
       },
       {
         "numbers": [
@@ -4416,7 +4416,7 @@
           17,
           18
         ],
-        "weight": 0.4793
+        "weight": 0.4093
       },
       {
         "numbers": [
@@ -4444,14 +4444,14 @@
           17,
           22
         ],
-        "weight": 0.2385
+        "weight": 0.3326
       },
       {
         "numbers": [
           17,
           23
         ],
-        "weight": 0.3807
+        "weight": 0.3107
       },
       {
         "numbers": [
@@ -4465,28 +4465,28 @@
           17,
           25
         ],
-        "weight": 0.2867
+        "weight": 0.2167
       },
       {
         "numbers": [
           17,
           26
         ],
-        "weight": 0.3348
+        "weight": 0.4289
       },
       {
         "numbers": [
           17,
           27
         ],
-        "weight": 0.5252
+        "weight": 0.6193
       },
       {
         "numbers": [
           17,
           28
         ],
-        "weight": 0.3589
+        "weight": 0.453
       },
       {
         "numbers": [
@@ -4514,7 +4514,7 @@
           17,
           32
         ],
-        "weight": 0.2867
+        "weight": 0.3807
       },
       {
         "numbers": [
@@ -4542,7 +4542,7 @@
           17,
           36
         ],
-        "weight": 0.5493
+        "weight": 0.4793
       },
       {
         "numbers": [
@@ -4556,14 +4556,14 @@
           17,
           38
         ],
-        "weight": 0.2626
+        "weight": 0.2867
       },
       {
         "numbers": [
           17,
           39
         ],
-        "weight": 0.5952
+        "weight": 0.4552
       },
       {
         "numbers": [
@@ -4577,7 +4577,7 @@
           17,
           41
         ],
-        "weight": 0.1204
+        "weight": 0.2144
       },
       {
         "numbers": [
@@ -4619,14 +4619,14 @@
           18,
           20
         ],
-        "weight": 0.383
+        "weight": 0.407
       },
       {
         "numbers": [
           18,
           21
         ],
-        "weight": 0.3852
+        "weight": 0.4793
       },
       {
         "numbers": [
@@ -4640,7 +4640,7 @@
           18,
           23
         ],
-        "weight": 0.4793
+        "weight": 0.4093
       },
       {
         "numbers": [
@@ -4654,7 +4654,7 @@
           18,
           25
         ],
-        "weight": 0.2144
+        "weight": 0.1444
       },
       {
         "numbers": [
@@ -4668,14 +4668,14 @@
           18,
           27
         ],
-        "weight": 0.2648
+        "weight": 0.3589
       },
       {
         "numbers": [
           18,
           28
         ],
-        "weight": 0.1926
+        "weight": 0.2867
       },
       {
         "numbers": [
@@ -4689,7 +4689,7 @@
           18,
           30
         ],
-        "weight": 0.4311
+        "weight": 0.4552
       },
       {
         "numbers": [
@@ -4703,14 +4703,14 @@
           18,
           32
         ],
-        "weight": 0.3852
+        "weight": 0.4793
       },
       {
         "numbers": [
           18,
           33
         ],
-        "weight": 0.1685
+        "weight": 0.2626
       },
       {
         "numbers": [
@@ -4724,14 +4724,14 @@
           18,
           35
         ],
-        "weight": 0.4048
+        "weight": 0.3348
       },
       {
         "numbers": [
           18,
           36
         ],
-        "weight": 0.2144
+        "weight": 0.2385
       },
       {
         "numbers": [
@@ -4745,14 +4745,14 @@
           18,
           38
         ],
-        "weight": 0.4311
+        "weight": 0.3611
       },
       {
         "numbers": [
           18,
           39
         ],
-        "weight": 0.5952
+        "weight": 0.5493
       },
       {
         "numbers": [
@@ -4787,14 +4787,14 @@
           18,
           44
         ],
-        "weight": 0.3348
+        "weight": 0.4289
       },
       {
         "numbers": [
           18,
           45
         ],
-        "weight": 0.5274
+        "weight": 0.5515
       },
       {
         "numbers": [
@@ -4808,7 +4808,7 @@
           19,
           21
         ],
-        "weight": 0.5056
+        "weight": 0.5996
       },
       {
         "numbers": [
@@ -4836,7 +4836,7 @@
           19,
           25
         ],
-        "weight": 0.3611
+        "weight": 0.4552
       },
       {
         "numbers": [
@@ -4850,7 +4850,7 @@
           19,
           27
         ],
-        "weight": 0.3589
+        "weight": 0.453
       },
       {
         "numbers": [
@@ -4871,7 +4871,7 @@
           19,
           30
         ],
-        "weight": 0.1926
+        "weight": 0.2867
       },
       {
         "numbers": [
@@ -4892,7 +4892,7 @@
           19,
           33
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
@@ -4948,14 +4948,14 @@
           19,
           41
         ],
-        "weight": 0.2889
+        "weight": 0.383
       },
       {
         "numbers": [
           19,
           42
         ],
-        "weight": 0.3611
+        "weight": 0.4552
       },
       {
         "numbers": [
@@ -4969,28 +4969,28 @@
           19,
           44
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
           19,
           45
         ],
-        "weight": 0.5274
+        "weight": 0.6215
       },
       {
         "numbers": [
           20,
           21
         ],
-        "weight": 0.2385
+        "weight": 0.1685
       },
       {
         "numbers": [
           20,
           22
         ],
-        "weight": 0.2385
+        "weight": 0.1685
       },
       {
         "numbers": [
@@ -5004,14 +5004,14 @@
           20,
           24
         ],
-        "weight": 0.4311
+        "weight": 0.3611
       },
       {
         "numbers": [
           20,
           25
         ],
-        "weight": 0.3107
+        "weight": 0.2407
       },
       {
         "numbers": [
@@ -5032,56 +5032,56 @@
           20,
           28
         ],
-        "weight": 0.3348
+        "weight": 0.2648
       },
       {
         "numbers": [
           20,
           29
         ],
-        "weight": 0.2385
+        "weight": 0.2626
       },
       {
         "numbers": [
           20,
           30
         ],
-        "weight": 0.3589
+        "weight": 0.2889
       },
       {
         "numbers": [
           20,
           31
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
           20,
           32
         ],
-        "weight": 0.2867
+        "weight": 0.3807
       },
       {
         "numbers": [
           20,
           33
         ],
-        "weight": 0.5033
+        "weight": 0.5974
       },
       {
         "numbers": [
           20,
           34
         ],
-        "weight": 0.3107
+        "weight": 0.2407
       },
       {
         "numbers": [
           20,
           35
         ],
-        "weight": 0.5974
+        "weight": 0.5274
       },
       {
         "numbers": [
@@ -5109,7 +5109,7 @@
           20,
           39
         ],
-        "weight": 0.2626
+        "weight": 0.3567
       },
       {
         "numbers": [
@@ -5130,7 +5130,7 @@
           20,
           42
         ],
-        "weight": 0.3107
+        "weight": 0.2407
       },
       {
         "numbers": [
@@ -5158,7 +5158,7 @@
           21,
           22
         ],
-        "weight": 0.3107
+        "weight": 0.2407
       },
       {
         "numbers": [
@@ -5172,14 +5172,14 @@
           21,
           24
         ],
-        "weight": 0.2385
+        "weight": 0.1685
       },
       {
         "numbers": [
           21,
           25
         ],
-        "weight": 0.5952
+        "weight": 0.4552
       },
       {
         "numbers": [
@@ -5193,28 +5193,28 @@
           21,
           27
         ],
-        "weight": 0.407
+        "weight": 0.4311
       },
       {
         "numbers": [
           21,
           28
         ],
-        "weight": 0.2363
+        "weight": 0.1663
       },
       {
         "numbers": [
           21,
           29
         ],
-        "weight": 0.2867
+        "weight": 0.2167
       },
       {
         "numbers": [
           21,
           30
         ],
-        "weight": 0.453
+        "weight": 0.383
       },
       {
         "numbers": [
@@ -5228,14 +5228,14 @@
           21,
           32
         ],
-        "weight": 0.383
+        "weight": 0.313
       },
       {
         "numbers": [
           21,
           33
         ],
-        "weight": 0.4289
+        "weight": 0.3589
       },
       {
         "numbers": [
@@ -5263,14 +5263,14 @@
           21,
           37
         ],
-        "weight": 0.547
+        "weight": 0.407
       },
       {
         "numbers": [
           21,
           38
         ],
-        "weight": 0.2867
+        "weight": 0.2167
       },
       {
         "numbers": [
@@ -5312,14 +5312,14 @@
           21,
           44
         ],
-        "weight": 0.337
+        "weight": 0.5252
       },
       {
         "numbers": [
           21,
           45
         ],
-        "weight": 0.2407
+        "weight": 0.4289
       },
       {
         "numbers": [
@@ -5340,7 +5340,7 @@
           22,
           25
         ],
-        "weight": 0.2867
+        "weight": 0.3107
       },
       {
         "numbers": [
@@ -5361,14 +5361,14 @@
           22,
           28
         ],
-        "weight": 0.3807
+        "weight": 0.4048
       },
       {
         "numbers": [
           22,
           29
         ],
-        "weight": 0.2604
+        "weight": 0.1904
       },
       {
         "numbers": [
@@ -5389,7 +5389,7 @@
           22,
           32
         ],
-        "weight": 0.2626
+        "weight": 0.3567
       },
       {
         "numbers": [
@@ -5403,7 +5403,7 @@
           22,
           34
         ],
-        "weight": 0.337
+        "weight": 0.4311
       },
       {
         "numbers": [
@@ -5452,7 +5452,7 @@
           22,
           41
         ],
-        "weight": 0.0963
+        "weight": 0.1904
       },
       {
         "numbers": [
@@ -5466,7 +5466,7 @@
           22,
           43
         ],
-        "weight": 0.1204
+        "weight": 0.2144
       },
       {
         "numbers": [
@@ -5487,28 +5487,28 @@
           23,
           24
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
           23,
           25
         ],
-        "weight": 0.4748
+        "weight": 0.3348
       },
       {
         "numbers": [
           23,
           26
         ],
-        "weight": 0.2385
+        "weight": 0.3326
       },
       {
         "numbers": [
           23,
           27
         ],
-        "weight": 0.3326
+        "weight": 0.3567
       },
       {
         "numbers": [
@@ -5522,7 +5522,7 @@
           23,
           29
         ],
-        "weight": 0.3348
+        "weight": 0.2648
       },
       {
         "numbers": [
@@ -5536,7 +5536,7 @@
           23,
           31
         ],
-        "weight": 0.4267
+        "weight": 0.3567
       },
       {
         "numbers": [
@@ -5564,7 +5564,7 @@
           23,
           35
         ],
-        "weight": 0.383
+        "weight": 0.407
       },
       {
         "numbers": [
@@ -5585,21 +5585,21 @@
           23,
           38
         ],
-        "weight": 0.3107
+        "weight": 0.3348
       },
       {
         "numbers": [
           23,
           39
         ],
-        "weight": 0.4748
+        "weight": 0.3348
       },
       {
         "numbers": [
           23,
           40
         ],
-        "weight": 0.3807
+        "weight": 0.4048
       },
       {
         "numbers": [
@@ -5613,7 +5613,7 @@
           23,
           42
         ],
-        "weight": 0.3107
+        "weight": 0.2407
       },
       {
         "numbers": [
@@ -5648,7 +5648,7 @@
           24,
           26
         ],
-        "weight": 0.2144
+        "weight": 0.1444
       },
       {
         "numbers": [
@@ -5676,7 +5676,7 @@
           24,
           30
         ],
-        "weight": 0.477
+        "weight": 0.407
       },
       {
         "numbers": [
@@ -5697,14 +5697,14 @@
           24,
           33
         ],
-        "weight": 0.477
+        "weight": 0.407
       },
       {
         "numbers": [
           24,
           34
         ],
-        "weight": 0.3589
+        "weight": 0.2889
       },
       {
         "numbers": [
@@ -5725,7 +5725,7 @@
           24,
           37
         ],
-        "weight": 0.4289
+        "weight": 0.3589
       },
       {
         "numbers": [
@@ -5739,14 +5739,14 @@
           24,
           39
         ],
-        "weight": 0.3348
+        "weight": 0.2648
       },
       {
         "numbers": [
           24,
           40
         ],
-        "weight": 0.477
+        "weight": 0.407
       },
       {
         "numbers": [
@@ -5760,7 +5760,7 @@
           24,
           42
         ],
-        "weight": 0.4748
+        "weight": 0.2648
       },
       {
         "numbers": [
@@ -5774,7 +5774,7 @@
           24,
           44
         ],
-        "weight": 0.5493
+        "weight": 0.4793
       },
       {
         "numbers": [
@@ -5795,21 +5795,21 @@
           25,
           27
         ],
-        "weight": 0.3807
+        "weight": 0.3348
       },
       {
         "numbers": [
           25,
           28
         ],
-        "weight": 0.3807
+        "weight": 0.4048
       },
       {
         "numbers": [
           25,
           29
         ],
-        "weight": 0.477
+        "weight": 0.337
       },
       {
         "numbers": [
@@ -5823,14 +5823,14 @@
           25,
           31
         ],
-        "weight": 0.4507
+        "weight": 0.5448
       },
       {
         "numbers": [
           25,
           32
         ],
-        "weight": 0.3085
+        "weight": 0.2385
       },
       {
         "numbers": [
@@ -5844,7 +5844,7 @@
           25,
           34
         ],
-        "weight": 0.2648
+        "weight": 0.3589
       },
       {
         "numbers": [
@@ -5858,28 +5858,28 @@
           25,
           36
         ],
-        "weight": 0.4574
+        "weight": 0.5515
       },
       {
         "numbers": [
           25,
           37
         ],
-        "weight": 0.477
+        "weight": 0.407
       },
       {
         "numbers": [
           25,
           38
         ],
-        "weight": 0.3807
+        "weight": 0.3348
       },
       {
         "numbers": [
           25,
           39
         ],
-        "weight": 0.2626
+        "weight": 0.1926
       },
       {
         "numbers": [
@@ -5893,28 +5893,28 @@
           25,
           41
         ],
-        "weight": 0.0722
+        "weight": 0.2604
       },
       {
         "numbers": [
           25,
           42
         ],
-        "weight": 0.1663
+        "weight": 0.1904
       },
       {
         "numbers": [
           25,
           43
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
           25,
           44
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
@@ -5928,14 +5928,14 @@
           26,
           27
         ],
-        "weight": 0.5033
+        "weight": 0.5974
       },
       {
         "numbers": [
           26,
           28
         ],
-        "weight": 0.3348
+        "weight": 0.4289
       },
       {
         "numbers": [
@@ -5984,7 +5984,7 @@
           26,
           35
         ],
-        "weight": 0.2889
+        "weight": 0.383
       },
       {
         "numbers": [
@@ -6005,21 +6005,21 @@
           26,
           38
         ],
-        "weight": 0.3589
+        "weight": 0.453
       },
       {
         "numbers": [
           26,
           39
         ],
-        "weight": 0.3567
+        "weight": 0.2867
       },
       {
         "numbers": [
           26,
           40
         ],
-        "weight": 0.407
+        "weight": 0.5011
       },
       {
         "numbers": [
@@ -6033,7 +6033,7 @@
           26,
           42
         ],
-        "weight": 0.453
+        "weight": 0.383
       },
       {
         "numbers": [
@@ -6061,21 +6061,21 @@
           27,
           28
         ],
-        "weight": 0.3589
+        "weight": 0.2889
       },
       {
         "numbers": [
           27,
           29
         ],
-        "weight": 0.5252
+        "weight": 0.3852
       },
       {
         "numbers": [
           27,
           30
         ],
-        "weight": 0.3107
+        "weight": 0.4048
       },
       {
         "numbers": [
@@ -6089,14 +6089,14 @@
           27,
           32
         ],
-        "weight": 0.2144
+        "weight": 0.1444
       },
       {
         "numbers": [
           27,
           33
         ],
-        "weight": 0.2867
+        "weight": 0.3807
       },
       {
         "numbers": [
@@ -6110,42 +6110,42 @@
           27,
           35
         ],
-        "weight": 0.5274
+        "weight": 0.6215
       },
       {
         "numbers": [
           27,
           36
         ],
-        "weight": 0.6652
+        "weight": 0.7593
       },
       {
         "numbers": [
           27,
           37
         ],
-        "weight": 0.4552
+        "weight": 0.3852
       },
       {
         "numbers": [
           27,
           38
         ],
-        "weight": 0.7352
+        "weight": 0.8074
       },
       {
         "numbers": [
           27,
           39
         ],
-        "weight": 0.383
+        "weight": 0.313
       },
       {
         "numbers": [
           27,
           40
         ],
-        "weight": 0.4333
+        "weight": 0.5274
       },
       {
         "numbers": [
@@ -6159,7 +6159,7 @@
           27,
           42
         ],
-        "weight": 0.547
+        "weight": 0.477
       },
       {
         "numbers": [
@@ -6173,42 +6173,42 @@
           27,
           44
         ],
-        "weight": 0.3348
+        "weight": 0.4289
       },
       {
         "numbers": [
           27,
           45
         ],
-        "weight": 0.5493
+        "weight": 0.5733
       },
       {
         "numbers": [
           28,
           29
         ],
-        "weight": 0.2844
+        "weight": 0.2144
       },
       {
         "numbers": [
           28,
           30
         ],
-        "weight": 0.4311
+        "weight": 0.5252
       },
       {
         "numbers": [
           28,
           31
         ],
-        "weight": 0.2363
+        "weight": 0.3304
       },
       {
         "numbers": [
           28,
           32
         ],
-        "weight": 0.1663
+        "weight": 0.2604
       },
       {
         "numbers": [
@@ -6222,7 +6222,7 @@
           28,
           34
         ],
-        "weight": 0.4311
+        "weight": 0.4552
       },
       {
         "numbers": [
@@ -6236,7 +6236,7 @@
           28,
           36
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -6250,14 +6250,14 @@
           28,
           38
         ],
-        "weight": 0.3807
+        "weight": 0.2407
       },
       {
         "numbers": [
           28,
           39
         ],
-        "weight": 0.2867
+        "weight": 0.3107
       },
       {
         "numbers": [
@@ -6278,14 +6278,14 @@
           28,
           42
         ],
-        "weight": 0.383
+        "weight": 0.407
       },
       {
         "numbers": [
           28,
           43
         ],
-        "weight": 0.383
+        "weight": 0.477
       },
       {
         "numbers": [
@@ -6299,7 +6299,7 @@
           28,
           45
         ],
-        "weight": 0.2407
+        "weight": 0.4289
       },
       {
         "numbers": [
@@ -6313,7 +6313,7 @@
           29,
           31
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -6362,7 +6362,7 @@
           29,
           38
         ],
-        "weight": 0.5011
+        "weight": 0.4311
       },
       {
         "numbers": [
@@ -6390,7 +6390,7 @@
           29,
           42
         ],
-        "weight": 0.2867
+        "weight": 0.2167
       },
       {
         "numbers": [
@@ -6411,7 +6411,7 @@
           29,
           45
         ],
-        "weight": 0.4048
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -6432,7 +6432,7 @@
           30,
           33
         ],
-        "weight": 0.5252
+        "weight": 0.5493
       },
       {
         "numbers": [
@@ -6446,21 +6446,21 @@
           30,
           35
         ],
-        "weight": 0.477
+        "weight": 0.407
       },
       {
         "numbers": [
           30,
           36
         ],
-        "weight": 0.2626
+        "weight": 0.3567
       },
       {
         "numbers": [
           30,
           37
         ],
-        "weight": 0.383
+        "weight": 0.313
       },
       {
         "numbers": [
@@ -6523,7 +6523,7 @@
           31,
           32
         ],
-        "weight": 0.4552
+        "weight": 0.5493
       },
       {
         "numbers": [
@@ -6544,7 +6544,7 @@
           31,
           35
         ],
-        "weight": 0.2626
+        "weight": 0.1926
       },
       {
         "numbers": [
@@ -6572,28 +6572,28 @@
           31,
           39
         ],
-        "weight": 0.2626
+        "weight": 0.1926
       },
       {
         "numbers": [
           31,
           40
         ],
-        "weight": 0.5033
+        "weight": 0.4333
       },
       {
         "numbers": [
           31,
           41
         ],
-        "weight": 0.2867
+        "weight": 0.3807
       },
       {
         "numbers": [
           31,
           42
         ],
-        "weight": 0.1444
+        "weight": 0.2385
       },
       {
         "numbers": [
@@ -6607,21 +6607,21 @@
           31,
           44
         ],
-        "weight": 0.4552
+        "weight": 0.5493
       },
       {
         "numbers": [
           31,
           45
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
           32,
           33
         ],
-        "weight": 0.337
+        "weight": 0.4311
       },
       {
         "numbers": [
@@ -6649,21 +6649,21 @@
           32,
           37
         ],
-        "weight": 0.2867
+        "weight": 0.2167
       },
       {
         "numbers": [
           32,
           38
         ],
-        "weight": 0.2385
+        "weight": 0.1685
       },
       {
         "numbers": [
           32,
           39
         ],
-        "weight": 0.1444
+        "weight": 0.2385
       },
       {
         "numbers": [
@@ -6677,14 +6677,14 @@
           32,
           41
         ],
-        "weight": 0.1444
+        "weight": 0.2385
       },
       {
         "numbers": [
           32,
           42
         ],
-        "weight": 0.3107
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -6705,7 +6705,7 @@
           32,
           45
         ],
-        "weight": 0.313
+        "weight": 0.407
       },
       {
         "numbers": [
@@ -6733,7 +6733,7 @@
           33,
           37
         ],
-        "weight": 0.6193
+        "weight": 0.5493
       },
       {
         "numbers": [
@@ -6747,7 +6747,7 @@
           33,
           39
         ],
-        "weight": 0.2626
+        "weight": 0.3567
       },
       {
         "numbers": [
@@ -6775,7 +6775,7 @@
           33,
           43
         ],
-        "weight": 0.2385
+        "weight": 0.1685
       },
       {
         "numbers": [
@@ -6817,7 +6817,7 @@
           34,
           38
         ],
-        "weight": 0.3348
+        "weight": 0.2648
       },
       {
         "numbers": [
@@ -6838,28 +6838,28 @@
           34,
           41
         ],
-        "weight": 0.313
+        "weight": 0.407
       },
       {
         "numbers": [
           34,
           42
         ],
-        "weight": 0.6696
+        "weight": 0.5296
       },
       {
         "numbers": [
           34,
           43
         ],
-        "weight": 0.2648
+        "weight": 0.3589
       },
       {
         "numbers": [
           34,
           44
         ],
-        "weight": 0.4574
+        "weight": 0.5515
       },
       {
         "numbers": [
@@ -6887,21 +6887,21 @@
           35,
           38
         ],
-        "weight": 0.3107
+        "weight": 0.4048
       },
       {
         "numbers": [
           35,
           39
         ],
-        "weight": 0.523
+        "weight": 0.453
       },
       {
         "numbers": [
           35,
           40
         ],
-        "weight": 0.4311
+        "weight": 0.4552
       },
       {
         "numbers": [
@@ -6950,14 +6950,14 @@
           36,
           38
         ],
-        "weight": 0.2867
+        "weight": 0.3807
       },
       {
         "numbers": [
           36,
           39
         ],
-        "weight": 0.6433
+        "weight": 0.5033
       },
       {
         "numbers": [
@@ -6999,14 +6999,14 @@
           36,
           45
         ],
-        "weight": 0.407
+        "weight": 0.337
       },
       {
         "numbers": [
           37,
           38
         ],
-        "weight": 0.5493
+        "weight": 0.4793
       },
       {
         "numbers": [
@@ -7062,14 +7062,14 @@
           38,
           39
         ],
-        "weight": 0.547
+        "weight": 0.407
       },
       {
         "numbers": [
           38,
           40
         ],
-        "weight": 0.3611
+        "weight": 0.4552
       },
       {
         "numbers": [
@@ -7083,7 +7083,7 @@
           38,
           42
         ],
-        "weight": 0.3326
+        "weight": 0.2626
       },
       {
         "numbers": [
@@ -7104,14 +7104,14 @@
           38,
           45
         ],
-        "weight": 0.5252
+        "weight": 0.4552
       },
       {
         "numbers": [
           39,
           40
         ],
-        "weight": 0.3567
+        "weight": 0.2867
       },
       {
         "numbers": [
@@ -7125,7 +7125,7 @@
           39,
           42
         ],
-        "weight": 0.1904
+        "weight": 0.1204
       },
       {
         "numbers": [
@@ -7146,7 +7146,7 @@
           39,
           45
         ],
-        "weight": 0.4311
+        "weight": 0.4552
       },
       {
         "numbers": [
@@ -7160,7 +7160,7 @@
           40,
           42
         ],
-        "weight": 0.2626
+        "weight": 0.1926
       },
       {
         "numbers": [
@@ -7174,7 +7174,7 @@
           40,
           44
         ],
-        "weight": 0.4289
+        "weight": 0.3589
       },
       {
         "numbers": [
@@ -7188,7 +7188,7 @@
           41,
           42
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
@@ -7202,7 +7202,7 @@
           41,
           44
         ],
-        "weight": 0.2648
+        "weight": 0.453
       },
       {
         "numbers": [
@@ -7223,14 +7223,14 @@
           42,
           44
         ],
-        "weight": 0.2626
+        "weight": 0.1926
       },
       {
         "numbers": [
           42,
           45
         ],
-        "weight": 0.3852
+        "weight": 0.4793
       },
       {
         "numbers": [
@@ -7251,82 +7251,82 @@
           44,
           45
         ],
-        "weight": 0.1204
+        "weight": 0.3085
       }
     ],
     "backtest": {
       "rounds": 60,
-      "avg_best_matches": 1.567,
-      "three_plus_rate": 0.1,
+      "avg_best_matches": 1.583,
+      "three_plus_rate": 0.133,
       "four_plus_rate": 0.0,
       "best_match": 3
     },
     "frequency_stats": [
       {
         "number": 34,
+        "count": 183,
+        "appearance_rate": 0.1491
+      },
+      {
+        "number": 27,
         "count": 181,
-        "appearance_rate": 0.1497
+        "appearance_rate": 0.1475
       },
       {
         "number": 12,
         "count": 177,
-        "appearance_rate": 0.1464
-      },
-      {
-        "number": 27,
-        "count": 176,
-        "appearance_rate": 0.1456
+        "appearance_rate": 0.1443
       },
       {
         "number": 13,
-        "count": 174,
-        "appearance_rate": 0.1439
+        "count": 177,
+        "appearance_rate": 0.1443
       },
       {
         "number": 18,
-        "count": 172,
-        "appearance_rate": 0.1423
+        "count": 175,
+        "appearance_rate": 0.1426
+      },
+      {
+        "number": 45,
+        "count": 175,
+        "appearance_rate": 0.1426
       },
       {
         "number": 33,
+        "count": 174,
+        "appearance_rate": 0.1418
+      },
+      {
+        "number": 40,
         "count": 172,
-        "appearance_rate": 0.1423
+        "appearance_rate": 0.1402
+      },
+      {
+        "number": 3,
+        "count": 171,
+        "appearance_rate": 0.1394
+      },
+      {
+        "number": 14,
+        "count": 171,
+        "appearance_rate": 0.1394
+      },
+      {
+        "number": 17,
+        "count": 171,
+        "appearance_rate": 0.1394
       },
       {
         "number": 37,
         "count": 171,
-        "appearance_rate": 0.1414
-      },
-      {
-        "number": 40,
-        "count": 171,
-        "appearance_rate": 0.1414
-      },
-      {
-        "number": 45,
-        "count": 171,
-        "appearance_rate": 0.1414
-      },
-      {
-        "number": 3,
-        "count": 169,
-        "appearance_rate": 0.1398
-      },
-      {
-        "number": 14,
-        "count": 169,
-        "appearance_rate": 0.1398
-      },
-      {
-        "number": 17,
-        "count": 168,
-        "appearance_rate": 0.139
+        "appearance_rate": 0.1394
       }
     ],
     "frequency_coverage": {
       "from_round": 1,
-      "to_round": 1209,
-      "draws": 1209
+      "to_round": 1227,
+      "draws": 1227
     }
   },
   "tickets": [
@@ -7334,61 +7334,61 @@
       "ticket_no": 1,
       "numbers": [
         1,
-        12,
-        16,
-        19,
+        15,
         27,
-        40
+        28,
+        38,
+        44
       ],
-      "score": 0.6841
+      "score": 0.6417
     },
     {
       "ticket_no": 2,
       "numbers": [
         3,
-        16,
-        20,
-        21,
         27,
-        37
+        28,
+        34,
+        40,
+        45
       ],
-      "score": 0.6714
+      "score": 0.6398
     },
     {
       "ticket_no": 3,
       "numbers": [
-        6,
+        1,
+        12,
         16,
+        18,
         27,
-        28,
-        30,
-        39
+        40
       ],
-      "score": 0.6591
+      "score": 0.6249
     },
     {
       "ticket_no": 4,
       "numbers": [
-        11,
-        16,
-        24,
+        10,
+        19,
         27,
-        36,
-        38
+        31,
+        38,
+        45
       ],
-      "score": 0.6535
+      "score": 0.6235
     },
     {
       "ticket_no": 5,
       "numbers": [
-        7,
-        18,
-        27,
-        33,
-        37,
-        40
+        1,
+        13,
+        16,
+        17,
+        28,
+        45
       ],
-      "score": 0.6493
+      "score": 0.6189
     }
   ],
   "winner_highlights": [
@@ -7844,6 +7844,240 @@
     }
   ],
   "all_draws": [
+    {
+      "round_no": 1227,
+      "draw_date": "2026-06-06",
+      "numbers": [
+        1,
+        14,
+        16,
+        34,
+        41,
+        44
+      ],
+      "bonus": 13
+    },
+    {
+      "round_no": 1226,
+      "draw_date": "2026-05-30",
+      "numbers": [
+        4,
+        6,
+        13,
+        17,
+        26,
+        28
+      ],
+      "bonus": 41
+    },
+    {
+      "round_no": 1225,
+      "draw_date": "2026-05-23",
+      "numbers": [
+        8,
+        9,
+        19,
+        25,
+        41,
+        42
+      ],
+      "bonus": 33
+    },
+    {
+      "round_no": 1224,
+      "draw_date": "2026-05-16",
+      "numbers": [
+        9,
+        18,
+        21,
+        27,
+        44,
+        45
+      ],
+      "bonus": 28
+    },
+    {
+      "round_no": 1223,
+      "draw_date": "2026-05-09",
+      "numbers": [
+        16,
+        18,
+        20,
+        32,
+        33,
+        39
+      ],
+      "bonus": 26
+    },
+    {
+      "round_no": 1222,
+      "draw_date": "2026-05-02",
+      "numbers": [
+        4,
+        11,
+        17,
+        22,
+        32,
+        41
+      ],
+      "bonus": 34
+    },
+    {
+      "round_no": 1221,
+      "draw_date": "2026-04-25",
+      "numbers": [
+        6,
+        13,
+        18,
+        28,
+        30,
+        36
+      ],
+      "bonus": 9
+    },
+    {
+      "round_no": 1220,
+      "draw_date": "2026-04-18",
+      "numbers": [
+        2,
+        22,
+        25,
+        28,
+        34,
+        43
+      ],
+      "bonus": 16
+    },
+    {
+      "round_no": 1219,
+      "draw_date": "2026-04-11",
+      "numbers": [
+        1,
+        2,
+        15,
+        28,
+        39,
+        45
+      ],
+      "bonus": 31
+    },
+    {
+      "round_no": 1218,
+      "draw_date": "2026-04-04",
+      "numbers": [
+        3,
+        28,
+        31,
+        32,
+        42,
+        45
+      ],
+      "bonus": 25
+    },
+    {
+      "round_no": 1217,
+      "draw_date": "2026-03-28",
+      "numbers": [
+        8,
+        10,
+        15,
+        20,
+        29,
+        31
+      ],
+      "bonus": 41
+    },
+    {
+      "round_no": 1216,
+      "draw_date": "2026-03-21",
+      "numbers": [
+        3,
+        10,
+        14,
+        15,
+        23,
+        24
+      ],
+      "bonus": 25
+    },
+    {
+      "round_no": 1215,
+      "draw_date": "2026-03-14",
+      "numbers": [
+        13,
+        15,
+        19,
+        21,
+        44,
+        45
+      ],
+      "bonus": 39
+    },
+    {
+      "round_no": 1214,
+      "draw_date": "2026-03-07",
+      "numbers": [
+        10,
+        15,
+        19,
+        27,
+        30,
+        33
+      ],
+      "bonus": 14
+    },
+    {
+      "round_no": 1213,
+      "draw_date": "2026-02-28",
+      "numbers": [
+        5,
+        11,
+        25,
+        27,
+        36,
+        38
+      ],
+      "bonus": 2
+    },
+    {
+      "round_no": 1212,
+      "draw_date": "2026-02-21",
+      "numbers": [
+        5,
+        8,
+        25,
+        31,
+        41,
+        44
+      ],
+      "bonus": 45
+    },
+    {
+      "round_no": 1211,
+      "draw_date": "2026-02-14",
+      "numbers": [
+        23,
+        26,
+        27,
+        35,
+        38,
+        40
+      ],
+      "bonus": 10
+    },
+    {
+      "round_no": 1210,
+      "draw_date": "2026-02-07",
+      "numbers": [
+        1,
+        7,
+        9,
+        17,
+        27,
+        38
+      ],
+      "bonus": 31
+    },
     {
       "round_no": 1209,
       "draw_date": "2026-01-31",
