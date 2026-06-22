@@ -1,23 +1,23 @@
 {
-  "generated_at_utc": "2026-06-11T10:39:19.190990+00:00",
+  "generated_at_utc": "2026-06-22T11:31:11.212910+00:00",
   "source_csv": "\\\\wsl$\\Ubuntu\\home\\ychaos89\\lottobang\\data\\official_draws.csv",
   "defaults": {
     "sets_count": 5,
-    "seed": 202624,
-    "refresh_cycle": "2026 week 24"
+    "seed": 202626,
+    "refresh_cycle": "2026 week 26"
   },
   "latest_draw": {
-    "round_no": 1227,
-    "draw_date": "2026-06-06",
+    "round_no": 1229,
+    "draw_date": "2026-06-20",
     "numbers": [
-      1,
-      14,
-      16,
+      12,
+      13,
+      29,
       34,
-      41,
-      44
+      37,
+      42
     ],
-    "bonus": 13
+    "bonus": 16
   },
   "strategy": {
     "description": "Frequency, multi-window recent trend, overdue signal, pair synergy, balance, and portfolio diversification heuristic",
@@ -35,233 +35,233 @@
     "top_numbers": [
       {
         "number": 27,
-        "weight": 0.7094
-      },
-      {
-        "number": 15,
-        "weight": 0.6103
+        "weight": 0.724
       },
       {
         "number": 45,
-        "weight": 0.5997
+        "weight": 0.6152
       },
       {
         "number": 28,
-        "weight": 0.5931
-      },
-      {
-        "number": 3,
-        "weight": 0.5765
-      },
-      {
-        "number": 18,
-        "weight": 0.5667
-      },
-      {
-        "number": 31,
-        "weight": 0.547
-      },
-      {
-        "number": 16,
-        "weight": 0.5396
-      },
-      {
-        "number": 12,
-        "weight": 0.5323
-      },
-      {
-        "number": 1,
-        "weight": 0.5279
+        "weight": 0.6077
       },
       {
         "number": 13,
-        "weight": 0.5262
+        "weight": 0.5901
       },
       {
-        "number": 17,
-        "weight": 0.5225
+        "number": 18,
+        "weight": 0.5622
+      },
+      {
+        "number": 34,
+        "weight": 0.561
+      },
+      {
+        "number": 15,
+        "weight": 0.5515
+      },
+      {
+        "number": 38,
+        "weight": 0.5512
+      },
+      {
+        "number": 1,
+        "weight": 0.5386
+      },
+      {
+        "number": 44,
+        "weight": 0.538
+      },
+      {
+        "number": 16,
+        "weight": 0.5375
+      },
+      {
+        "number": 31,
+        "weight": 0.5365
       }
     ],
     "number_weights": [
       {
         "number": 1,
-        "weight": 0.5279
+        "weight": 0.5386
       },
       {
         "number": 2,
-        "weight": 0.3685
+        "weight": 0.3948
       },
       {
         "number": 3,
-        "weight": 0.5765
+        "weight": 0.535
       },
       {
         "number": 4,
-        "weight": 0.4096
+        "weight": 0.4234
       },
       {
         "number": 5,
-        "weight": 0.3443
+        "weight": 0.3639
       },
       {
         "number": 6,
-        "weight": 0.4718
+        "weight": 0.465
       },
       {
         "number": 7,
-        "weight": 0.4316
+        "weight": 0.4487
       },
       {
         "number": 8,
-        "weight": 0.4064
+        "weight": 0.3867
       },
       {
         "number": 9,
-        "weight": 0.239
+        "weight": 0.2456
       },
       {
         "number": 10,
-        "weight": 0.4706
+        "weight": 0.4295
       },
       {
         "number": 11,
-        "weight": 0.3808
+        "weight": 0.3885
       },
       {
         "number": 12,
-        "weight": 0.5323
+        "weight": 0.4321
       },
       {
         "number": 13,
-        "weight": 0.5262
+        "weight": 0.5901
       },
       {
         "number": 14,
-        "weight": 0.4175
+        "weight": 0.3919
       },
       {
         "number": 15,
-        "weight": 0.6103
+        "weight": 0.5515
       },
       {
         "number": 16,
-        "weight": 0.5396
+        "weight": 0.5375
       },
       {
         "number": 17,
-        "weight": 0.5225
+        "weight": 0.5348
       },
       {
         "number": 18,
-        "weight": 0.5667
+        "weight": 0.5622
       },
       {
         "number": 19,
-        "weight": 0.4436
+        "weight": 0.4453
       },
       {
         "number": 20,
-        "weight": 0.4729
+        "weight": 0.4552
       },
       {
         "number": 21,
-        "weight": 0.396
+        "weight": 0.3799
       },
       {
         "number": 22,
-        "weight": 0.2763
+        "weight": 0.3004
       },
       {
         "number": 23,
-        "weight": 0.3445
+        "weight": 0.3433
       },
       {
         "number": 24,
-        "weight": 0.4355
+        "weight": 0.4132
       },
       {
         "number": 25,
-        "weight": 0.37
+        "weight": 0.387
       },
       {
         "number": 26,
-        "weight": 0.4028
+        "weight": 0.416
       },
       {
         "number": 27,
-        "weight": 0.7094
+        "weight": 0.724
       },
       {
         "number": 28,
-        "weight": 0.5931
+        "weight": 0.6077
       },
       {
         "number": 29,
-        "weight": 0.3363
+        "weight": 0.3699
       },
       {
         "number": 30,
-        "weight": 0.3944
+        "weight": 0.4262
       },
       {
         "number": 31,
-        "weight": 0.547
+        "weight": 0.5365
       },
       {
         "number": 32,
-        "weight": 0.3266
+        "weight": 0.3487
       },
       {
         "number": 33,
-        "weight": 0.4864
+        "weight": 0.4839
       },
       {
         "number": 34,
-        "weight": 0.492
+        "weight": 0.561
       },
       {
         "number": 35,
-        "weight": 0.4146
+        "weight": 0.3658
       },
       {
         "number": 36,
-        "weight": 0.4182
+        "weight": 0.4412
       },
       {
         "number": 37,
-        "weight": 0.4925
+        "weight": 0.4353
       },
       {
         "number": 38,
-        "weight": 0.5139
+        "weight": 0.5512
       },
       {
         "number": 39,
-        "weight": 0.4783
+        "weight": 0.4769
       },
       {
         "number": 40,
-        "weight": 0.4878
+        "weight": 0.5084
       },
       {
         "number": 41,
-        "weight": 0.4254
+        "weight": 0.4389
       },
       {
         "number": 42,
-        "weight": 0.3528
+        "weight": 0.414
       },
       {
         "number": 43,
-        "weight": 0.3452
+        "weight": 0.3571
       },
       {
         "number": 44,
-        "weight": 0.4582
+        "weight": 0.538
       },
       {
         "number": 45,
-        "weight": 0.5997
+        "weight": 0.6152
       }
     ],
     "top_pairs": [
@@ -316,10 +316,10 @@
       },
       {
         "numbers": [
-          11,
-          21
+          3,
+          27
         ],
-        "weight": 0.72
+        "weight": 0.7156
       }
     ],
     "pair_weights": [
@@ -958,7 +958,7 @@
           3,
           7
         ],
-        "weight": 0.407
+        "weight": 0.337
       },
       {
         "numbers": [
@@ -1014,14 +1014,14 @@
           3,
           15
         ],
-        "weight": 0.617
+        "weight": 0.547
       },
       {
         "numbers": [
           3,
           16
         ],
-        "weight": 0.4048
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -1042,7 +1042,7 @@
           3,
           19
         ],
-        "weight": 0.3567
+        "weight": 0.2867
       },
       {
         "numbers": [
@@ -1210,7 +1210,7 @@
           3,
           43
         ],
-        "weight": 0.3589
+        "weight": 0.2889
       },
       {
         "numbers": [
@@ -2078,7 +2078,7 @@
           7,
           9
         ],
-        "weight": 0.6411
+        "weight": 0.5711
       },
       {
         "numbers": [
@@ -2092,7 +2092,7 @@
           7,
           11
         ],
-        "weight": 0.3589
+        "weight": 0.2889
       },
       {
         "numbers": [
@@ -2120,14 +2120,14 @@
           7,
           15
         ],
-        "weight": 0.4552
+        "weight": 0.3852
       },
       {
         "numbers": [
           7,
           16
         ],
-        "weight": 0.407
+        "weight": 0.337
       },
       {
         "numbers": [
@@ -2148,7 +2148,7 @@
           7,
           19
         ],
-        "weight": 0.5974
+        "weight": 0.5274
       },
       {
         "numbers": [
@@ -2162,7 +2162,7 @@
           7,
           21
         ],
-        "weight": 0.2144
+        "weight": 0.1444
       },
       {
         "numbers": [
@@ -2225,7 +2225,7 @@
           7,
           30
         ],
-        "weight": 0.2626
+        "weight": 0.1926
       },
       {
         "numbers": [
@@ -2260,7 +2260,7 @@
           7,
           35
         ],
-        "weight": 0.4048
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -2316,7 +2316,7 @@
           7,
           43
         ],
-        "weight": 0.3567
+        "weight": 0.2867
       },
       {
         "numbers": [
@@ -2603,7 +2603,7 @@
           9,
           11
         ],
-        "weight": 0.2626
+        "weight": 0.1926
       },
       {
         "numbers": [
@@ -2673,7 +2673,7 @@
           9,
           21
         ],
-        "weight": 0.3567
+        "weight": 0.2867
       },
       {
         "numbers": [
@@ -2736,7 +2736,7 @@
           9,
           30
         ],
-        "weight": 0.2626
+        "weight": 0.1926
       },
       {
         "numbers": [
@@ -2771,7 +2771,7 @@
           9,
           35
         ],
-        "weight": 0.4748
+        "weight": 0.4048
       },
       {
         "numbers": [
@@ -3156,7 +3156,7 @@
           11,
           21
         ],
-        "weight": 0.72
+        "weight": 0.65
       },
       {
         "numbers": [
@@ -3219,7 +3219,7 @@
           11,
           30
         ],
-        "weight": 0.2626
+        "weight": 0.1926
       },
       {
         "numbers": [
@@ -3254,7 +3254,7 @@
           11,
           35
         ],
-        "weight": 0.3589
+        "weight": 0.2889
       },
       {
         "numbers": [
@@ -3331,7 +3331,7 @@
           12,
           13
         ],
-        "weight": 0.313
+        "weight": 0.407
       },
       {
         "numbers": [
@@ -3443,7 +3443,7 @@
           12,
           29
         ],
-        "weight": 0.4311
+        "weight": 0.5252
       },
       {
         "numbers": [
@@ -3478,7 +3478,7 @@
           12,
           34
         ],
-        "weight": 0.4815
+        "weight": 0.5756
       },
       {
         "numbers": [
@@ -3499,7 +3499,7 @@
           12,
           37
         ],
-        "weight": 0.3326
+        "weight": 0.4267
       },
       {
         "numbers": [
@@ -3534,7 +3534,7 @@
           12,
           42
         ],
-        "weight": 0.4574
+        "weight": 0.5515
       },
       {
         "numbers": [
@@ -3667,7 +3667,7 @@
           13,
           29
         ],
-        "weight": 0.4311
+        "weight": 0.5252
       },
       {
         "numbers": [
@@ -3702,7 +3702,7 @@
           13,
           34
         ],
-        "weight": 0.337
+        "weight": 0.4311
       },
       {
         "numbers": [
@@ -3723,7 +3723,7 @@
           13,
           37
         ],
-        "weight": 0.5493
+        "weight": 0.6433
       },
       {
         "numbers": [
@@ -3758,7 +3758,7 @@
           13,
           42
         ],
-        "weight": 0.2407
+        "weight": 0.3348
       },
       {
         "numbers": [
@@ -4003,7 +4003,7 @@
           15,
           16
         ],
-        "weight": 0.2867
+        "weight": 0.2167
       },
       {
         "numbers": [
@@ -4024,7 +4024,7 @@
           15,
           19
         ],
-        "weight": 0.6193
+        "weight": 0.5493
       },
       {
         "numbers": [
@@ -4192,7 +4192,7 @@
           15,
           43
         ],
-        "weight": 0.4311
+        "weight": 0.3611
       },
       {
         "numbers": [
@@ -4227,7 +4227,7 @@
           16,
           19
         ],
-        "weight": 0.5493
+        "weight": 0.4793
       },
       {
         "numbers": [
@@ -4395,7 +4395,7 @@
           16,
           43
         ],
-        "weight": 0.407
+        "weight": 0.337
       },
       {
         "numbers": [
@@ -4962,7 +4962,7 @@
           19,
           43
         ],
-        "weight": 0.4552
+        "weight": 0.3852
       },
       {
         "numbers": [
@@ -5214,7 +5214,7 @@
           21,
           30
         ],
-        "weight": 0.383
+        "weight": 0.313
       },
       {
         "numbers": [
@@ -5249,7 +5249,7 @@
           21,
           35
         ],
-        "weight": 0.4311
+        "weight": 0.3611
       },
       {
         "numbers": [
@@ -5669,21 +5669,21 @@
           24,
           29
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
           24,
           30
         ],
-        "weight": 0.407
+        "weight": 0.5011
       },
       {
         "numbers": [
           24,
           31
         ],
-        "weight": 0.2385
+        "weight": 0.3326
       },
       {
         "numbers": [
@@ -5711,7 +5711,7 @@
           24,
           35
         ],
-        "weight": 0.383
+        "weight": 0.477
       },
       {
         "numbers": [
@@ -5774,7 +5774,7 @@
           24,
           44
         ],
-        "weight": 0.4793
+        "weight": 0.5733
       },
       {
         "numbers": [
@@ -6306,14 +6306,14 @@
           29,
           30
         ],
-        "weight": 0.0722
+        "weight": 0.1663
       },
       {
         "numbers": [
           29,
           31
         ],
-        "weight": 0.3348
+        "weight": 0.4289
       },
       {
         "numbers": [
@@ -6334,14 +6334,14 @@
           29,
           34
         ],
-        "weight": 0.3611
+        "weight": 0.4552
       },
       {
         "numbers": [
           29,
           35
         ],
-        "weight": 0.3567
+        "weight": 0.4507
       },
       {
         "numbers": [
@@ -6355,7 +6355,7 @@
           29,
           37
         ],
-        "weight": 0.3326
+        "weight": 0.4267
       },
       {
         "numbers": [
@@ -6390,7 +6390,7 @@
           29,
           42
         ],
-        "weight": 0.2167
+        "weight": 0.3107
       },
       {
         "numbers": [
@@ -6404,7 +6404,7 @@
           29,
           44
         ],
-        "weight": 0.3852
+        "weight": 0.4793
       },
       {
         "numbers": [
@@ -6418,7 +6418,7 @@
           30,
           31
         ],
-        "weight": 0.5011
+        "weight": 0.5952
       },
       {
         "numbers": [
@@ -6446,7 +6446,7 @@
           30,
           35
         ],
-        "weight": 0.407
+        "weight": 0.4311
       },
       {
         "numbers": [
@@ -6509,7 +6509,7 @@
           30,
           44
         ],
-        "weight": 0.2867
+        "weight": 0.3807
       },
       {
         "numbers": [
@@ -6544,7 +6544,7 @@
           31,
           35
         ],
-        "weight": 0.1926
+        "weight": 0.2867
       },
       {
         "numbers": [
@@ -6607,7 +6607,7 @@
           31,
           44
         ],
-        "weight": 0.5493
+        "weight": 0.6433
       },
       {
         "numbers": [
@@ -6810,7 +6810,7 @@
           34,
           37
         ],
-        "weight": 0.1685
+        "weight": 0.2626
       },
       {
         "numbers": [
@@ -6845,7 +6845,7 @@
           34,
           42
         ],
-        "weight": 0.5296
+        "weight": 0.6237
       },
       {
         "numbers": [
@@ -6929,7 +6929,7 @@
           35,
           44
         ],
-        "weight": 0.2648
+        "weight": 0.3589
       },
       {
         "numbers": [
@@ -7034,7 +7034,7 @@
           37,
           42
         ],
-        "weight": 0.1685
+        "weight": 0.2626
       },
       {
         "numbers": [
@@ -7256,7 +7256,7 @@
     ],
     "backtest": {
       "rounds": 60,
-      "avg_best_matches": 1.583,
+      "avg_best_matches": 1.567,
       "three_plus_rate": 0.133,
       "four_plus_rate": 0.0,
       "best_match": 3
@@ -7264,131 +7264,131 @@
     "frequency_stats": [
       {
         "number": 34,
-        "count": 183,
-        "appearance_rate": 0.1491
+        "count": 184,
+        "appearance_rate": 0.1497
       },
       {
         "number": 27,
         "count": 181,
-        "appearance_rate": 0.1475
+        "appearance_rate": 0.1473
       },
       {
         "number": 12,
-        "count": 177,
-        "appearance_rate": 0.1443
+        "count": 178,
+        "appearance_rate": 0.1448
       },
       {
         "number": 13,
-        "count": 177,
-        "appearance_rate": 0.1443
+        "count": 178,
+        "appearance_rate": 0.1448
       },
       {
         "number": 18,
         "count": 175,
-        "appearance_rate": 0.1426
+        "appearance_rate": 0.1424
       },
       {
         "number": 45,
         "count": 175,
-        "appearance_rate": 0.1426
+        "appearance_rate": 0.1424
       },
       {
         "number": 33,
         "count": 174,
-        "appearance_rate": 0.1418
+        "appearance_rate": 0.1416
+      },
+      {
+        "number": 37,
+        "count": 172,
+        "appearance_rate": 0.14
       },
       {
         "number": 40,
         "count": 172,
-        "appearance_rate": 0.1402
+        "appearance_rate": 0.14
       },
       {
         "number": 3,
         "count": 171,
-        "appearance_rate": 0.1394
+        "appearance_rate": 0.1391
       },
       {
         "number": 14,
         "count": 171,
-        "appearance_rate": 0.1394
+        "appearance_rate": 0.1391
       },
       {
         "number": 17,
         "count": 171,
-        "appearance_rate": 0.1394
-      },
-      {
-        "number": 37,
-        "count": 171,
-        "appearance_rate": 0.1394
+        "appearance_rate": 0.1391
       }
     ],
     "frequency_coverage": {
       "from_round": 1,
-      "to_round": 1227,
-      "draws": 1227
+      "to_round": 1229,
+      "draws": 1229
     }
   },
   "tickets": [
     {
       "ticket_no": 1,
       "numbers": [
-        1,
-        15,
+        7,
+        8,
+        17,
         27,
-        28,
         38,
-        44
+        45
       ],
-      "score": 0.6417
+      "score": 0.6202
     },
     {
       "ticket_no": 2,
       "numbers": [
-        3,
+        1,
+        15,
+        22,
         27,
         28,
-        34,
-        40,
         45
       ],
-      "score": 0.6398
+      "score": 0.6197
     },
     {
       "ticket_no": 3,
       "numbers": [
-        1,
-        12,
-        16,
+        13,
+        14,
         18,
         27,
-        40
+        36,
+        45
       ],
-      "score": 0.6249
+      "score": 0.6187
     },
     {
       "ticket_no": 4,
       "numbers": [
-        10,
-        19,
+        7,
+        18,
         27,
-        31,
-        38,
-        45
+        39,
+        40,
+        44
       ],
-      "score": 0.6235
+      "score": 0.6162
     },
     {
       "ticket_no": 5,
       "numbers": [
-        1,
-        13,
-        16,
+        2,
         17,
+        27,
         28,
-        45
+        34,
+        39
       ],
-      "score": 0.6189
+      "score": 0.6139
     }
   ],
   "winner_highlights": [
@@ -7844,6 +7844,32 @@
     }
   ],
   "all_draws": [
+    {
+      "round_no": 1229,
+      "draw_date": "2026-06-20",
+      "numbers": [
+        12,
+        13,
+        29,
+        34,
+        37,
+        42
+      ],
+      "bonus": 16
+    },
+    {
+      "round_no": 1228,
+      "draw_date": "2026-06-13",
+      "numbers": [
+        24,
+        29,
+        30,
+        31,
+        35,
+        44
+      ],
+      "bonus": 1
+    },
     {
       "round_no": 1227,
       "draw_date": "2026-06-06",

@@ -6,6 +6,7 @@ import subprocess
 import sys
 import time
 import urllib.parse
+import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -180,7 +181,15 @@ def write_store_archive(draws_by_round: dict[int, dict[str, object]], latest_rou
         json.dump(archive, handle, ensure_ascii=False, indent=2)
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Refresh official lottery data.")
+    parser.add_argument(
+        "--draws-only",
+        action="store_true",
+        help="Refresh only official draw numbers and skip the slower winner-store archive.",
+    )
+    args = parser.parse_args(argv)
+
     episodes = fetch_episode_list()
     latest_round = int(episodes[-1]["ltEpsd"])
     print(f"최신 회차: {latest_round}", flush=True)
@@ -188,6 +197,9 @@ def main() -> int:
     draws_by_round = fetch_all_draws(latest_round)
     write_draws_csv(draws_by_round)
     print(f"당첨번호 저장: {OFFICIAL_DRAWS_CSV}", flush=True)
+
+    if args.draws_only:
+        return 0
 
     write_store_archive(draws_by_round, latest_round)
     print(f"가맹점 저장: {OFFICIAL_STORES_JSON}", flush=True)
