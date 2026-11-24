@@ -363,6 +363,14 @@ button:disabled { opacity: .45; cursor: not-allowed; transform: none; }
 #map { min-height: 720px; border-radius: 28px; overflow: hidden; }
 .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .store-list { max-height: 620px; overflow: auto; display: grid; gap: 12px; }
+.ranking-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 112px), 1fr));
+  gap: 12px;
+  margin: 0 26px 16px;
+}
+.ranking-filters select { width: 100%; min-width: 0; }
+.ranking-status { margin: 0 26px 12px; }
 .store-map {
   min-height: 720px;
   margin: 24px 26px 28px;
@@ -408,6 +416,7 @@ button:disabled { opacity: .45; cursor: not-allowed; transform: none; }
   .signal-bar { grid-row: 2; grid-column: 1 / -1; }
   .signal-row small { max-width: 100%; }
   .store-map { min-height: 0; height: clamp(260px, 58vh, 500px); margin: 16px; }
+  .ranking-filters, .ranking-status { margin-inline: 16px; }
   .toast { left: 12px; right: 12px; bottom: 12px; margin: 0; z-index: 1000; }
   .number-board { grid-template-columns: repeat(5, 1fr); }
   .backtest-summary { grid-template-columns: 1fr 1fr; }

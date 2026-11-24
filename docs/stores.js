@@ -11,6 +11,10 @@ const els = {
   markerDetail: $("#markerDetail"),
   fitMap: $("#fitMap"),
   rankings: $("#storeRankings"),
+  rankingProvince: $("#rankingProvince"),
+  rankingLocality: $("#rankingLocality"),
+  rankingWard: $("#rankingWard"),
+  rankingStatus: $("#rankingStatus"),
   rounds: $("#storeRounds"),
   regions: $("#storeRegions"),
   addresses: $("#storeAddresses"),
@@ -26,6 +30,16 @@ let markerLayer = null;
 let markerBounds = null;
 let latestMarkers = [];
 let archiveRequest;
+let boundaryRequest;
+let countryBounds;
+let storeRequestId = 0;
+let rankingRequestId = 0;
+let storePayload;
+
+function setRankingStatus(message = "") {
+  els.rankingStatus.hidden = !message;
+  els.rankingStatus.textContent = message;
+}
 
 function setStatus(message = "", tone = "info") {
   els.status.hidden = !message;
@@ -51,23 +65,71 @@ function buildQuery() {
 }
 
 async function loadStoreLab(params = buildQuery()) {
+  const requestId = ++storeRequestId;
+  ++rankingRequestId;
   setStatus("가맹점 데이터를 불러오는 중입니다.");
-  const response = lottoBrowser.isPages ? null : await fetch(`api/store-lab?${params}`).catch(() => null);
-  let payload;
-  if (response?.ok) {
-    payload = await response.json();
-  } else {
-    archiveRequest ??= fetch("data/store_archive.json", { cache: "no-cache" }).then((snapshot) => {
-      if (!snapshot.ok) throw new Error("가맹점 데이터를 불러오지 못했습니다.");
-      return snapshot.json();
-    }).catch((error) => {
-      archiveRequest = undefined;
-      throw error;
-    });
-    payload = filterStoreArchive(await archiveRequest, params);
+  try {
+    const payload = await fetchStoreLab(params);
+    if (requestId !== storeRequestId) return;
+    render(payload);
+    setStatus("");
+    loadRankings();
+    const boundary = await loadCountryBoundary();
+    if (requestId === storeRequestId) renderMap(payload.markers || [], boundary);
+  } catch (error) {
+    if (requestId === storeRequestId) setStatus(error.message || String(error), "error");
   }
-  render(payload);
-  setStatus("");
+}
+
+async function fetchStoreLab(params) {
+  const response = lottoBrowser.isPages ? null : await fetch(`api/store-lab?${params}`).catch(() => null);
+  if (response?.ok) return response.json();
+  if (response?.status === 400) {
+    const payload = await response.json();
+    throw new Error(payload.error || "가맹점 검색 조건을 확인하세요.");
+  }
+  archiveRequest ??= fetch("data/store_archive.json", { cache: "no-cache" }).then((snapshot) => {
+    if (!snapshot.ok) throw new Error("가맹점 데이터를 불러오지 못했습니다.");
+    return snapshot.json();
+  }).catch((error) => {
+    archiveRequest = undefined;
+    throw error;
+  });
+  return filterStoreArchive(await archiveRequest, params);
+}
+
+function storeLocation(store) {
+  const [province = "", ...district] = String(store.region || "").trim().split(/\s+/);
+  const address = String(store.address || "").trim().split(/\s+/);
+  if (!district.length && /[시군구]$/.test(address[1] || "")) district.push(...address.slice(1, 3));
+  const [locality = "", subDistrict] = district;
+  if (locality === province) return { province, locality: "", ward: "" };
+  const candidate = subDistrict ?? (address[1] === locality ? address[2] : "");
+  const ward = locality.endsWith("시") && candidate?.endsWith("구") ? candidate : "";
+  return { province, locality, ward };
+}
+
+function storeRegionOptions(archive) {
+  const provinces = new Map();
+  const sorted = (items) => [...items].sort((left, right) => left.localeCompare(right, "ko"));
+  for (const entry of archive) {
+    for (const store of entry.stores) {
+      const { province, locality, ward } = storeLocation(store);
+      if (!province) continue;
+      if (!provinces.has(province)) provinces.set(province, new Map());
+      if (!locality) continue;
+      const localities = provinces.get(province);
+      if (!localities.has(locality)) localities.set(locality, new Set());
+      if (ward) localities.get(locality).add(ward);
+    }
+  }
+  return sorted(provinces.keys()).map((province) => ({
+    province,
+    localities: sorted(provinces.get(province).keys()).map((name) => ({
+      name,
+      wards: sorted(provinces.get(province).get(name)),
+    })),
+  }));
 }
 
 function filterStoreArchive(archive, params) {
@@ -78,6 +140,9 @@ function filterStoreArchive(archive, params) {
   const selectionType = params.get("selection_type") || "all";
   const query = params.get("query") || "";
   const search = query.toLowerCase();
+  const province = params.get("province") || "";
+  const locality = params.get("locality") || "";
+  const ward = params.get("ward") || "";
   if (endRound < startRound) throw new Error("종료 회차는 시작 회차 이상이어야 합니다.");
 
   const rounds = [];
@@ -88,6 +153,12 @@ function filterStoreArchive(archive, params) {
     if (entry.round_no < startRound || entry.round_no > endRound) continue;
     const matches = entry.stores.filter((store) => {
       if (selectionType !== "all" && store.selection_type !== selectionType) return false;
+      if (province || locality || ward) {
+        const location = storeLocation(store);
+        if (province && location.province !== province) return false;
+        if (locality && location.locality !== locality) return false;
+        if (ward && location.ward !== ward) return false;
+      }
       return [store.name, store.region, store.address, store.selection_type].join(" ").toLowerCase().includes(search);
     });
     if (!matches.length) continue;
@@ -134,6 +205,7 @@ function filterStoreArchive(archive, params) {
       top_stores: ranked.slice(0, 12),
     },
     markers,
+    region_options: storeRegionOptions(archive),
     rounds: rounds.slice(0, roundsLimit),
   };
 }
@@ -143,27 +215,102 @@ function isStoreCoordinate(lat, lon) {
     && Number.isFinite(Number(lat)) && Number.isFinite(Number(lon));
 }
 
-function ensureMap() {
+function loadCountryBoundary() {
+  boundaryRequest ??= fetch("south-korea.geojson").then(async (response) => {
+    if (!response.ok) throw new Error("남한 지도 경계를 불러오지 못했습니다.");
+    const boundary = await response.json();
+    return boundary.coordinates.map(([ring]) => ring);
+  }).catch((error) => {
+    boundaryRequest = undefined;
+    throw error;
+  });
+  return boundaryRequest;
+}
+
+function isInsideCountry(lat, lon, rings) {
+  return rings.some((ring) => {
+    let inside = false;
+    for (let index = 1; index < ring.length; index += 1) {
+      const [x1, y1] = ring[index - 1];
+      const [x2, y2] = ring[index];
+      if ((y1 > lat) !== (y2 > lat) && lon < (x2 - x1) * (lat - y1) / (y2 - y1) + x1) {
+        inside = !inside;
+      }
+    }
+    return inside;
+  });
+}
+
+function isDomesticMarker(lat, lon, rings) {
+  if (isInsideCountry(lat, lon, rings)) return true;
+
+  // The map-scale coastline can differ from the coordinates of coastal stores.
+  const tolerance = 0.018;
+  const longitudeScale = Math.cos(lat * Math.PI / 180);
+  return rings.some((ring) => {
+    for (let index = 1; index < ring.length; index += 1) {
+      const [lon1, lat1] = ring[index - 1];
+      const [lon2, lat2] = ring[index];
+      const startX = (lon1 - lon) * longitudeScale;
+      const startY = lat1 - lat;
+      const dx = (lon2 - lon1) * longitudeScale;
+      const dy = lat2 - lat1;
+      const lengthSquared = dx * dx + dy * dy;
+      if (!lengthSquared) continue;
+      const projection = Math.max(0, Math.min(1, -(startX * dx + startY * dy) / lengthSquared));
+      if (Math.hypot(startX + projection * dx, startY + projection * dy) <= tolerance) return true;
+    }
+    return false;
+  });
+}
+
+function ensureMap(rings) {
   if (!window.L) {
     throw new Error("Leaflet 지도 라이브러리를 불러오지 못했습니다. 네트워크 또는 CDN 차단 여부를 확인하세요.");
   }
   if (map) return map;
-  map = window.L.map(els.mapCanvas, { preferCanvas: true }).setView([36.35, 127.85], 7);
-  window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  const L = window.L;
+  const countryRings = rings.map((ring) => ring.map(([lon, lat]) => [lat, lon]));
+  countryBounds = L.latLngBounds(countryRings.flat());
+  map = L.map(els.mapCanvas, {
+    preferCanvas: true,
+    maxBounds: countryBounds.pad(0.15),
+    maxBoundsViscosity: 1,
+  });
+  const syncMinZoom = () => map.setMinZoom(map.getBoundsZoom(countryBounds, false, [32, 32]));
+  syncMinZoom();
+  map.fitBounds(countryBounds, { padding: [16, 16] });
+  map.on("resize", syncMinZoom);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    noWrap: true,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · <a href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/">Natural Earth</a>',
   }).addTo(map);
-  markerLayer = window.L.layerGroup().addTo(map);
+  map.createPane("countryMask").style.zIndex = "300";
+  L.polygon([
+    [[-85, -180], [-85, 180], [85, 180], [85, -180]],
+    ...countryRings,
+  ], {
+    pane: "countryMask",
+    renderer: L.svg({ pane: "countryMask" }),
+    interactive: false,
+    stroke: false,
+    fillColor: "#e6ebea",
+    fillOpacity: 1,
+    fillRule: "evenodd",
+    smoothFactor: 0,
+  }).addTo(map);
+  markerLayer = L.layerGroup().addTo(map);
   return map;
 }
 
 function render(payload) {
+  storePayload = payload;
   els.generatedAt.textContent = payload.generated_at_utc ? formatDate(payload.generated_at_utc) : "공개 데이터";
   els.coverage.textContent = payload.statistics.coverage.rounds
     ? `${payload.statistics.coverage.from_round}회부터 ${payload.statistics.coverage.to_round}회까지`
     : "조건에 맞는 회차 없음";
   els.matchedRounds.textContent = `${payload.summary.matched_rounds}회`;
-  els.uniqueAddresses.textContent = `${payload.summary.unique_addresses}곳`;
   els.startRound.value = payload.filters.start_round;
   els.endRound.value = payload.filters.end_round;
   els.query.value = payload.filters.query || "";
@@ -172,9 +319,55 @@ function render(payload) {
 
   renderStats(els.regions, payload.statistics.top_regions, "region");
   renderStats(els.addresses, payload.statistics.top_addresses, "address");
-  renderRankings(payload.statistics.top_stores || []);
+  updateRankingOptions();
   renderRounds(payload.rounds || []);
-  renderMap(payload.markers || []);
+}
+
+function setRankingOptions(select, placeholder, values) {
+  const previous = select.value;
+  select.replaceChildren(new Option(placeholder, ""), ...values.map((value) => new Option(value, value)));
+  select.value = values.includes(previous) ? previous : "";
+  select.disabled = !values.length;
+}
+
+function updateRankingOptions() {
+  const regions = storePayload?.region_options || [];
+  setRankingOptions(els.rankingProvince, "전체 시·도", regions.map((region) => region.province));
+  const selected = regions.find((region) => region.province === els.rankingProvince.value);
+  const localities = selected?.localities || [];
+  setRankingOptions(els.rankingLocality, "전체 시·군·구", localities.map((item) => item.name));
+  const locality = localities.find((item) => item.name === els.rankingLocality.value);
+  setRankingOptions(els.rankingWard, "전체 구", locality?.wards || []);
+}
+
+async function loadRankings() {
+  if (!storePayload) return;
+  const requestId = ++rankingRequestId;
+  if (!els.rankingProvince.value) {
+    renderRankings(storePayload.statistics.top_stores || []);
+    setRankingStatus();
+    return;
+  }
+  const params = new URLSearchParams();
+  for (const field of ["start_round", "end_round", "query", "selection_type", "rounds_limit"]) {
+    const value = storePayload.filters[field];
+    if (value != null && value !== "") params.set(field, value);
+  }
+  params.set("province", els.rankingProvince.value);
+  if (els.rankingLocality.value) params.set("locality", els.rankingLocality.value);
+  if (els.rankingWard.value) params.set("ward", els.rankingWard.value);
+  els.rankings.replaceChildren();
+  setRankingStatus("선택한 지역의 랭킹을 불러오는 중입니다.");
+  try {
+    const payload = await fetchStoreLab(params);
+    if (requestId !== rankingRequestId) return;
+    renderRankings(payload.statistics.top_stores || []);
+    setRankingStatus();
+  } catch (error) {
+    if (requestId !== rankingRequestId) return;
+    renderRankings([]);
+    setRankingStatus(error.message || String(error));
+  }
 }
 
 function renderStats(container, rows, key) {
@@ -192,15 +385,17 @@ function renderStats(container, rows, key) {
   `).join("");
 }
 
-function renderMap(markers) {
-  latestMarkers = markers.filter((marker) => isStoreCoordinate(marker.lat, marker.lon));
-  const leafletMap = ensureMap();
+function renderMap(markers, rings) {
+  latestMarkers = markers.filter(({ lat, lon }) =>
+    isStoreCoordinate(lat, lon) && isDomesticMarker(Number(lat), Number(lon), rings));
+  els.uniqueAddresses.textContent = `${latestMarkers.length}곳`;
+  ensureMap(rings);
   markerLayer.clearLayers();
   markerBounds = window.L.latLngBounds();
 
   if (!latestMarkers.length) {
-    els.markerDetail.innerHTML = `<p class="muted">좌표가 있는 가맹점이 없습니다. 검색 조건을 조정하세요.</p>`;
-    leafletMap.setView([36.35, 127.85], 7);
+    els.markerDetail.innerHTML = `<p class="muted">남한 경계 안에 표시할 가맹점이 없습니다. 검색 조건을 조정하세요.</p>`;
+    fitMapToMarkers();
     return;
   }
 
@@ -220,8 +415,8 @@ function renderMap(markers) {
 }
 
 function fitMapToMarkers() {
-  if (!map || !markerBounds?.isValid()) return;
-  map.fitBounds(markerBounds, { padding: [28, 28], maxZoom: 12 });
+  if (!map) return;
+  map.fitBounds(markerBounds?.isValid() ? markerBounds : countryBounds, { padding: [28, 28], maxZoom: 12 });
 }
 
 function showMarkerDetail(marker) {
@@ -241,7 +436,7 @@ function showMarkerDetail(marker) {
 
 function renderRankings(stores) {
   if (!stores.length) {
-    els.rankings.innerHTML = `<p class="muted">가맹점 랭킹이 없습니다.</p>`;
+    els.rankings.innerHTML = `<p class="muted">선택한 조건에 맞는 가맹점이 없습니다.</p>`;
     return;
   }
   els.rankings.innerHTML = stores.map((store) => `
@@ -314,15 +509,23 @@ function escapeAttr(value) {
   return escapeHtml(value).replace(/`/g, "&#96;");
 }
 
-els.form.addEventListener("submit", async (event) => {
+els.form.addEventListener("submit", (event) => {
   event.preventDefault();
-  try {
-    await loadStoreLab();
-  } catch (error) {
-    setStatus(error.message || String(error), "error");
-  }
+  loadStoreLab();
 });
 
 els.fitMap.addEventListener("click", fitMapToMarkers);
+els.rankingProvince.addEventListener("change", () => {
+  els.rankingLocality.value = "";
+  els.rankingWard.value = "";
+  updateRankingOptions();
+  loadRankings();
+});
+els.rankingLocality.addEventListener("change", () => {
+  els.rankingWard.value = "";
+  updateRankingOptions();
+  loadRankings();
+});
+els.rankingWard.addEventListener("change", loadRankings);
 
-loadStoreLab().catch((error) => setStatus(error.message || String(error), "error"));
+loadStoreLab();

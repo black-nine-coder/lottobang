@@ -62,7 +62,7 @@
         <article class="panel metric">
           <span>지도 좌표</span>
           <strong id="uniqueAddresses">-</strong>
-          <small>좌표가 있는 주소만 지도 표시</small>
+          <small>남한 가맹점 좌표만 표시</small>
         </article>
       </section>
 
@@ -71,7 +71,7 @@
           <div class="section-head">
             <div>
               <p class="eyebrow">Map</p>
-              <h2>가맹점 지도</h2>
+              <h2>남한 가맹점 지도</h2>
             </div>
             <button id="fitMap" type="button" class="ghost">전체 보기</button>
           </div>
@@ -99,6 +99,18 @@
               <h2>가맹점 랭킹</h2>
             </div>
           </div>
+          <div class="ranking-filters" role="group" aria-label="가맹점 랭킹 지역">
+            <label>시·도
+              <select id="rankingProvince" disabled><option value="">전체 시·도</option></select>
+            </label>
+            <label>시·군·구
+              <select id="rankingLocality" disabled><option value="">전체 시·군·구</option></select>
+            </label>
+            <label>하위 구
+              <select id="rankingWard" disabled><option value="">전체 구</option></select>
+            </label>
+          </div>
+          <p id="rankingStatus" class="ranking-status muted" role="status" hidden></p>
           <div id="storeRankings" class="store-list"></div>
         </section>
 
