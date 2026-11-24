@@ -31,8 +31,8 @@ jobs:
       - name: Refresh official data
         run: python3 scripts/refresh_official_data.py
 
-      - name: Build GitHub Pages bundle
-        run: python3 scripts/build_github_pages.py
+      - name: Refresh GitHub Pages data
+        run: python3 scripts/build_github_pages.py --data-only
 
       - name: Run tests
         run: python3 -m unittest discover -s tests
@@ -41,7 +41,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data docs flutter_app/assets/data README.md scripts web .github/workflows/refresh-pages.yml
+          git add data docs/data flutter_app/assets/data
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0

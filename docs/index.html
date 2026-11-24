@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="ko">
+<html lang="ko" data-hosting="pages">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,13 +14,20 @@
       <section class="hero panel">
         <div>
           <p class="eyebrow">Lottery Research Console</p>
-          <h1>추천 번호를 만들고, 공식 LO40 구매 화면에 바로 마킹합니다.</h1>
-          <p class="hero-copy">과거 전 회차 흐름, 최근 출현 흐름, 번호 균형 조건을 함께 사용합니다. 구매 확정은 자동화하지 않고, 번호 선택 이후 사용자가 직접 확인합니다.</p>
+          <h1>로또 6/45 추천번호를 만들고 추첨 결과를 확인하세요.</h1>
+          <p class="hero-copy">모든 조합을 대상으로 균등 추첨하거나, 과거 출현 데이터를 참고해 추천번호를 만들 수 있습니다.</p>
         </div>
         <form id="controls" class="control-card">
           <label>
             세트 수
             <input id="sets" name="sets" type="number" min="1" max="10" value="5" />
+          </label>
+          <label>
+            추천 방식
+            <select id="recommendationMode" name="mode">
+              <option value="uniform">균등 추첨</option>
+              <option value="model">과거 데이터 참고</option>
+            </select>
           </label>
           <label>
             시드
@@ -44,9 +51,9 @@
           <small>1회차부터 가능한 공식 CSV 기준</small>
         </article>
         <article class="panel metric">
-          <span>공식 구매</span>
-          <strong>LO40</strong>
-          <small>번호 마킹까지만 보조</small>
+          <span>최신 1등 정보</span>
+          <strong id="latestPrize">-</strong>
+          <small id="latestPrizeMeta">서버 시작 시 공식 정보 확인</small>
         </article>
       </section>
 
@@ -60,9 +67,10 @@
             <button id="copyAllTickets" type="button" class="ghost" disabled>전체 복사</button>
           </div>
           <div id="tickets" class="ticket-grid"></div>
+          <textarea id="ticketCopyText" class="ticket-copy" aria-label="복사할 로또 추천번호" hidden readonly></textarea>
         </section>
 
-        <aside class="panel official-box">
+        <aside class="panel official-box local-only">
           <p class="eyebrow">Official Marking</p>
           <h2>동행복권 마킹 보조</h2>
           <p id="markingSummary" class="muted">추천 세트를 선택하면 공식 사이트용 스크립트가 준비됩니다.</p>
@@ -91,15 +99,21 @@
             <div class="mini-head">
               <div>
                 <p class="eyebrow">Marked Tickets</p>
-                <h3>내 마킹 이력</h3>
+                <h3>내 로컬 구매 이력</h3>
               </div>
               <button id="refreshMarkingHistory" type="button" class="ghost">새로고침</button>
             </div>
+            <p class="muted history-help">마킹 후 실제 구매를 완료했다면 해당 항목의 구매 완료 버튼을 누르세요. 기록은 이 PC의 SQLite DB에만 저장됩니다.</p>
             <div id="markingHistory" class="marking-history-list">
-              <p class="muted">아직 저장된 마킹 이력이 없습니다.</p>
+              <p class="muted">아직 저장된 구매 이력이 없습니다.</p>
             </div>
           </div>
           <textarea id="officialScript" readonly spellcheck="false" placeholder="콘솔 스크립트가 여기에 표시됩니다."></textarea>
+        </aside>
+        <aside class="panel manual-entry pages-only">
+          <h2>동행복권에서 번호 입력</h2>
+          <p class="muted">추천번호를 복사한 뒤 동행복권에서 직접 입력하세요.</p>
+          <a class="quiet-link" href="https://www.dhlottery.co.kr/lt645/intro" target="_blank" rel="noopener noreferrer">동행복권 로또 6/45 열기</a>
         </aside>
       </section>
 
@@ -108,11 +122,12 @@
           <div class="section-head">
             <div>
               <p class="eyebrow">Number Signals</p>
-              <h2>알고리즘 근거</h2>
+              <h2>당첨 확률과 백테스트</h2>
             </div>
           </div>
           <div id="rules" class="chips"></div>
-          <div id="backtestSummary" class="backtest-summary"></div>
+          <div id="backtestSummary" class="lotto-backtest"></div>
+          <div class="section-head"><h3>과거 출현 통계</h3></div>
           <div id="topPairs" class="chips pair-chips"></div>
           <div id="topNumbers" class="weight-list"></div>
         </section>
@@ -129,8 +144,9 @@
         </section>
       </section>
 
-      <p id="statusMessage" class="toast" hidden></p>
+      <p id="statusMessage" class="toast" role="status" hidden></p>
     </main>
+    <script src="browser.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

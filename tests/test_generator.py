@@ -34,10 +34,11 @@ class GeneratorTest(unittest.TestCase):
             self.assertTrue(all(1 <= number <= 45 for number in recommendation.numbers))
 
     def test_dashboard_payload_includes_archive_data(self) -> None:
+        latest_draw = load_draws("data/official_draws.csv")[-1]
         payload = build_dashboard_payload(csv_path="data/sample_draws.csv", sets_count=3, seed=7)
 
         self.assertEqual(len(payload["tickets"]), 3)
-        self.assertEqual(payload["latest_draw"]["round_no"], 1229)
+        self.assertEqual(payload["latest_draw"]["round_no"], latest_draw.round_no)
         self.assertGreaterEqual(len(payload["winner_highlights"]), 3)
         self.assertEqual(payload["defaults"]["seed"], 7)
         self.assertGreaterEqual(len(payload["strategy"]["frequency_stats"]), 1)
@@ -46,7 +47,7 @@ class GeneratorTest(unittest.TestCase):
         self.assertEqual(len(payload["strategy"]["pair_weights"]), 990)
         self.assertGreaterEqual(len(payload["strategy"]["top_pairs"]), 1)
         self.assertIn("backtest", payload["strategy"])
-        self.assertEqual(payload["strategy"]["frequency_coverage"]["to_round"], 1229)
+        self.assertEqual(payload["strategy"]["frequency_coverage"]["to_round"], latest_draw.round_no)
         self.assertEqual(Path(payload["source_csv"]).name, "official_draws.csv")
         self.assertEqual(payload["store_page_url"], "/stores.html")
         first_history = payload["winner_highlights"][0]

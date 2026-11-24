@@ -25,6 +25,7 @@ let map = null;
 let markerLayer = null;
 let markerBounds = null;
 let latestMarkers = [];
+let archiveRequest;
 
 function setStatus(message = "", tone = "info") {
   els.status.hidden = !message;
@@ -51,12 +52,95 @@ function buildQuery() {
 
 async function loadStoreLab(params = buildQuery()) {
   setStatus("가맹점 데이터를 불러오는 중입니다.");
-  let response = await fetch(`api/store-lab?${params.toString()}`).catch(() => null);
-  if (!response || !response.ok) response = await fetch("data/store_lab.json");
-  const payload = await response.json();
-  if (!response.ok) throw new Error(payload.error || "가맹점 데이터를 불러오지 못했습니다.");
+  const response = lottoBrowser.isPages ? null : await fetch(`api/store-lab?${params}`).catch(() => null);
+  let payload;
+  if (response?.ok) {
+    payload = await response.json();
+  } else {
+    archiveRequest ??= fetch("data/store_archive.json", { cache: "no-cache" }).then((snapshot) => {
+      if (!snapshot.ok) throw new Error("가맹점 데이터를 불러오지 못했습니다.");
+      return snapshot.json();
+    }).catch((error) => {
+      archiveRequest = undefined;
+      throw error;
+    });
+    payload = filterStoreArchive(await archiveRequest, params);
+  }
   render(payload);
   setStatus("");
+}
+
+function filterStoreArchive(archive, params) {
+  const startRound = Number(params.get("start_round")) || 1;
+  const latestRound = archive.reduce((latest, entry) => Math.max(latest, entry.round_no), 1);
+  const endRound = Number(params.get("end_round")) || latestRound;
+  const roundsLimit = Number(params.get("rounds_limit")) || 40;
+  const selectionType = params.get("selection_type") || "all";
+  const query = params.get("query") || "";
+  const search = query.toLowerCase();
+  if (endRound < startRound) throw new Error("종료 회차는 시작 회차 이상이어야 합니다.");
+
+  const rounds = [];
+  const stores = new Map();
+  const regions = new Map();
+  const addresses = new Map();
+  for (const entry of archive) {
+    if (entry.round_no < startRound || entry.round_no > endRound) continue;
+    const matches = entry.stores.filter((store) => {
+      if (selectionType !== "all" && store.selection_type !== selectionType) return false;
+      return [store.name, store.region, store.address, store.selection_type].join(" ").toLowerCase().includes(search);
+    });
+    if (!matches.length) continue;
+    rounds.push({ ...entry, stores: matches });
+    for (const store of matches) {
+      regions.set(store.region, (regions.get(store.region) || 0) + 1);
+      addresses.set(store.address, (addresses.get(store.address) || 0) + 1);
+      const id = JSON.stringify([store.name, store.address]);
+      const previous = stores.get(id);
+      const latest = !previous || entry.round_no >= previous.latest_round_no;
+      const item = {
+        ...previous,
+        name: store.name,
+        address: store.address,
+        region: latest ? store.region : previous.region,
+        latest_round_no: latest ? entry.round_no : previous.latest_round_no,
+        latest_draw_date: latest ? entry.draw_date : previous.latest_draw_date,
+        count: (previous?.count || 0) + 1,
+        selection_types: [...new Set([...(previous?.selection_types || []), store.selection_type])],
+      };
+      if (isStoreCoordinate(store.lat, store.lon)) {
+        item.lat = store.lat;
+        item.lon = store.lon;
+      }
+      stores.set(id, item);
+    }
+  }
+
+  const top = (counts, property) => [...counts.entries()]
+    .sort((left, right) => right[1] - left[1]).slice(0, 12)
+    .map(([value, count]) => ({ [property]: value, count }));
+  const ranked = [...stores.values()].sort((left, right) =>
+    right.count - left.count || right.latest_round_no - left.latest_round_no);
+  const markers = ranked.filter((item) => isStoreCoordinate(item.lat, item.lon));
+  rounds.sort((left, right) => right.round_no - left.round_no);
+  return {
+    generated_at_utc: null,
+    filters: { start_round: startRound, end_round: endRound, rounds_limit: roundsLimit, query, selection_type: selectionType },
+    summary: { matched_rounds: rounds.length, unique_addresses: markers.length },
+    statistics: {
+      coverage: { rounds: rounds.length, from_round: rounds.at(-1)?.round_no, to_round: rounds[0]?.round_no },
+      top_regions: top(regions, "region"),
+      top_addresses: top(addresses, "address"),
+      top_stores: ranked.slice(0, 12),
+    },
+    markers,
+    rounds: rounds.slice(0, roundsLimit),
+  };
+}
+
+function isStoreCoordinate(lat, lon) {
+  return lat != null && lon != null && lat !== "" && lon !== ""
+    && Number.isFinite(Number(lat)) && Number.isFinite(Number(lon));
 }
 
 function ensureMap() {
@@ -74,7 +158,7 @@ function ensureMap() {
 }
 
 function render(payload) {
-  els.generatedAt.textContent = formatDate(payload.generated_at_utc);
+  els.generatedAt.textContent = payload.generated_at_utc ? formatDate(payload.generated_at_utc) : "공개 데이터";
   els.coverage.textContent = payload.statistics.coverage.rounds
     ? `${payload.statistics.coverage.from_round}회부터 ${payload.statistics.coverage.to_round}회까지`
     : "조건에 맞는 회차 없음";
@@ -109,7 +193,7 @@ function renderStats(container, rows, key) {
 }
 
 function renderMap(markers) {
-  latestMarkers = markers.filter((marker) => Number.isFinite(Number(marker.lat)) && Number.isFinite(Number(marker.lon)));
+  latestMarkers = markers.filter((marker) => isStoreCoordinate(marker.lat, marker.lon));
   const leafletMap = ensureMap();
   markerLayer.clearLayers();
   markerBounds = window.L.latLngBounds();
@@ -123,7 +207,9 @@ function renderMap(markers) {
   for (const marker of latestMarkers) {
     const latLng = [Number(marker.lat), Number(marker.lon)];
     markerBounds.extend(latLng);
-    const leafletMarker = window.L.marker(latLng, { title: marker.name })
+    const leafletMarker = window.L.circleMarker(latLng, {
+      radius: 6, color: "#884923", fillColor: "#c7743a", fillOpacity: .8, weight: 1,
+    })
       .bindPopup(`<strong>${escapeHtml(marker.name)}</strong><br>${escapeHtml(marker.address)}<br>${marker.count}회 출현`)
       .on("click", () => showMarkerDetail(marker));
     leafletMarker.addTo(markerLayer);

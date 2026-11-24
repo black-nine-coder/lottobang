@@ -1,5 +1,6 @@
 ﻿from __future__ import annotations
 
+import argparse
 import html
 import json
 import shutil
@@ -24,6 +25,7 @@ STATIC_FILES = [
     "stores.html",
     "pension.html",
     "styles.css",
+    "browser.js",
     "app.js",
     "stores.js",
     "pension.js",
@@ -80,12 +82,48 @@ def build_readme_page() -> None:
     (DOCS_ROOT / "readme.html").write_text(readme_html, encoding="utf-8")
 
 
-def build_pages_site() -> None:
+def build_pages_assets() -> bool:
+    if not (WEB_ROOT / "browser.js").is_file():
+        # A checkout used solely for publishing can carry the ready-to-serve assets.
+        if all((DOCS_ROOT / file_name).is_file() for file_name in STATIC_FILES):
+            return False
+        raise FileNotFoundError("The mobile Pages assets are missing from web/ and docs/.")
     DOCS_ROOT.mkdir(parents=True, exist_ok=True)
-    DOCS_DATA_ROOT.mkdir(parents=True, exist_ok=True)
-
     for file_name in STATIC_FILES:
-        shutil.copy2(WEB_ROOT / file_name, DOCS_ROOT / file_name)
+        source = WEB_ROOT / file_name
+        target = DOCS_ROOT / file_name
+        if source.suffix == ".html":
+            page = source.read_text(encoding="utf-8")
+            target.write_text(page.replace('<html lang="ko">', '<html lang="ko" data-hosting="pages">', 1), encoding="utf-8")
+        else:
+            shutil.copy2(source, target)
+    return True
+
+
+def build_recommendation_snapshots() -> None:
+    DOCS_DATA_ROOT.mkdir(parents=True, exist_ok=True)
+    dashboard = build_dashboard_payload(csv_path=resolve_draws_csv())
+    dashboard.pop("source_csv", None)
+    latest = dashboard.get("latest_first_prize")
+    if isinstance(latest, dict):
+        public_fields = ("round_no", "draw_date", "first_prize_winners", "prize_per_winner")
+        dashboard["latest_first_prize"] = {key: latest[key] for key in public_fields if key in latest}
+    dashboard["store_page_url"] = "stores.html"
+    snapshots = {
+        "dashboard.json": dashboard,
+        "pension_dashboard.json": build_pension_dashboard(),
+    }
+    for file_name, payload in snapshots.items():
+        (DOCS_DATA_ROOT / file_name).write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+
+
+def build_pages_site(*, data_only: bool = False) -> None:
+    if not data_only and build_pages_assets():
+        print(f"- copied static files from {WEB_ROOT}")
+    DOCS_DATA_ROOT.mkdir(parents=True, exist_ok=True)
 
     draws = load_draws(resolve_draws_csv())
     draws_payload = [
@@ -119,31 +157,22 @@ def build_pages_site() -> None:
         encoding="utf-8",
     )
 
-    dashboard_payload = build_dashboard_payload(csv_path=resolve_draws_csv())
-    dashboard_payload["store_page_url"] = "stores.html"
-    (DOCS_DATA_ROOT / "dashboard.json").write_text(
-        json.dumps(dashboard_payload, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-    pension_payload = build_pension_dashboard()
-    (DOCS_DATA_ROOT / "pension_dashboard.json").write_text(
-        json.dumps(pension_payload, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-    build_readme_page()
+    build_recommendation_snapshots()
+    if not data_only:
+        build_readme_page()
+        (DOCS_ROOT / ".nojekyll").write_text("", encoding="utf-8")
+        print(f"- wrote {DOCS_ROOT / 'README.md'}")
+        print(f"- wrote {DOCS_ROOT / 'readme.html'}")
 
-    (DOCS_ROOT / ".nojekyll").write_text("", encoding="utf-8")
-
-    print(f"GitHub Pages bundle generated in {DOCS_ROOT}")
-    print(f"- copied static files from {WEB_ROOT}")
+    print(f"GitHub Pages data generated in {DOCS_DATA_ROOT}")
     print(f"- wrote {DOCS_DATA_ROOT / 'draws.json'}")
     print(f"- wrote {DOCS_DATA_ROOT / 'store_archive.json'}")
     print(f"- wrote {DOCS_DATA_ROOT / 'store_lab.json'}")
     print(f"- wrote {DOCS_DATA_ROOT / 'dashboard.json'}")
     print(f"- wrote {DOCS_DATA_ROOT / 'pension_dashboard.json'}")
-    print(f"- wrote {DOCS_ROOT / 'README.md'}")
-    print(f"- wrote {DOCS_ROOT / 'readme.html'}")
 
 
 if __name__ == "__main__":
-    build_pages_site()
+    parser = argparse.ArgumentParser(description="Build the GitHub Pages site and its lottery data.")
+    parser.add_argument("--data-only", action="store_true", help="Refresh JSON snapshots without replacing the site pages or scripts.")
+    build_pages_site(data_only=parser.parse_args().data_only)
